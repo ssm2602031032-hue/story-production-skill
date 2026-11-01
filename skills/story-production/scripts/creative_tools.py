@@ -32,7 +32,7 @@ def infer_mode(text):
 def infer_task(text):
  if re.search(r'(?:只|仅).{0,18}(?:润色|修改|改写).{0,18}(?:对白|台词)',text):return 'dialogue'
  if has(text,('只改对白','只改台词','润色台词','润色对白','dialogue only','polish dialogue')):return 'dialogue'
- if has(text,('只审','审稿','审读','只检查','不改正文','critique','review only')):return 'critique'
+ if has(text,('只审','审稿','审读','只检查','critique','review only')):return 'critique'
  if has(text,('读演','读本排练','台词朗读','table read','table-read')):return 'table-read'
  if has(text,('广播剧','有声书','音频剧','audio drama')):return 'audio'
  if has(text,('漫画','条漫','webtoon','comic')):return 'comics'
@@ -54,6 +54,7 @@ def infer_task(text):
  if has(text,('改稿','重写','修订','rewrite','revise')):return 'rewrite'
  if has(text,('点子','构思','脑暴','brainstorm')):return 'brainstorm'
  if has(text,('续写','下一章','写这一场','continue chapter','draft scene')):return 'draft'
+ if has(text,('不改正文','不改原文','do not rewrite')):return 'critique'
  return 'full'
 def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  if not isinstance(request,str) or not request.strip():raise ValueError('A non-empty request is required')

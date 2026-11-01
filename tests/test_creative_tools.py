@@ -21,6 +21,12 @@ class CreativeToolsTests(unittest.TestCase):
  def test_naming_only_does_not_create_a_whole_story(self):
   p=creative.plan('只给这部悬疑小说起书名')
   self.assertEqual(p['task'],'naming');self.assertEqual(self.selected(p),{'title-logline'})
+ def test_preserve_prose_is_a_constraint_not_an_automatic_review_task(self):
+  p=creative.plan('只给示例短片起3个不同方向的片名并推荐一个，不改正文')
+  self.assertEqual(p['task'],'naming');self.assertEqual(self.selected(p),{'title-logline'})
+  p=creative.plan('为这部电影写项目提案，不改正文')
+  self.assertEqual(p['task'],'pitch')
+  self.assertEqual(creative.plan('只审读作品因果，不改正文')['task'],'critique')
  def test_comic_adaptation_is_not_claimed_as_a_rendered_film(self):
   p=creative.plan('把小说改编成条漫分格脚本')
   self.assertEqual(p['task'],'comics');self.assertIn('comics-webtoon',self.selected(p));self.assertIn('adaptation',self.selected(p));self.assertNotIn('format',self.selected(p))

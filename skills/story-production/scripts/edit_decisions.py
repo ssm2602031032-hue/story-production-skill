@@ -137,12 +137,17 @@ def timeline(path,output,picture_only=False):
    track.append(clip(row));tl.tracks.append(track)
  tl.metadata['story_production']={'source_decisions_sha256':digest(path),'rendered_video':False,'mix_automation_applied':False}
  if suffix=='.edl':
-  try:otio.adapters.write_to_file(tl,str(out),adapter_name='cmx_3600',rate=fps,style='premiere')
+  try:otio.adapters.write_to_file(tl,str(out),adapter_name='cmx_3600',rate=fps,style='avid')
   except otio.exceptions.NotSupportedError as e:raise ValueError('Install the optional otio-cmx3600-adapter package') from e
   reread=otio.adapters.read_from_file(str(out),adapter_name='cmx_3600',rate=fps)
+  decoded=list(reread.tracks[0])
+  if len(decoded)!=len(r['picture']):raise ValueError('EDL round-trip clip count differs')
+  for actual,expected in zip(decoded,r['picture']):
+   if actual.metadata.get('cmx_3600',{}).get('reel','').strip()!=reels[expected['source']]:raise ValueError('EDL round-trip lost source reel identity')
+   if abs(actual.source_range.start_time.rescaled_to(fps).value-expected['in_frame'])>.001 or abs(actual.source_range.duration.rescaled_to(fps).value-(expected['out_frame']-expected['in_frame']))>.001:raise ValueError('EDL round-trip changed source range')
  else:otio.adapters.write_to_file(tl,str(out));reread=otio.adapters.read_from_file(str(out))
  if abs(reread.duration().rescaled_to(fps).value-r['total_frames'])>.001:raise ValueError('Timeline round-trip duration differs')
- return {'output':str(out),'frames':r['total_frames'],'picture_clips':len(v),'audio_tracks':0 if suffix=='.edl' or picture_only else len(r['audio']),'reels':reels,'source_timecode_basis':'zero-based decoded file frames, not camera-embedded timecode','native_editor_import_tested':False,'mix_automation_applied':False}
+ return {'output':str(out),'frames':r['total_frames'],'picture_clips':len(v),'audio_tracks':0 if suffix=='.edl' or picture_only else len(r['audio']),'reels':reels,'edl_style':'avid' if suffix=='.edl' else None,'source_timecode_basis':'zero-based decoded file frames, not camera-embedded timecode','native_editor_import_tested':False,'mix_automation_applied':False}
 def main():
  p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
  for name in ('validate','capture','otio','edl'):

@@ -66,6 +66,7 @@ class RealEditTests(unittest.TestCase):
   import opentimelineio as otio
   with self.assertRaises(ValueError):timeline(self.edit,self.root/'bad.edl')
   out=self.root/'edit.edl';r=timeline(self.edit,out,True);t=otio.adapters.read_from_file(str(out),adapter_name='cmx_3600',rate=24);self.assertEqual(t.duration().value,48);self.assertEqual(r['audio_tracks'],0);self.assertEqual(t.tracks[0][0].source_range.start_time.value,24)
+  self.assertEqual([c.metadata['cmx_3600']['reel'].strip() for c in t.tracks[0]],[r['reels']['V1']]*2);self.assertIn(r['reels']['V1'],out.read_text(encoding='utf-8'))
  def test_out_of_range_audio_and_conflicting_fades_are_rejected(self):
   d=json.loads(self.edit.read_text());d['audio'][0]['fade_in_frames']=20;d['audio'][0]['fade_out_frames']=20;self.edit.write_text(json.dumps(d))
   with self.assertRaises(ValueError):validate(self.edit)

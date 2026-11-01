@@ -78,7 +78,7 @@ python scripts/edit_decisions.py edl project/edit-v1.json --picture-only --out p
 python scripts/edit_decisions.py diff project/edit-v1.json project/edit-v2.json --out project/edit-changes.json
 ```
 
-OTIO保留画面和声音的源范围与开始时间。增益、淡入淡出只是元数据，目标编辑器不会被假定自动应用；渲染器才真正执行这些混音处理。EDL本包只导出画面，限24/25/30fps非丢帧，使用唯一短reel映射和从文件第0帧起算的源时码，不冒充拍摄机嵌入时码。实际商业编辑器导入与插件兼容性另测。
+OTIO保留画面和声音的源范围与开始时间。增益、淡入淡出只是元数据，目标编辑器不会被假定自动应用；渲染器才真正执行这些混音处理。EDL本包只导出画面，限24/25/30fps非丢帧，采用适配器的avid风格保留唯一短reel映射，回读同时检查reel、源范围和总长；其premiere风格会将reel统一为AX，因此这里不使用。源时码从文件第0帧起算，不冒充拍摄机嵌入时码。实际商业编辑器导入与插件兼容性另测。
 
 diff按稳定片段ID列出剪切、移位、音轨和来源变化，提示字幕与声音需重核。它不读取媒体，也不判断改后故事更好；导演仍需回到原文和两个实际版本比较。
 

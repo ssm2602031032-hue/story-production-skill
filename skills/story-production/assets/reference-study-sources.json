@@ -1,0 +1,17 @@
+{
+  "version": "1.8.0",
+  "studies": [
+    {
+      "id": "autumn-screenshot-study",
+      "source_url": "https://www.douyin.com/note/7690847701923138843",
+      "source_attribution": "User-associated creator: Chill^_^Puppy",
+      "evidence": "two user-provided screenshots containing images and readable Prompt panels",
+      "reviewed_at": "2026-11-01",
+      "reference": "references/reference-studies/autumn-reference-study.md",
+      "raw_images_bundled": false,
+      "complete_prompt_bundled": false,
+      "actual_generation_model_verified": false,
+      "generation_experiment_run": false
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "1.7.0",
-  "module_count": 108,
+  "version": "1.8.0",
+  "module_count": 113,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -1464,6 +1464,75 @@
       "integration": "independently-authored-adapter",
       "tags": [
         "editorial-story-guards"
+      ]
+    },
+    {
+      "id": "image-scene-grounding",
+      "title": "图片场景质感与注意中心",
+      "summary": "把主体、空间层次、光源和材料写成可见条件",
+      "stage": "production",
+      "reference": "references/modules/image-scene-grounding.md",
+      "sources": [],
+      "integration": "original-methods-and-scoped-adapters",
+      "tags": [
+        "image-scene-grounding"
+      ]
+    },
+    {
+      "id": "still-to-motion-transfer",
+      "title": "静帧到视频动作",
+      "summary": "保留批准画面事实，单独设计动作与剪辑衔接",
+      "stage": "production",
+      "reference": "references/modules/still-to-motion-transfer.md",
+      "sources": [],
+      "integration": "original-methods-and-scoped-adapters",
+      "tags": [
+        "still-to-motion-transfer"
+      ]
+    },
+    {
+      "id": "canvas-information-design",
+      "title": "素材画布信息架构",
+      "summary": "按目的分组、建立阅读顺序与真实制作状态",
+      "stage": "production",
+      "reference": "references/modules/canvas-information-design.md",
+      "sources": [
+        "obsidian-skills",
+        "json-canvas"
+      ],
+      "integration": "original-methods-and-scoped-adapters",
+      "tags": [
+        "canvas-information-design"
+      ]
+    },
+    {
+      "id": "canvas-auto-layout",
+      "title": "画布自动布局",
+      "summary": "阶段网格和真实ELK依赖布局，检查重叠与线路",
+      "stage": "delivery",
+      "reference": "references/modules/canvas-auto-layout.md",
+      "sources": [
+        "elkjs",
+        "dagre"
+      ],
+      "integration": "original-methods-and-scoped-adapters",
+      "tags": [
+        "canvas-auto-layout"
+      ]
+    },
+    {
+      "id": "canvas-incremental-handoff",
+      "title": "画布增量与交接",
+      "summary": "保留位置、拆分长项目、维护媒体路径和格式边界",
+      "stage": "delivery",
+      "reference": "references/modules/canvas-incremental-handoff.md",
+      "sources": [
+        "json-canvas",
+        "react-flow"
+      ],
+      "integration": "original-methods-and-scoped-adapters",
+      "tags": [
+        "canvas-incremental-handoff"
       ]
     }
   ]

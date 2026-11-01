@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和96个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和101个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)
@@ -93,3 +93,15 @@ InstantStyle未见仓库级明确再分发许可，未复制其内容。HunyuanC
 - [TateZhouSiu/create-storyboard-skill](https://github.com/TateZhouSiu/create-storyboard-skill/tree/4b8662e2fee51b37488c77952bbfa302bfeaf36c)：镜间交出/接收、干净首帧与审看片板分离，映射/边界/剪辑保护用本包脚本测试；未运行上游图像模型或固定15秒流程。 [许可](upstream/continuity-storyboard/LICENSE)
 
 ai-video-storyboard-skill未见明确仓库许可，未复制内容。Storyboarder虽被调研，本次未接入其程序或原生工程，避免宣称未测试的导入能力。
+
+## v1.8 画布与参考图学习
+
+画布入口见[画布手册](canvas-handbook.md)。参考图研究证据另列于[截图来源表](../assets/reference-study-sources.json)，不与GitHub代码许可证表混为一类。
+
+- [obsidianmd/jsoncanvas](https://github.com/obsidianmd/jsoncanvas/tree/456f843cb293df4f4ab1763e22ccb46a80b307c8)：实际输出JSON Canvas 1.0节点、组和关系，检查ID/引用/媒体副本和本地PNG；未做原生Obsidian导入验收。 [许可](upstream/json-canvas/LICENSE)
+- [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/3ccff5338ea700537839b21900aa5358a0402c98)：采用JSON Canvas分组、相对文件和引用检查方法；不把其16位ID惯例误当标准强制规则。 [许可](upstream/obsidian-skills/LICENSE)
+- [kieler/elkjs](https://github.com/kieler/elkjs/tree/bddee3a807b5ff6324a1f1af79d1f95105637458)：实际运行elkjs 0.12.1 layered/orthogonal布局，检查6节点7关系无重叠、原规范保留和输出保护。 [许可](upstream/elkjs/LICENSE.md)
+- [dagrejs/dagre](https://github.com/dagrejs/dagre/tree/877ead2bb0d5822daeb44ccb4396be1ebccbc9e4)：有向图分层布局与信息语义分离的方案参考；本包未安装或运行Dagre。 [许可](upstream/dagre/LICENSE)
+- [xyflow/xyflow](https://github.com/xyflow/xyflow/tree/d4bc936edad07aba995dbdb8e2c63af8cdd631c9)：节点数据、交互组件和布局算法分离的架构参考；未安装或部署React Flow应用。 [许可](upstream/react-flow/LICENSE)
+
+Excalidraw作为可选画布产品调研，未承诺导出其原生格式。robonuggets/excalidraw-skill未见明确仓库级许可证，未复制技能内容。ELK运行时的EPL-2.0与本包独立编写脚本的许可分别适用，本包不打包该运行时。

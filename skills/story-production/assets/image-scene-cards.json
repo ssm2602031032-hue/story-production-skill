@@ -1,0 +1,135 @@
+{
+  "version": "1.8.0",
+  "source_kind": "original cross-subject examples derived from general composition principles; no copied full creator prompt",
+  "cards": [
+    {
+      "id": "repair-studio",
+      "title": "现代修理工作室",
+      "attention": "维修者的目光、工具与正在检查的器件形成一个注意中心",
+      "action": "维修者俯身确认接点，手停在刚刚完成操作的位置",
+      "depth": {
+        "foreground": "桌边工具盒只遮住不重要的边缘",
+        "subject": "双手、器件与低垂目光可读",
+        "background": "少量工作台和架子交代现代室内，背景适度分离"
+      },
+      "light": "一侧大窗的柔和日光照亮手和器件；金属高光随光源连续，木桌较哑光",
+      "material": "衣料褶皱、金属边缘和木材纹理各有不同表现",
+      "focus": "工具接触点与必要手部在可读焦平面内，不强制极浅景深",
+      "image_prompt": "现代维修工作室的中近景，维修者低头检查桌面器件，注意中心是工具与手部接触处；桌边工具盒形成轻微前景遮挡，后方架子交代工作环境。侧窗柔光照亮手和器件，金属反射清楚、木桌偏哑光，衣料有自然褶皱。神情专注，姿势来自正在进行的工作，关键操作区域保持清晰。",
+      "do_not_inherit": [
+        "庭院与古装",
+        "暖黄火光",
+        "无条件做旧",
+        "相机品牌或固定平台尾缀"
+      ],
+      "video_transfer": {
+        "main_change": "只完成一次明确的检查动作，再短暂抬眼确认结果",
+        "camera": "先固定机位测试手部与器件稳定性",
+        "end_state": "工具离开接点、器件仍在原位",
+        "review": "接触先后、工具数量、器件形状与材料闪变"
+      },
+      "parameters": {
+        "provider": "unspecified",
+        "native_options": {},
+        "status": "verify actual model before setting"
+      }
+    },
+    {
+      "id": "ceramic-product",
+      "title": "自然陶瓷产品",
+      "attention": "杯口细边与把手连接处",
+      "action": "杯体静止，旁边的布巾保留自然折痕",
+      "depth": {
+        "foreground": "桌沿可作为简洁引导，不必加植物",
+        "subject": "杯体和单个把手同时可读",
+        "background": "无文字的干净生活环境轮廓"
+      },
+      "light": "窗光从斜侧照入，釉面出现连续柔和反射，阴影保持方向一致",
+      "material": "釉面光滑但不是全白发光，布巾偏哑光，木桌有稳定细纹",
+      "focus": "杯口与把手都重要时调整观看角度或景深",
+      "image_prompt": "桌面高度的陶瓷杯产品近景，杯体与单个把手完整可读，视觉重点是杯口细边与把手的连接。斜侧窗光在釉面形成柔和连续的反射，布巾和木桌呈现不同的哑光纹理，阴影方向一致。背景仅保留生活环境轮廓，不用极端散景遮掉杯体结构。",
+      "do_not_inherit": [
+        "人物肤色和笑容描述",
+        "烟气尘埃",
+        "超浅景深与全清晰同时要求",
+        "固定高风格化参数"
+      ],
+      "video_transfer": {
+        "main_change": "如果剧情需要，只让轻微蒸汽变化；不必让产品旋转",
+        "camera": "固定观察",
+        "end_state": "杯口、把手和图案保持同一几何",
+        "review": "字形/图案漂移、边缘融化、反射跳变"
+      },
+      "parameters": {
+        "provider": "unspecified",
+        "native_options": {},
+        "status": "verify actual model before setting"
+      }
+    },
+    {
+      "id": "rainy-conversation",
+      "title": "雨后城市对话",
+      "attention": "两人接收到对方话语后的反应",
+      "action": "一人收起湿外套，另一人让出一小块干燥座位",
+      "depth": {
+        "foreground": "雨棚立柱轻微遮挡边缘",
+        "subject": "两人的距离和座位动作清楚",
+        "background": "湿地、商店灯和路人仅作环境层次"
+      },
+      "light": "阴天环境光与已有商店灯共同作用，湿地反光有来源，不把肤色染成统一橙色",
+      "material": "湿地、湿衣物与皮肤反光程度不同",
+      "focus": "两人关系需要同看时不把一人完全虚化",
+      "image_prompt": "雨后城市雨棚下的双人中景，一人收起湿外套，另一人往旁边挪动让出干燥座位，注意中心是这次小动作带来的反应。立柱在前景边缘形成轻微遮挡，背景湿地和商店灯提供地点线索。阴天环境光保留自然肤色，实际店灯只在相应区域形成暖色反射，衣物、皮肤与湿地的质感不同。",
+      "do_not_inherit": [
+        "固定庭院题材",
+        "每个人都看镜头笑",
+        "所有背景极度虚化",
+        "额外人群数量"
+      ],
+      "video_transfer": {
+        "main_change": "让座动作与对方看见后的回应按先后发生",
+        "camera": "稳定双人机位",
+        "end_state": "座位空间和两人的位置明确改变",
+        "review": "座位几何、衣物湿润状态、人物视线及镜间位置"
+      },
+      "parameters": {
+        "provider": "unspecified",
+        "native_options": {},
+        "status": "verify actual model before setting"
+      }
+    },
+    {
+      "id": "sport-moment",
+      "title": "运动中的决定瞬间",
+      "attention": "运动员与下一步路线的关系",
+      "action": "运动员在起跑后的一个承重瞬间，身体朝目标方向推进",
+      "depth": {
+        "foreground": "近处跑道边线提供方向",
+        "subject": "身体重心与脚底接触关系清楚",
+        "background": "远处跑道与观众区提供尺度而不抢注意"
+      },
+      "light": "采用实际时段的室外光，人体和跑道接受同一方向照明",
+      "material": "运动服受动作拉伸，跑道表面与皮肤反光不同",
+      "focus": "重要承重点与姿态可读，动感不靠整幅均匀模糊",
+      "image_prompt": "跑道边低位中景，运动员在起跑后的承重瞬间朝前方目标推进，注意中心是身体重心、脚底接触和路线。近处边线引导方向，远处跑道保持可辨尺度。实际室外光照统一，衣物受动作拉伸，皮肤与跑道反射不同；保留关键姿态的可读性，不把整个画面涂成均匀模糊。",
+      "do_not_inherit": [
+        "静物式摆拍姿态",
+        "默认慢动作",
+        "任意烟雾与颗粒",
+        "用单帧断言真实速度"
+      ],
+      "video_transfer": {
+        "main_change": "完成一次连续蹬地、重心前移与下一次着地",
+        "camera": "先使用明确的固定或短跟拍机位之一",
+        "end_state": "足部接地与身体方向保持因果连续",
+        "review": "滑步、漂浮、背景视差与播放速度"
+      },
+      "parameters": {
+        "provider": "unspecified",
+        "native_options": {},
+        "status": "verify actual model before setting"
+      }
+    }
+  ],
+  "media_generated": false
+}

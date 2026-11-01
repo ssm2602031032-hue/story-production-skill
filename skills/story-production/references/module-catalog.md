@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共108个按需模块：12份昆卡原文参考、96个扩展模块。每阶段只读当前需要的两三个。
+共113个按需模块：12份昆卡原文参考、101个扩展模块。每阶段只读当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -112,5 +112,10 @@
 |`scene-context-editing`|[按当前情境选择剪辑策略](modules/scene-context-editing.md)|用场景问题、知情与行为决定切点，不套统一节拍|
 |`shot-handoff-contracts`|[镜间交出、接收与替代覆盖](modules/shot-handoff-contracts.md)|每个切点交代动作、空间、声音或信息怎样继续|
 |`editorial-story-guards`|[剪辑保护关键动作、反应与揭示](modules/editorial-story-guards.md)|追踪实际取帧是否删掉必须看见的叙事内容|
+|`image-scene-grounding`|[图片场景质感与注意中心](modules/image-scene-grounding.md)|把主体、空间层次、光源和材料写成可见条件|
+|`still-to-motion-transfer`|[静帧到视频动作](modules/still-to-motion-transfer.md)|保留批准画面事实，单独设计动作与剪辑衔接|
+|`canvas-information-design`|[素材画布信息架构](modules/canvas-information-design.md)|按目的分组、建立阅读顺序与真实制作状态|
+|`canvas-auto-layout`|[画布自动布局](modules/canvas-auto-layout.md)|阶段网格和真实ELK依赖布局，检查重叠与线路|
+|`canvas-incremental-handoff`|[画布增量与交接](modules/canvas-incremental-handoff.md)|保留位置、拆分长项目、维护媒体路径和格式边界|
 
-入口：[剧本到情境剪辑](script-to-edit.md)、[通用影像](visual-reliability.md)、[剪辑工作台](editing-handbook.md)、[来源](integrations.md)。
+入口：[画布整理](canvas-handbook.md)、[图片质感方法](modules/image-scene-grounding.md)、[剧本转化](script-to-edit.md)、[通用影像](visual-reliability.md)、[来源](integrations.md)。

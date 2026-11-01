@@ -1,4 +1,4 @@
 interface:
   display_name: "Story Production · 全套创作"
-  short_description: "从完整剧本到分镜提示词，追踪改编依据、对白表演与当前场景的剪辑逻辑"
+  short_description: "从剧本到图片/视频提示词与剪辑，支持有层级的素材画布和可追溯制作记录"
   default_prompt: "使用 $story-production，按我的主题、媒介和范围选择创作模块，完成正文或指定修改，并审校人物、伏笔、时间线与对应制作资料。"

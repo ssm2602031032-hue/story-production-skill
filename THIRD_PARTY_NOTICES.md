@@ -170,3 +170,17 @@ LosslessCut仅作方法与链接参考，其GPL条款未被本项目MIT覆盖。
 |[TateZhouSiu/create-storyboard-skill](https://github.com/TateZhouSiu/create-storyboard-skill)|`4b8662e2fee51b37488c77952bbfa302bfeaf36c`|[MIT](skills/story-production/references/upstream/continuity-storyboard/LICENSE)|
 
 署名改编说明：LaoYu-Professional-Screenwriter，维护者YuYingRay，2026；[原始入口](https://github.com/YuYingRay/LaoYu-Professional-Screenwriter/blob/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/SKILL.md)，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。本包[scene-intent-engine模块](skills/story-production/references/modules/scene-intent-engine.md)依据其场景因果方法改写为按需工作流，移除强制项目结构和固定反转要求；该模块文本按CC BY 4.0提供，不能用仓库MIT条款覆盖。新编写工具脚本不包含上游代码。原有独立第三方许可继续适用。
+
+## v1.8 画布来源与截图研究
+
+实际截图学习仅保留必要短语与分析，来源见[研究记录](skills/story-production/references/reference-studies/autumn-reference-study.md)。用户截图、作品图片和完整原提示词未随本包分发，不因本项目MIT许可重新授权。
+
+|项目|固定提交|许可|
+|---|---|---|
+|[obsidianmd/jsoncanvas](https://github.com/obsidianmd/jsoncanvas)|`456f843cb293df4f4ab1763e22ccb46a80b307c8`|[MIT](skills/story-production/references/upstream/json-canvas/LICENSE)|
+|[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)|`3ccff5338ea700537839b21900aa5358a0402c98`|[MIT](skills/story-production/references/upstream/obsidian-skills/LICENSE)|
+|[kieler/elkjs](https://github.com/kieler/elkjs)|`bddee3a807b5ff6324a1f1af79d1f95105637458`|[EPL-2.0](skills/story-production/references/upstream/elkjs/LICENSE.md)|
+|[dagrejs/dagre](https://github.com/dagrejs/dagre)|`877ead2bb0d5822daeb44ccb4396be1ebccbc9e4`|[MIT](skills/story-production/references/upstream/dagre/LICENSE)|
+|[xyflow/xyflow](https://github.com/xyflow/xyflow)|`d4bc936edad07aba995dbdb8e2c63af8cdd631c9`|[MIT](skills/story-production/references/upstream/react-flow/LICENSE)|
+
+本包独立编写画布生成与检查工具；ELK只作可选外部库调用，未分发其二进制/打包代码。未复制上游完整Skill。原有CC BY及其他单独许可保持有效。

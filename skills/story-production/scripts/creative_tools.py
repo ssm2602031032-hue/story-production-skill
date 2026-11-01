@@ -63,6 +63,14 @@ BRIDGE_EXTENSIONS={
  'story-guards':('editorial-story-guards',('关键反应被剪','剪辑叙事保护','保护关键动作','剪辑提前揭示'))}
 TASKS=TASKS+tuple(BRIDGE_EXTENSIONS)
 EXTENSIONS={**BRIDGE_EXTENSIONS,**EXTENSIONS}
+CANVAS_EXTENSIONS={
+ 'image-grounding':('image-scene-grounding',('图片提示词','图片质感分析','学习图片质感','参考图片写法','生图场景')),
+ 'still-motion':('still-to-motion-transfer',('静帧转视频','静帧到视频','参考图转运动提示词')),
+ 'canvas-board':('canvas-information-design',('无限画布','无线画布','素材画布','画布整理','节点排版','json canvas')),
+ 'canvas-layout':('canvas-auto-layout',('画布自动布局','依赖画布','elk布局')),
+ 'canvas-update':('canvas-incremental-handoff',('保留画布位置','画布增量','素材分板'))}
+TASKS=TASKS+tuple(CANVAS_EXTENSIONS)
+EXTENSIONS={**CANVAS_EXTENSIONS,**EXTENSIONS}
 GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'horror-atmosphere','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'science-fiction','historical':'historical-period','serial':'serial-rewards','revenge':'serial-rewards','crime':'crime-procedural'}
 def read(path):
  value=json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -150,6 +158,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
        'metrics':['video-metric-reading'],'cuts':['scene-detection-review']}
  base.update({task:[module] for task,(module,terms) in EXTENSIONS.items()})
  for mid in base[task]:add(mid,'当前任务的直接方法')
+ if task=='canvas-board':add('canvas-auto-layout','语义分组后计算布局与线路');add('canvas-incremental-handoff','保持稳定ID、既有位置和可携带文件')
  if task in EXTENSIONS or task in ('full','production','editorial','research','critique'):
   for module,terms in EXTENSIONS.values():
    if has(clean,terms):add(module,'请求中明确需要的创作或交付扩展')
@@ -230,7 +239,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'metrics':['与视频任务匹配的指标方案','实际评分证据或明确未运行状态'],
   'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核'],
   **{key:[by[value[0]]['summary'],'实际产物与验证边界；不代替正文或生成媒体'] for key,value in EXTENSIONS.items()}}[task]
- return {'version':'1.7.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+ return {'version':'1.8.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

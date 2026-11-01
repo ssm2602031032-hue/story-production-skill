@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.8.0",
   "projects": [
     {
       "id": "chinese-novelist",
@@ -1781,6 +1781,204 @@
       "verification": {
         "level": "adapter-tested",
         "details": "镜间交出/接收、干净首帧与审看片板分离，映射/边界/剪辑保护用本包脚本测试；未运行上游图像模型或固定15秒流程"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "json-canvas",
+      "repository": "obsidianmd/jsoncanvas",
+      "repository_url": "https://github.com/obsidianmd/jsoncanvas",
+      "commit": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/LICENSE",
+          "sha256": "5dc8a82e5f93308e31b729297b027d1aafbaae3b9b73696371a975a3b4a2cd5d",
+          "bytes": 1068,
+          "bundled_path": "references/upstream/json-canvas/LICENSE"
+        },
+        {
+          "path": "readme.md",
+          "url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/readme.md",
+          "sha256": "36b0a69a0b852c0340a204d7d1f8e845b6d2efc3f48c36e9abb888397c8a4527",
+          "bytes": 941
+        },
+        {
+          "path": "spec/1.0.md",
+          "url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+          "sha256": "41d75005394f3ed43a53031ff9d07c5d49c47e897971e7afb2972cc8af67469a",
+          "bytes": 3899
+        }
+      ],
+      "modules": [
+        "canvas-information-design",
+        "canvas-incremental-handoff"
+      ],
+      "integration": "Independently authored planning layouts and scoped optional engine adapter; upstream runtime not bundled",
+      "omitted": [
+        "自动上传、付费服务和强制应用安装",
+        "将规划画布冒充模型可执行节点图",
+        "未验证的原生编辑器兼容性与自动语义理解承诺"
+      ],
+      "verification": {
+        "level": "format-export-tested",
+        "details": "实际输出JSON Canvas 1.0节点、组和关系，检查ID/引用/媒体副本和本地PNG；未做原生Obsidian导入验收"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "obsidian-skills",
+      "repository": "kepano/obsidian-skills",
+      "repository_url": "https://github.com/kepano/obsidian-skills",
+      "commit": "3ccff5338ea700537839b21900aa5358a0402c98",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/kepano/obsidian-skills/3ccff5338ea700537839b21900aa5358a0402c98/LICENSE",
+          "sha256": "64c64d48361edfe8610016441bf593256ea9b67f133b00f47c55aa29ee878567",
+          "bytes": 1077,
+          "bundled_path": "references/upstream/obsidian-skills/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/kepano/obsidian-skills/3ccff5338ea700537839b21900aa5358a0402c98/README.md",
+          "sha256": "a395f944ddce5efa92f52f5c947cec9d015e5c7448ae7f31eb41a0652c968c57",
+          "bytes": 3539
+        },
+        {
+          "path": "skills/json-canvas/SKILL.md",
+          "url": "https://raw.githubusercontent.com/kepano/obsidian-skills/3ccff5338ea700537839b21900aa5358a0402c98/skills/json-canvas/SKILL.md",
+          "sha256": "97d1ae0728955c4203922753d5656890e5e4dd371b8306ea11884f9b510f1b85",
+          "bytes": 7624
+        }
+      ],
+      "modules": [
+        "canvas-information-design"
+      ],
+      "integration": "Independently authored planning layouts and scoped optional engine adapter; upstream runtime not bundled",
+      "omitted": [
+        "自动上传、付费服务和强制应用安装",
+        "将规划画布冒充模型可执行节点图",
+        "未验证的原生编辑器兼容性与自动语义理解承诺"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "采用JSON Canvas分组、相对文件和引用检查方法；不把其16位ID惯例误当标准强制规则"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "elkjs",
+      "repository": "kieler/elkjs",
+      "repository_url": "https://github.com/kieler/elkjs",
+      "commit": "bddee3a807b5ff6324a1f1af79d1f95105637458",
+      "license": "EPL-2.0",
+      "license_detection": "NOASSERTION",
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/kieler/elkjs/bddee3a807b5ff6324a1f1af79d1f95105637458/LICENSE.md",
+          "sha256": "637e81f4a1b6b4079535c499fca05e238cf7605c1ff5b76d60d7da7ce96700c9",
+          "bytes": 14443,
+          "bundled_path": "references/upstream/elkjs/LICENSE.md"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/kieler/elkjs/bddee3a807b5ff6324a1f1af79d1f95105637458/README.md",
+          "sha256": "b2d1f5d457f07b28356f400b6600ea62f5239f0d0db51b23933d4aa47711d95c",
+          "bytes": 16160
+        }
+      ],
+      "modules": [
+        "canvas-auto-layout"
+      ],
+      "integration": "Independently authored planning layouts and scoped optional engine adapter; upstream runtime not bundled",
+      "omitted": [
+        "自动上传、付费服务和强制应用安装",
+        "将规划画布冒充模型可执行节点图",
+        "未验证的原生编辑器兼容性与自动语义理解承诺"
+      ],
+      "verification": {
+        "level": "real-node-tested",
+        "details": "实际运行elkjs 0.12.1 layered/orthogonal布局，检查6节点7关系无重叠、原规范保留和输出保护"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "dagre",
+      "repository": "dagrejs/dagre",
+      "repository_url": "https://github.com/dagrejs/dagre",
+      "commit": "877ead2bb0d5822daeb44ccb4396be1ebccbc9e4",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/dagrejs/dagre/877ead2bb0d5822daeb44ccb4396be1ebccbc9e4/LICENSE",
+          "sha256": "6a349742a6cb219d5a2fc8d0844f6d89a6efc62e20c664450d884fc7ff2d6015",
+          "bytes": 1062,
+          "bundled_path": "references/upstream/dagre/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/dagrejs/dagre/877ead2bb0d5822daeb44ccb4396be1ebccbc9e4/README.md",
+          "sha256": "c358b9119e416c36bdc692b85839bff787800e0ae73a444ae781d68327d6eb08",
+          "bytes": 794
+        }
+      ],
+      "modules": [
+        "canvas-auto-layout"
+      ],
+      "integration": "Independently authored planning layouts and scoped optional engine adapter; upstream runtime not bundled",
+      "omitted": [
+        "自动上传、付费服务和强制应用安装",
+        "将规划画布冒充模型可执行节点图",
+        "未验证的原生编辑器兼容性与自动语义理解承诺"
+      ],
+      "verification": {
+        "level": "documentation-reviewed",
+        "details": "有向图分层布局与信息语义分离的方案参考；本包未安装或运行Dagre"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "react-flow",
+      "repository": "xyflow/xyflow",
+      "repository_url": "https://github.com/xyflow/xyflow",
+      "commit": "d4bc936edad07aba995dbdb8e2c63af8cdd631c9",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/xyflow/xyflow/d4bc936edad07aba995dbdb8e2c63af8cdd631c9/LICENSE",
+          "sha256": "023119ac20fb1c8c9930abe0bcd196989a1960388529a96fc43cebf96f07c9ff",
+          "bytes": 1073,
+          "bundled_path": "references/upstream/react-flow/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/xyflow/xyflow/d4bc936edad07aba995dbdb8e2c63af8cdd631c9/README.md",
+          "sha256": "be7df4c1810d7c7d0e44e26d08404a97fa9ab62d3fdf3e5fd4c31f3070472d63",
+          "bytes": 5271
+        }
+      ],
+      "modules": [
+        "canvas-incremental-handoff"
+      ],
+      "integration": "Independently authored planning layouts and scoped optional engine adapter; upstream runtime not bundled",
+      "omitted": [
+        "自动上传、付费服务和强制应用安装",
+        "将规划画布冒充模型可执行节点图",
+        "未验证的原生编辑器兼容性与自动语义理解承诺"
+      ],
+      "verification": {
+        "level": "documentation-reviewed",
+        "details": "节点数据、交互组件和布局算法分离的架构参考；未安装或部署React Flow应用"
       },
       "reviewed_at": "2026-11-01"
     }

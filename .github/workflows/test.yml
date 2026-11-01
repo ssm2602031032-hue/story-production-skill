@@ -50,3 +50,16 @@ jobs:
           java-version: '21'
       - name: Verify generated book with pinned official EPUBCheck
         run: python tests/run_epubcheck.py --workdir "$RUNNER_TEMP/story-epubcheck"
+  canvas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install isolated optional layout engine
+        run: npm install --prefix "$RUNNER_TEMP/canvas-elk" --ignore-scripts --no-audit --no-fund elkjs@0.12.1
+      - name: Exercise actual ELK layout and JSON Canvas output
+        env:
+          CANVAS_ELK_PROJECT: ${{ runner.temp }}/canvas-elk
+        run: node tests/test_canvas_elk.cjs

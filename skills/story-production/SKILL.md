@@ -9,11 +9,13 @@ description: "把主题开发成小说、长篇剧集或电影制作包；按需
 
 ## 先选择本次需要的方法
 
-本包内置[108个创作模块](references/module-catalog.md)：12份昆卡编剧技能参考与96个扩展模块。完整来源、固定版本及许可证见[整合说明](references/integrations.md)。使用当前任务需要的模块，每阶段先读两三个；不要默认通读全部。
+本包内置[113个创作模块](references/module-catalog.md)：12份昆卡编剧技能参考与101个扩展模块。完整来源、固定版本及许可证见[整合说明](references/integrations.md)。使用当前任务需要的模块，每阶段先读两三个；不要默认通读全部。
 
 | 本次需求 | 优先入口 |
 | --- | --- |
 | 剧本转分镜/逐镜提示词/依据当前情境剪辑 | [剧本到情境剪辑](references/script-to-edit.md)，追踪源文、戏剧功能、对白时间与剪切保护 |
+| 素材画布/无限画布/节点整理 | [画布手册](references/canvas-handbook.md)，先按信息角色与阅读目的组织，再选择网格/依赖布局 |
+| 参考图质感/图片提示词/静帧转动作 | [图片场景质感](references/modules/image-scene-grounding.md)与[静帧转动作](references/modules/still-to-motion-transfer.md)，先读取实际证据，区分观察与推断 |
 | 从主题开发完整故事 | 构思、人物、结构，再按媒介与类型进入模块 |
 | 只润色台词或改一场 | 对白、场景；保持指定事实、镜长与范围 |
 | 小说文风/章节续写 | 小说文风、场景、[章节上下文](references/modules/novel-context-packs.md) |

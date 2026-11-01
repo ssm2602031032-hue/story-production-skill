@@ -1,0 +1,115 @@
+{
+  "title": "单场依赖示例",
+  "groups": [
+    {
+      "id": "G1",
+      "title": "从源文到可剪素材"
+    }
+  ],
+  "stages": [
+    {
+      "id": "plan",
+      "title": "计划"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "group": "G1",
+      "stage": "plan",
+      "order": 0,
+      "title": "源文与场景问题",
+      "summary": "明确人物选择与结果",
+      "status": "draft"
+    },
+    {
+      "id": "identity",
+      "group": "G1",
+      "stage": "plan",
+      "order": 1,
+      "title": "身份与场景参考",
+      "summary": "当前人物、道具与空间",
+      "status": "draft"
+    },
+    {
+      "id": "prompt",
+      "group": "G1",
+      "stage": "plan",
+      "order": 2,
+      "title": "镜头提示词",
+      "summary": "可见动作与首尾状态",
+      "status": "draft"
+    },
+    {
+      "id": "voice",
+      "group": "G1",
+      "stage": "plan",
+      "order": 3,
+      "title": "准确对白与声音",
+      "summary": "发声者、语义和暂定时间",
+      "status": "draft"
+    },
+    {
+      "id": "take",
+      "group": "G1",
+      "stage": "plan",
+      "order": 4,
+      "title": "候选素材审看",
+      "summary": "检查实际画面和声音",
+      "status": "draft"
+    },
+    {
+      "id": "edit",
+      "group": "G1",
+      "stage": "plan",
+      "order": 5,
+      "title": "情境化剪辑",
+      "summary": "保住动作、反应与信息顺序",
+      "status": "draft"
+    }
+  ],
+  "edges": [
+    {
+      "id": "0",
+      "from": "source",
+      "to": "identity",
+      "label": "定义所需资产"
+    },
+    {
+      "id": "1",
+      "from": "source",
+      "to": "prompt",
+      "label": "约束戏剧作用"
+    },
+    {
+      "id": "2",
+      "from": "source",
+      "to": "voice",
+      "label": "保留原意"
+    },
+    {
+      "id": "3",
+      "from": "identity",
+      "to": "prompt",
+      "label": "固定可见条件"
+    },
+    {
+      "id": "4",
+      "from": "prompt",
+      "to": "take",
+      "label": "生成后审看"
+    },
+    {
+      "id": "5",
+      "from": "voice",
+      "to": "take",
+      "label": "核对实际台词"
+    },
+    {
+      "id": "6",
+      "from": "take",
+      "to": "edit",
+      "label": "选定可用素材"
+    }
+  ]
+}

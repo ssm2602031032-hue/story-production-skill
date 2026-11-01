@@ -139,7 +139,7 @@ def validate(source,base_jobs=None,contract_override=None):
    ref=refs_by_asset[aid][rid]
    if ref['role']!=role+'_frame':errors.append(jid+': '+role+' conditioning requires an approved scene keyframe, not an identity sheet or style/motion reference')
    if ref['view']!=s.get('view') and not s.get('reference_view_reason'):errors.append(jid+': reference view differs; needs an authored view-change plan')
-  if speed=='high' and s['camera_relation']=='parallel_follow':warnings.append(jid+': tracking car may stay still in frame; verify near-road parallax and passing landmarks in the actual output')
+  if speed=='high' and s['camera_relation'] in ('parallel_follow','tracking_subject'):warnings.append(jid+': tracked subject may stay still in frame; verify near/far parallax and passing environmental landmarks in the actual output')
  if base_jobs:
   base=read(base_jobs);by={j['id']:j for j in base.get('video_jobs',[])}
   for jid,s in shots.items():

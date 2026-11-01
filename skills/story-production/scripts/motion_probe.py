@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure image-plane motion in declared ROIs and export native-pixel detail crops. Does not infer vehicle ground speed or realism."""
+"""Measure image-plane motion in declared ROIs and export native-pixel detail crops. Does not infer physical world speed or realism."""
 from pathlib import Path
 import argparse,json,math,sys
 from creative_tools import read,safe_write

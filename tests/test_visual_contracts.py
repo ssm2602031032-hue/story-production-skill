@@ -72,7 +72,7 @@ class MotionProbeTests(unittest.TestCase):
   from PIL import Image
   source=self.root/'source.mkv';self.fixture(source,True);out=self.root/'details.png';r=detail_sheet(source,[0,5],[28,32,40,24],out);self.assertFalse(r['resized']);self.assertEqual(r['scale'],1)
   with av.open(str(source)) as c:first=next(c.decode(video=0)).to_ndarray(format='rgb24')
-  with Image.open(out) as im:self.assertTrue(np.array_equal(np.asarray(im)[:24,:40],first[32:56,28:68]))
+  with Image.open(out) as im:self.assertTrue(np.array_equal(np.asarray(im)[:24,:40],first[32:56,28:68]));self.assertEqual(im.width,r['cell_width']*2);self.assertGreaterEqual(r['cell_width'],240)
 class UniversalAssetTests(unittest.TestCase):
  def setUp(self):self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name);self.source=self.root/'contract.json';self.data=json.loads((S/'assets/example-multiasset-visual-contract.json').read_text(encoding='utf-8'));self.save()
  def save(self):self.source.write_text(json.dumps(self.data,ensure_ascii=False),encoding='utf-8')

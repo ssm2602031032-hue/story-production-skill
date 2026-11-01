@@ -46,7 +46,7 @@ def detail_sheet(source,frames,crop,output):
  if not isinstance(crop,list) or len(crop)!=4 or any(not isinstance(n,int) or isinstance(n,bool) for n in crop):raise ValueError('crop must be integer pixel x,y,width,height')
  x,y,w,h=crop
  if x<0 or y<0 or w<=0 or h<=0 or w*h*len(frames)>20000000:raise ValueError('Invalid or excessive crop sheet size')
- out=fresh(output,'.png');report=fresh(out.with_suffix('.details.json'));columns=min(3,len(frames));sheet=Image.new('RGB',(columns*w,math.ceil(len(frames)/columns)*(h+28)),(20,23,29));draw=ImageDraw.Draw(sheet);found={}
+ out=fresh(output,'.png');report=fresh(out.with_suffix('.details.json'));columns=min(3,len(frames));cell_width=max(w,240);sheet=Image.new('RGB',(columns*cell_width,math.ceil(len(frames)/columns)*(h+28)),(20,23,29));draw=ImageDraw.Draw(sheet);found={}
  with av.open(str(source)) as container:
   for n,frame in enumerate(container.decode(video=0)):
    if n in frames:
@@ -55,8 +55,8 @@ def detail_sheet(source,frames,crop,output):
    if len(found)==len(frames):break
  if len(found)!=len(frames):raise ValueError('Requested frame does not exist')
  for i,n in enumerate(frames):
-  col,row=i%columns,i//columns;im,t=found[n];sheet.paste(im,(col*w,row*(h+28)));draw.text((col*w+4,row*(h+28)+h+5),f'frame {n} | '+(f'{t:.3f}s' if t is not None else 'PTS unknown'),fill=(235,235,235))
- sheet.save(out);r={'source_sha256':digest(source),'frames':frames,'crop_pixels':crop,'scale':1,'resized':False,'sharpened':False,'realism_score':None,'limits':'Native decoded pixel crops for manual temporal/material review, with normal decoder RGB conversion; no denoising, added grain or fake detail. Not an identity detector.'};safe_write(report,r);return r
+  col,row=i%columns,i//columns;im,t=found[n];sheet.paste(im,(col*cell_width,row*(h+28)));draw.text((col*cell_width+4,row*(h+28)+h+5),f'frame {n} | '+(f'{t:.3f}s' if t is not None else 'PTS unknown'),fill=(235,235,235))
+ sheet.save(out);r={'source_sha256':digest(source),'frames':frames,'crop_pixels':crop,'cell_width':cell_width,'crop_placement':'top-left of each cell; extra space is padding for legible labels','scale':1,'resized':False,'sharpened':False,'realism_score':None,'limits':'Native decoded pixel crops for manual temporal/material review, with normal decoder RGB conversion; no denoising, added grain or fake detail. Not an identity detector.'};safe_write(report,r);return r
 def main():
  p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
  c=sub.add_parser('flow');c.add_argument('source',type=Path);c.add_argument('--regions',type=Path,required=True);c.add_argument('--start-frame',type=int,default=0);c.add_argument('--max-frames',type=int,default=121);c.add_argument('--out',type=Path,required=True)

@@ -1,0 +1,194 @@
+{
+  "version": "1.6.0",
+  "title": "车辆追逐的身份、速度与风格执行样例",
+  "mode": "i2v",
+  "style": {
+    "label": "紧张、克制的都市犯罪动作",
+    "lighting": "阴天日间的开放天空作为柔和主光，建筑提供方向一致的反光；所有镜头保持同一时段，不另加夜景霓虹或无来源轮廓光",
+    "palette": "偏中性的环境色，保留自然肤色；黑车靠轮廓和环境反射读形，不把黑漆染成蓝色车漆",
+    "contrast": "保留阴影信息和车身暗部层次，高光受控制，不给每条轮廓加发光边",
+    "texture": "黑色原厂车漆有连续环境反射；轮胎橡胶偏哑光，路面细节不随帧游走；不做全画面油亮与统一磨皮",
+    "optics": "道路和障碍有可读纵深，主体清楚但不是所有距离都同样锐利；运动模糊随真实运动出现",
+    "camera_behavior": "有物理支撑的路边固定机位和短段跟拍，机位变化服务于路线与人物选择",
+    "editing": "先建立路线和威胁，再让动作改变处境；保留决策与反应，不把所有镜头都等长或越剪越短",
+    "sound": "先组织发动机负荷、轮胎与空间声，再用音乐推进；声画速度相符，不用巨大音效掩盖缓慢画面"
+  },
+  "assets": [
+    {
+      "id": "CAR_A",
+      "name": "主车",
+      "category": "vehicle",
+      "invariants": {
+        "车型": "原厂双门高性能轿跑，以批准参考为准",
+        "车门数": 2,
+        "基础车漆": "纯黑",
+        "车身结构": "保留原车轮廓、轴距比例和车顶线，不增加车门或改装套件"
+      },
+      "states": {
+        "clean": "本段为同一正常外观状态，没有新增撞损或无故修复"
+      },
+      "features": [
+        {
+          "views": [
+            "front",
+            "front_three_quarter"
+          ],
+          "text": "前灯与进气格栅保持批准参考的形状与相对位置"
+        },
+        {
+          "views": [
+            "left",
+            "right",
+            "front_three_quarter",
+            "rear_three_quarter"
+          ],
+          "text": "单侧长车门、后侧窗、轮圈设计和轮胎比例沿用同一参考"
+        },
+        {
+          "views": [
+            "rear",
+            "rear_three_quarter"
+          ],
+          "text": "尾灯轮廓、后保险杠、排气和尾部标识沿用同一参考"
+        },
+        {
+          "views": [
+            "interior"
+          ],
+          "text": "座位、方向盘和中控布局沿用该车批准的内饰参考"
+        }
+      ],
+      "references": []
+    }
+  ],
+  "shots": [
+    {
+      "id": "S01_001_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "wide",
+      "duration_sec": 3,
+      "goal": "先让观众理解路线与迫近的阻断",
+      "action": "主车从画面左侧沿唯一通道驶向右侧，前方出口正在逐渐被遮挡",
+      "camera": "路边固定广角观察，近处路缘在画面下方建立距离，摄影机不追着车旋转",
+      "camera_relation": "roadside_fixed",
+      "screen_direction": "left_to_right",
+      "speed_intent": "normal",
+      "speed_cues": [],
+      "playback_rate": 1,
+      "start_state": "主车尚未进入狭窄通道，出口位置清楚",
+      "end_state": "主车到达通道入口，出口仍可见",
+      "cut_reason": "信息建立后切到速度证据，不能先把路线剪碎",
+      "conditioning": {}
+    },
+    {
+      "id": "S01_002_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "left",
+      "duration_sec": 2,
+      "goal": "让危险靠近，给出能看见的速度",
+      "action": "同一辆车沿同一方向从路边机位前快速通过，保持连续轮胎接地与明确出画",
+      "camera": "低位固定路边机位，车体短时间穿过画幅，近处护栏立柱先后遮挡下沿",
+      "camera_relation": "roadside_fixed",
+      "screen_direction": "left_to_right",
+      "speed_intent": "high",
+      "speed_cues": [
+        "近处立柱快速扫过画面，远处仓库位移较小",
+        "轮胎接地点沿路面连续推进，车身通过画幅后留出短暂空画面"
+      ],
+      "playback_rate": 1,
+      "start_state": "左侧车身进入画面，车门与后侧窗比例可辨",
+      "end_state": "车尾沿右侧出画，运动方向没有改变",
+      "cut_reason": "在车尾完成通过后切驾驶者反应，保留动作结果",
+      "conditioning": {}
+    },
+    {
+      "id": "S01_003_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "interior",
+      "duration_sec": 2,
+      "goal": "给动作一个人物决策",
+      "action": "驾驶者看见前方通道收窄，目光从出口移向侧向开口，手只完成一次明确的操控准备",
+      "camera": "稳定的车内中近景，车外环境沿窗边移动，不能让玻璃外背景静止",
+      "camera_relation": "interior",
+      "screen_direction": "not_applicable",
+      "speed_intent": "normal",
+      "speed_cues": [
+        "窗外近处光影连续扫过，内部结构不扭曲"
+      ],
+      "playback_rate": 1,
+      "start_state": "目光仍看向原出口，方向盘保持前一动作状态",
+      "end_state": "视线已确认侧向开口，手部完成准备，没有凭空换位置",
+      "cut_reason": "切回外景展示选择的后果，不能只靠台词说有危险",
+      "conditioning": {}
+    },
+    {
+      "id": "S01_004_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "front_three_quarter",
+      "duration_sec": 3,
+      "goal": "把选择转成可读的动作结果",
+      "action": "主车接近阻断处后明确减速，车体有短暂而克制的前向载荷变化，沿已建立的侧向开口改变路线",
+      "camera": "固定在通道外侧的三分之四视角，先看清车辆接近，再看清路线改变；不同时环绕和推拉",
+      "camera_relation": "roadside_fixed",
+      "screen_direction": "left_to_right",
+      "speed_intent": "high",
+      "speed_cues": [
+        "车前路面纹理先快速接近，减速后流动速度明显降低",
+        "车身姿态变化与轮胎接地同步，没有悬浮平移"
+      ],
+      "playback_rate": 1,
+      "start_state": "主车沿原通道接近，侧向开口已在画面中",
+      "end_state": "车头对准新通道，避让结果明确，没有新增损伤",
+      "cut_reason": "动作完成才切尾部，保留车的重量感",
+      "conditioning": {}
+    },
+    {
+      "id": "S01_005_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "rear_three_quarter",
+      "duration_sec": 2,
+      "goal": "兑现刚才的路线选择",
+      "action": "同一辆车沿新通道驶离，尾灯、车顶和后轮保持原样，前景墙角短暂遮挡后重新出现",
+      "camera": "短段后方观察，摄影机保持可解释的位置，新通道纵深清楚",
+      "camera_relation": "rear_follow",
+      "screen_direction": "away",
+      "speed_intent": "high",
+      "speed_cues": [
+        "近侧墙面边缘相对画面退得快，远端出口变化较慢",
+        "车轮接地和车身垂向反应连续，遮挡后车型没有改变"
+      ],
+      "playback_rate": 1,
+      "start_state": "车已进入新通道，后轮仍接近入口",
+      "end_state": "整车驶向新出口，尾部标识与轮廓仍一致",
+      "cut_reason": "用完整驶离交代结果，再给人物或情节余波",
+      "conditioning": {}
+    },
+    {
+      "id": "S01_006_G01",
+      "asset": "CAR_A",
+      "state": "clean",
+      "view": "interior",
+      "duration_sec": 2,
+      "goal": "让成功带来下一步压力",
+      "action": "驾驶者确认路线通过后短暂松开紧绷的下颌，目光仍关注前路，没有夸张庆祝",
+      "camera": "稳定车内机位，保持与前一车内镜相同的座位、光线方向和空间关系",
+      "camera_relation": "interior",
+      "screen_direction": "not_applicable",
+      "speed_intent": "normal",
+      "speed_cues": [
+        "窗外环境继续以自然速度移动"
+      ],
+      "playback_rate": 1,
+      "start_state": "人物仍紧绷并注视前路",
+      "end_state": "确认通过但继续警觉，动作情绪留下后续空间",
+      "cut_reason": "此处承接下一场故事，不能用无目的赛车镜填充",
+      "conditioning": {}
+    }
+  ],
+  "notes": "原创14秒方法样例；未提供实际参考图，不能声称车型已被视觉锁定或生成效果已验证。"
+}

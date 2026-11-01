@@ -1,0 +1,206 @@
+{
+  "version": "1.6.0",
+  "title": "通用一致性验证：两个人、衣装、道具与场景",
+  "mode": "i2v",
+  "style": {
+    "label": "自然生活剧情",
+    "lighting": "一侧窗户提供柔和主光，走廊背景接受同一空间的反射光",
+    "palette": "人物与道具保持各自本色，色彩自然克制",
+    "contrast": "明暗有层次，肤色和衣袖细节可读",
+    "texture": "皮肤、织物、木门与伞布各有不同材质；细节随物体稳定，不统一磨皮或锐化",
+    "optics": "人物关系可读；近景只聚焦交接所需的手与物，不额外展示不可见的面部",
+    "camera_behavior": "从稳定双人空间进入手部，再回到反应；每镜只选一种机位",
+    "editing": "保留问、选择、接住、松手与反应的因果，不机械删掉所有停顿",
+    "sound": "保留衣料、伞柄接触与真实空间声，音乐不遮盖交流"
+  },
+  "assets": [
+    {
+      "id": "C01",
+      "name": "人物甲",
+      "category": "person",
+      "invariants": {
+        "人物身份": "沿用甲的批准面部参考",
+        "发型": "黑色短发"
+      },
+      "states": {
+        "LOOK_A": "米色风衣及同一内搭；外观状态连续"
+      },
+      "visibility": {
+        "detail": []
+      },
+      "features": [
+        {
+          "views": [
+            "detail"
+          ],
+          "text": "可见米色袖口与自然手部，面部不在画面内"
+        }
+      ],
+      "references": []
+    },
+    {
+      "id": "C02",
+      "name": "人物乙",
+      "category": "person",
+      "invariants": {
+        "人物身份": "沿用乙的批准面部参考",
+        "发型": "深棕色齐肩发"
+      },
+      "states": {
+        "LOOK_B": "灰色外套及同一内搭；外观状态连续"
+      },
+      "visibility": {
+        "detail": []
+      },
+      "features": [
+        {
+          "views": [
+            "detail"
+          ],
+          "text": "可见灰色袖口与自然手部，面部不在画面内"
+        }
+      ],
+      "references": []
+    },
+    {
+      "id": "P01",
+      "name": "折叠伞",
+      "category": "prop",
+      "invariants": {
+        "伞布本色": "蓝色",
+        "把手数量": 1,
+        "形制": "同一把短柄折叠伞"
+      },
+      "states": {
+        "FOLDED": "伞保持合拢，布带扣好，伞柄与长度不变"
+      },
+      "references": []
+    },
+    {
+      "id": "L01",
+      "name": "门口走廊",
+      "category": "location",
+      "invariants": {
+        "空间": "同一扇浅色木门、左侧窗户、右侧墙面",
+        "布局": "门与窗的相对位置不变"
+      },
+      "states": {
+        "DAY": "同一日间时段和连续环境状态"
+      },
+      "references": []
+    }
+  ],
+  "shots": [
+    {
+      "duration_sec": 3,
+      "camera_relation": "static_observer",
+      "screen_direction": "not_applicable",
+      "speed_intent": "normal",
+      "speed_cues": [],
+      "playback_rate": 1,
+      "conditioning": {},
+      "id": "S01_001_G01",
+      "asset": "C01",
+      "state": "LOOK_A",
+      "view": "wide",
+      "goal": "建立两人的关系与待交接物",
+      "action": "甲拿着合拢的蓝伞，乙伸出空手表示愿意接过，甲稍作迟疑",
+      "camera": "稳定双人中景，保持门窗和两人的相对位置",
+      "start_state": "蓝伞由甲握着，乙手中没有物品",
+      "end_state": "乙的手伸到伞柄附近，伞仍在甲手中",
+      "cut_reason": "在选择发生后切手部，观众知道下一动作是什么",
+      "supporting_assets": [
+        {
+          "asset": "C02",
+          "state": "LOOK_B",
+          "view": "wide"
+        },
+        {
+          "asset": "P01",
+          "state": "FOLDED",
+          "view": "detail",
+          "exit_facts": {
+            "holder": "C01"
+          }
+        },
+        {
+          "asset": "L01",
+          "state": "DAY",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "duration_sec": 3,
+      "camera_relation": "static_observer",
+      "screen_direction": "not_applicable",
+      "speed_intent": "normal",
+      "speed_cues": [],
+      "playback_rate": 1,
+      "conditioning": {},
+      "id": "S01_002_G01",
+      "asset": "P01",
+      "state": "FOLDED",
+      "view": "detail",
+      "goal": "让交接动作真正完成",
+      "action": "灰色袖口的手先握稳伞柄，米色袖口的手随后松开，伞保持同一形状",
+      "camera": "固定手部近景，完整看见接住和松手，不在动作中绕到另一侧",
+      "start_state": "甲握住伞柄，乙尚未承重",
+      "end_state": "伞由乙单独握住，甲的手已退出",
+      "cut_reason": "交接完成后回到乙的反应，不靠剪切让道具瞬移",
+      "entry_facts": {
+        "holder": "C01"
+      },
+      "exit_facts": {
+        "holder": "C02"
+      },
+      "supporting_assets": [
+        {
+          "asset": "C01",
+          "state": "LOOK_A",
+          "view": "detail"
+        },
+        {
+          "asset": "C02",
+          "state": "LOOK_B",
+          "view": "detail"
+        }
+      ]
+    },
+    {
+      "duration_sec": 3,
+      "camera_relation": "static_observer",
+      "screen_direction": "not_applicable",
+      "speed_intent": "normal",
+      "speed_cues": [],
+      "playback_rate": 1,
+      "conditioning": {},
+      "id": "S01_003_G01",
+      "asset": "C02",
+      "state": "LOOK_B",
+      "view": "front_three_quarter",
+      "goal": "展示接过帮助后的关系变化",
+      "action": "乙看一眼手中的蓝伞，再抬眼看向甲，表情放松但没有夸张微笑",
+      "camera": "稳定反应近景，沿用既定视线方向和窗光",
+      "start_state": "伞在乙手中，乙低头看它",
+      "end_state": "乙抬眼与甲交流，伞没有换手或变色",
+      "cut_reason": "保留这次抬眼的情绪结果，再衔接下一场",
+      "supporting_assets": [
+        {
+          "asset": "P01",
+          "state": "FOLDED",
+          "view": "detail",
+          "entry_facts": {
+            "holder": "C02"
+          }
+        },
+        {
+          "asset": "L01",
+          "state": "DAY",
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "notes": "原创9秒交接样例；未提供实际参考图，人物身份与生成效果尚未验证。"
+}

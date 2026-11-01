@@ -1,6 +1,6 @@
 {
-  "version": "1.5.0",
-  "module_count": 92,
+  "version": "1.6.0",
+  "module_count": 100,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -1228,6 +1228,125 @@
       "integration": "independently-authored-adapter",
       "tags": [
         "final-review-qc"
+      ]
+    },
+    {
+      "id": "asset-identity-contracts",
+      "title": "通用资产一致性契约",
+      "summary": "分别约束人物、车辆、衣装、道具、产品和场景",
+      "stage": "production",
+      "reference": "references/modules/asset-identity-contracts.md",
+      "sources": [
+        "universal-video",
+        "video-prompting"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "asset-identity-contracts"
+      ]
+    },
+    {
+      "id": "motion-readability",
+      "title": "通用运动与速度可读性",
+      "summary": "分离主体、摄影机、环境与播放速度",
+      "stage": "production",
+      "reference": "references/modules/motion-readability.md",
+      "sources": [
+        "seedance-previs",
+        "universal-video"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "motion-readability"
+      ]
+    },
+    {
+      "id": "action-edit-continuity",
+      "title": "动作衔接与空间因果",
+      "summary": "核对方向、物件交接、动作完成态与切镜动机",
+      "stage": "review",
+      "reference": "references/modules/action-edit-continuity.md",
+      "sources": [
+        "universal-video"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "action-edit-continuity"
+      ]
+    },
+    {
+      "id": "style-to-visual",
+      "title": "风格到可见条件",
+      "summary": "把抽象风格拆成摄影、美术、动作和剪辑决策",
+      "stage": "production",
+      "reference": "references/modules/style-to-visual.md",
+      "sources": [
+        "universal-video",
+        "video-prompting"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "style-to-visual"
+      ]
+    },
+    {
+      "id": "material-realism",
+      "title": "材质真实感与油腻排查",
+      "summary": "从参考、生成与后期各层定位失真",
+      "stage": "review",
+      "reference": "references/modules/material-realism.md",
+      "sources": [
+        "photorealistic",
+        "color-grading"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "material-realism"
+      ]
+    },
+    {
+      "id": "reference-role-binding",
+      "title": "参考角色与模型输入绑定",
+      "summary": "区分身份、风格、动作和场景首尾帧的职责",
+      "stage": "production",
+      "reference": "references/modules/reference-role-binding.md",
+      "sources": [
+        "video-prompting",
+        "seedance-previs",
+        "vace"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "reference-role-binding"
+      ]
+    },
+    {
+      "id": "motion-evidence",
+      "title": "实际图像运动证据",
+      "summary": "用手动区域光流辅助主体与背景运动诊断",
+      "stage": "review",
+      "reference": "references/modules/motion-evidence.md",
+      "sources": [
+        "opencv"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "motion-evidence"
+      ]
+    },
+    {
+      "id": "look-ab-validation",
+      "title": "观感对照与原尺寸细节",
+      "summary": "用固定条件区分单因素修复与整体风格比较",
+      "stage": "review",
+      "reference": "references/modules/look-ab-validation.md",
+      "sources": [
+        "universal-video",
+        "photorealistic"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "look-ab-validation"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和80个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和88个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)
@@ -66,3 +66,17 @@ OpenTimelineIO的[NOTICE](upstream/opentimelineio/NOTICE.txt)随许可保留。�
 - [imageio/imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg/tree/be2a02bdeaa728047df3822fa14db2aee0bed4ff)：0.7.0提供本地FFmpeg 7.1 Windows运行时，实际裁切/拼接/音频延迟/淡化/混合并核对输出。 [许可](upstream/imageio-ffmpeg/LICENSE)
 
 Remotion技能候选未见仓库级明确再分发许可证，因此未复制其技能内容。MoviePy被调研但未引入重复运行层。本包不分发FFmpeg二进制或桌面编辑器，依赖按其发行许可使用。
+
+## v1.6 通用影像执行
+
+入口见[通用影像执行手册](visual-reliability.md)。固定提交、许可、未采用规则和测试范围见[integration-projects.json](../assets/integration-projects.json)。
+
+- [Square-Zero-Labs/video-prompting-skill](https://github.com/Square-Zero-Labs/video-prompting-skill/tree/3f55fd70342d0874d66a54e9708e881462414c06)：输入模式与身份参考/场景帧分离方法；未照搬模型版本、固定格式或超出已核验资料的能力结论。 [许可](upstream/video-prompting/LICENSE)
+- [kiana-liang/universal-video-prompt-skill](https://github.com/kiana-liang/universal-video-prompt-skill/tree/d69305bbc89b76d14a790cf5fd332102dc1d23fd)：项目/身份/时间层分离、风格转译与可验证性，采用独立通用契约脚本测试。 [许可](upstream/universal-video/LICENSE)
+- [alchaincyf/seedance-skill](https://github.com/alchaincyf/seedance-skill/tree/4530b443b686c363da27109712ac18aec07aa6b9)：几何与材质控制分开、参考继承/排除的方法；未运行其白模引擎或Seedance。 [许可](upstream/seedance-previs/LICENSE)
+- [ricardochristovao/photorealistic-skill](https://github.com/ricardochristovao/photorealistic-skill/tree/2c1251f4ec9686d4819203aade66b1d9d8d3e970)：原尺寸缺陷检查和输入/生成/后期分层；明确不采用强制劣化、噪声或不可辨真伪承诺。 [许可](upstream/photorealistic/LICENSE)
+- [kajisho5/color-grading-skill](https://github.com/kajisho5/color-grading-skill/tree/2b5b1a5f0075824fedb51b7c92031d417527023a)：色彩意图与执行参数分开；未运行上游CLI，不把改标签当色彩转换。 [许可](upstream/color-grading/LICENSE)
+- [ali-vilab/VACE](https://github.com/ali-vilab/VACE/tree/48eb44f1c4be87cc65a98bff985a26976841e9f3)：核对参考图/视频/遮罩输入和Wan2.1/LTX旧配置范围；未下载模型或做车辆/人物GPU实测。 [许可](upstream/vace/LICENSE.txt)
+- [opencv/opencv](https://github.com/opencv/opencv/tree/c4f7634256e3aaba0faa478605bb4e7bc0332292)：实际Farneback区域光流与时间戳归一化，用合成运动视频验证主体/背景区分，未推断物理速度。 [许可](upstream/opencv/LICENSE)
+
+InstantStyle未见仓库级明确再分发许可，未复制其内容。HunyuanCustom采用有地域/用途范围的社区许可，仅作调研候选，未导入其模型、代码或文档。VACE代码许可与所选基础模型许可分别核对，不将权重随包分发。

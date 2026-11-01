@@ -1,0 +1,54 @@
+{
+  "version": "1.6.0",
+  "title": "通用材质验证：陶瓷产品与静态构图",
+  "mode": "i2v",
+  "style": {
+    "label": "自然产品实拍",
+    "lighting": "一侧窗户提供柔和主光，走廊背景接受同一空间的反射光",
+    "palette": "保留乳白釉面和蓝色细边本色，背景颜色自然克制",
+    "contrast": "明暗有层次，肤色和衣袖细节可读",
+    "texture": "陶瓷釉面有柔和、连续的反射，木桌保留真实细纹；不让整个画面同样油亮或磨平",
+    "optics": "杯体与把手同时可读，背景自然分离，不伪造极端散景",
+    "camera_behavior": "在同一固定机位观察杯体与蒸汽，不套用人物场景的机位组合",
+    "editing": "让观众看清杯沿、把手和材质，完成观察后再切镜，不沿用人物交接节拍",
+    "sound": "安静室内环境，不自动加入广告配乐"
+  },
+  "assets": [
+    {
+      "id": "P01",
+      "name": "陶瓷杯",
+      "category": "product",
+      "invariants": {
+        "形状": "圆柱杯身及单个右侧把手",
+        "基础釉色": "乳白色，杯口一圈蓝色细边",
+        "把手数量": 1
+      },
+      "states": {
+        "INTACT": "杯体完整，杯沿和把手几何稳定"
+      },
+      "references": []
+    }
+  ],
+  "shots": [
+    {
+      "duration_sec": 3,
+      "camera_relation": "static_observer",
+      "screen_direction": "not_applicable",
+      "speed_intent": "static",
+      "speed_cues": [],
+      "playback_rate": 1,
+      "conditioning": {},
+      "id": "S01_001_G01",
+      "asset": "P01",
+      "state": "INTACT",
+      "view": "front_three_quarter",
+      "goal": "清楚呈现材料，而不把静物做成塑料",
+      "action": "陶瓷杯保持静止，少量蒸汽自然向上散开，不改变杯沿和把手",
+      "camera": "桌面高度的固定机位，不旋转、不变焦",
+      "start_state": "杯体和单个把手完整可见",
+      "end_state": "蒸汽形状变化，杯体几何和蓝色细边保持不变",
+      "cut_reason": "以材料观察完成本镜，不靠随机运镜增加动感"
+    }
+  ],
+  "notes": "原创9秒交接样例；未提供实际参考图，人物身份与生成效果尚未验证。"
+}

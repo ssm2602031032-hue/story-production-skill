@@ -141,3 +141,17 @@ LTX与Hunyuan模型/适配器采用自定义社区许可，不以本项目MIT条
 |[imageio/imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg)|`be2a02bdeaa728047df3822fa14db2aee0bed4ff`|[BSD-2-Clause](skills/story-production/references/upstream/imageio-ffmpeg/LICENSE)|
 
 LosslessCut仅作方法与链接参考，其GPL条款未被本项目MIT覆盖。imageio-ffmpeg包与实际FFmpeg/编解码器发行的许可分别适用，本包不包含该运行时。
+
+## v1.6 通用影像执行来源
+
+独立编写通用模块与脚本，不复制上游完整Skill、推广内容、例片或模型。许可与固定版本如下；真正执行的范围见[integration-projects.json](skills/story-production/assets/integration-projects.json)。
+
+|项目|固定提交|许可|
+|---|---|---|
+|[Square-Zero-Labs/video-prompting-skill](https://github.com/Square-Zero-Labs/video-prompting-skill)|`3f55fd70342d0874d66a54e9708e881462414c06`|[Apache-2.0](skills/story-production/references/upstream/video-prompting/LICENSE)|
+|[kiana-liang/universal-video-prompt-skill](https://github.com/kiana-liang/universal-video-prompt-skill)|`d69305bbc89b76d14a790cf5fd332102dc1d23fd`|[MIT](skills/story-production/references/upstream/universal-video/LICENSE)|
+|[alchaincyf/seedance-skill](https://github.com/alchaincyf/seedance-skill)|`4530b443b686c363da27109712ac18aec07aa6b9`|[MIT](skills/story-production/references/upstream/seedance-previs/LICENSE)|
+|[ricardochristovao/photorealistic-skill](https://github.com/ricardochristovao/photorealistic-skill)|`2c1251f4ec9686d4819203aade66b1d9d8d3e970`|[MIT](skills/story-production/references/upstream/photorealistic/LICENSE)|
+|[kajisho5/color-grading-skill](https://github.com/kajisho5/color-grading-skill)|`2b5b1a5f0075824fedb51b7c92031d417527023a`|[MIT](skills/story-production/references/upstream/color-grading/LICENSE)|
+|[ali-vilab/VACE](https://github.com/ali-vilab/VACE)|`48eb44f1c4be87cc65a98bff985a26976841e9f3`|[Apache-2.0](skills/story-production/references/upstream/vace/LICENSE.txt)|
+|[opencv/opencv](https://github.com/opencv/opencv)|`c4f7634256e3aaba0faa478605bb4e7bc0332292`|[Apache-2.0](skills/story-production/references/upstream/opencv/LICENSE)|

@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共92个按需模块：12份昆卡原文参考、80个本项目扩展模块。每阶段只读取当前需要的两三个。
+共100个按需模块：12份昆卡原文参考、88个本项目扩展模块。每阶段只读取当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -96,5 +96,13 @@
 |`color-management-handoff`|[色彩管理与调色交接](modules/color-management-handoff.md)|记录输入输出变换、真实标签和作者CDL数值|
 |`titles-captions-safe`|[片头字幕与画幅适配](modules/titles-captions-safe.md)|把文字放进真实画面后检查字形与遮挡|
 |`final-review-qc`|[成片审看与交付状态](modules/final-review-qc.md)|核对实际输出并保留尚需观看、听音和调色的范围|
+|`asset-identity-contracts`|[通用资产一致性契约](modules/asset-identity-contracts.md)|分别约束人物、车辆、衣装、道具、产品和场景|
+|`motion-readability`|[通用运动与速度可读性](modules/motion-readability.md)|分离主体、摄影机、环境与播放速度|
+|`action-edit-continuity`|[动作衔接与空间因果](modules/action-edit-continuity.md)|核对方向、物件交接、动作完成态与切镜动机|
+|`style-to-visual`|[风格到可见条件](modules/style-to-visual.md)|把抽象风格拆成摄影、美术、动作和剪辑决策|
+|`material-realism`|[材质真实感与油腻排查](modules/material-realism.md)|从参考、生成与后期各层定位失真|
+|`reference-role-binding`|[参考角色与模型输入绑定](modules/reference-role-binding.md)|区分身份、风格、动作和场景首尾帧的职责|
+|`motion-evidence`|[实际图像运动证据](modules/motion-evidence.md)|用手动区域光流辅助主体与背景运动诊断|
+|`look-ab-validation`|[观感对照与原尺寸细节](modules/look-ab-validation.md)|用固定条件区分单因素修复与整体风格比较|
 
-运行入口：[剪辑工作台](editing-handbook.md)、[交付扩展](delivery-extensions.md)、[媒体工具](integration-tools.md)。来源见[整合说明](integrations.md)。
+运行入口：[通用影像执行](visual-reliability.md)、[剪辑工作台](editing-handbook.md)、[交付扩展](delivery-extensions.md)。来源见[整合说明](integrations.md)。

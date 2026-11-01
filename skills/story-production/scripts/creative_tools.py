@@ -5,15 +5,15 @@ import argparse,hashlib,json,re,sys
 from pathlib import Path
 
 SKILL=Path(__file__).resolve().parents[1]
-TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt','opening','emotion','antagonist','ensemble','transitions','pacing','short-form','audio','comics','nonfiction','naming','table-read')
+TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt','opening','emotion','antagonist','ensemble','transitions','pacing','short-form','audio','comics','nonfiction','naming','table-read','prompts','models','evaluation','impact','realism')
 GENRES={
  'comedy':('喜剧','搞笑','comedy','sitcom'), 'romance':('爱情','恋爱','romance'),
  'mystery':('悬疑','推理','侦探','mystery','detective'), 'thriller':('惊悚','thriller'),
  'action':('动作','追逐','营救','action'), 'sports':('运动','比赛','竞技','sports'),
  'fantasy':('奇幻','穿越','修仙','魔法','fantasy'), 'sci-fi':('科幻','science fiction','sci-fi'),
  'historical':('历史','年代','考据','historical'), 'horror':('恐怖','horror'),
- 'serial':('爽文','网文','连载','升级流','serial'), 'revenge':('复仇','逆袭','revenge')}
-GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'mystery-thriller','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'worldbuilding','historical':'research','serial':'serial-rewards','revenge':'serial-rewards'}
+ 'serial':('爽文','网文','连载','升级流','serial'), 'revenge':('复仇','逆袭','revenge'),'crime':('刑侦','警匪','卧底','procedural','crime')}
+GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'horror-atmosphere','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'science-fiction','historical':'historical-period','serial':'serial-rewards','revenge':'serial-rewards','crime':'crime-procedural'}
 def read(path):
  value=json.loads(Path(path).read_text(encoding='utf-8-sig'))
  if not isinstance(value,dict):raise ValueError('JSON root must be an object')
@@ -30,6 +30,12 @@ def infer_mode(text):
  if has(text,('小说','novel')):return 'novel'
  return 'film'
 def infer_task(text):
+ if re.search(r'(?:写|创作|制作|完成).{0,16}(?:完整电影|电影全套|完整小说|整季剧本|小说全文|剧集全套)',text) and not has(text,('只审','只检查','不改正文')):return 'full'
+ if has(text,('ai感','去ai','塑料皮肤','运镜很假','运镜假','超级真实','photographic realism')):return 'realism'
+ if has(text,('视频提示词','优化提示词','润色提示词','提示词模板','prompt pack')):return 'prompts'
+ if has(text,('模型选型','选择视频模型','model selection')):return 'models'
+ if has(text,('提示词对比','提示词评测','benchmark prompts')):return 'evaluation'
+ if has(text,('改稿影响','连锁影响','哪些需要重做','revision impact')):return 'impact'
  if re.search(r'(?:只|仅).{0,18}(?:润色|修改|改写).{0,18}(?:对白|台词)',text):return 'dialogue'
  if has(text,('只改对白','只改台词','润色台词','润色对白','dialogue only','polish dialogue')):return 'dialogue'
  if has(text,('只审','审稿','审读','只检查','critique','review only')):return 'critique'
@@ -72,7 +78,11 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
        'opening':['opening-ending'],'emotion':['emotional-payoff'],'antagonist':['antagonist-design'],'ensemble':['ensemble-subplots'],
        'transitions':['scene-transitions'],'pacing':['pacing-compression','continuity'],'short-form':['short-vertical','series'],
        'audio':['audio-drama','sound-design'],'comics':['comics-webtoon','visual-design'],
-       'nonfiction':['nonfiction-adaptation','research'],'naming':['title-logline'],'table-read':['table-read','dialogue']}
+       'nonfiction':['nonfiction-adaptation','research'],'naming':['title-logline'],'table-read':['table-read','dialogue'],
+       'prompts':['video-prompt-architecture','model-selection','identity-continuity'],
+       'models':['model-selection','workflow-reproducibility'],
+       'evaluation':['prompt-evaluation'],'impact':['revision-impact','continuity'],
+       'realism':['realism-diagnostics','camera-blocking','micro-performance','prompt-evaluation']}
  for mid in base[task]:add(mid,'当前任务的直接方法')
  if task in ('audio','comics') and has(clean,('改编','adapt')):add('adaptation','跨媒介时保留源材料映射与取舍')
  if task in ('full','draft','rewrite','adapt','critique'):
@@ -82,6 +92,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
            ('ensemble-subplots',('群像','多主角','支线')),
            ('scene-transitions',('转场','场景衔接')),
            ('pacing-compression',('节奏拖沓','删减','压缩篇幅'))]
+  focused += [('character-arcs',('成长弧','人物弧','角色成长','坠落弧')),('foreshadowing-design',('伏笔','回收')),('nonlinear-time',('非线性','倒叙','多时间线')),('theme-motifs',('意象','主题回响'))]
   for mid,terms in focused:
    if has(clean,terms):add(mid,'请求中明确提到的专项问题')
  if task in ('full','brainstorm','draft','rewrite') and has(clean,('风格实验','风格对照','不同文风','style comparison')):add('style-lab','用户要求比较表达风格')
@@ -91,11 +102,17 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  if task in ('full','brainstorm','draft','rewrite','adapt'):
   for genre in selected_genres:add(GENRE_MODULES[genre],'用户请求中的类型方向：'+genre)
   if len(selected_genres)>1:add('genre-blend','检查多种类型的主次与体验承诺')
+  if 'sci-fi' in selected_genres:add('worldbuilding','核对科幻想定的规则与替代方案')
+  if 'historical' in selected_genres:add('research','年代事实与生活细节需要来源')
+ if task in ('prompts','production','realism'):
+  for mid,terms in [('image-to-video',('图生视频','i2v')),('text-to-video',('文生视频','t2v')),('keyframe-video',('首尾帧','关键帧','flf2v')),('motion-physics',('接触','物理','动作失真')),('workflow-reproducibility',('comfyui','工作流'))]:
+   if has(clean,terms):add(mid,'视频任务明确需要：'+mid)
  if task=='full':
   add('scene','把关键事件写成完整正文');add('dialogue','人物实际交流与声音')
   if mode in ('novel','series'):add('project-memory','长篇需要有效版本、事实与交接')
   add('continuity','完成后核对事实与状态');add('reader-experience','独立检查体验，明确模拟局限')
   if mode!='novel':add('visual-design','影视全套');add('sound-design','影视全套');add('production-limits','生成难点与工作量约束');add('format','完整交付格式')
+  if mode!='novel' and has(clean,('超级真实','写实','ai感','photoreal')):add('realism-diagnostics','完整创作中的写实要求');add('camera-blocking','使用合理机位与人物调度')
  for mid in modules or []:add(mid,'用户显式选择模块')
  by={m['id']:m for m in catalog()['modules']}
  unknown=[mid for mid in ids if mid not in by]
@@ -126,8 +143,13 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'comics':['漫画/条漫分格脚本','阅读顺序、气泡和图像任务；不冒称成品漫画'],
   'nonfiction':['事实/推断/虚构对照','用户指定范围改编文本'],
   'naming':['少量有区别的命名候选','推荐名称及简介'],
-  'table-read':['对白读本与表演提示','真实计时或明确估计，必要台词修订']}[task]
- return {'version':'1.1.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+  'table-read':['对白读本与表演提示','真实计时或明确估计，必要台词修订'],
+  'prompts':['按所选模型与模式写的镜头提示词','独立参数、参考条件与待实测项'],
+  'models':['可核验的模型/工作流选择','明确能力、许可与未验证项'],
+  'evaluation':['固定条件的A/B测试方案','只有实际产物与观察才填写的结果记录'],
+  'impact':['源版本改动与直接依赖清单','需要人工复核或重建的产物'],
+  'realism':['真实摄影基准提示词与单变量对照','起始图、动作、运镜和后期的分层排查']}[task]
+ return {'version':'1.2.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

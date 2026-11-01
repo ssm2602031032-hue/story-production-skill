@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "module_count": 40,
+  "version": "1.2.0",
+  "module_count": 61,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -531,6 +531,258 @@
       "integration": "original",
       "tags": [
         "table-read"
+      ]
+    },
+    {
+      "id": "crime-procedural",
+      "title": "刑侦与程序剧情",
+      "summary": "分开案件真相、可证事实与人物推断",
+      "stage": "develop",
+      "reference": "references/modules/crime-procedural.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "crime"
+      ]
+    },
+    {
+      "id": "horror-atmosphere",
+      "title": "恐怖与威胁升级",
+      "summary": "让安全空间和行动代价逐级改变",
+      "stage": "develop",
+      "reference": "references/modules/horror-atmosphere.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "horror"
+      ]
+    },
+    {
+      "id": "science-fiction",
+      "title": "科幻推演",
+      "summary": "让技术假设改变日常与人物选择",
+      "stage": "develop",
+      "reference": "references/modules/science-fiction.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "sci-fi"
+      ]
+    },
+    {
+      "id": "historical-period",
+      "title": "历史年代生活",
+      "summary": "核对时代中的信息、资源与生活节奏",
+      "stage": "develop",
+      "reference": "references/modules/historical-period.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "id": "character-arcs",
+      "title": "角色成长与坠落",
+      "summary": "以连续选择及后果建立变化路径",
+      "stage": "develop",
+      "reference": "references/modules/character-arcs.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "arc"
+      ]
+    },
+    {
+      "id": "foreshadowing-design",
+      "title": "伏笔与回收设计",
+      "summary": "追踪承诺、可记信息和实际兑现",
+      "stage": "develop",
+      "reference": "references/modules/foreshadowing-design.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "foreshadow"
+      ]
+    },
+    {
+      "id": "nonlinear-time",
+      "title": "非线性叙事",
+      "summary": "分开事件顺序、呈现顺序与知情",
+      "stage": "develop",
+      "reference": "references/modules/nonlinear-time.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "nonlinear"
+      ]
+    },
+    {
+      "id": "theme-motifs",
+      "title": "主题与意象",
+      "summary": "通过行动与变义回响呈现主题",
+      "stage": "draft",
+      "reference": "references/modules/theme-motifs.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "motif"
+      ]
+    },
+    {
+      "id": "video-prompt-architecture",
+      "title": "视频提示词架构",
+      "summary": "分开意图、可见文本、参数与后期",
+      "stage": "production",
+      "reference": "references/modules/video-prompt-architecture.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "prompt"
+      ]
+    },
+    {
+      "id": "text-to-video",
+      "title": "文生视频",
+      "summary": "从文字建立首态与单镜动作",
+      "stage": "production",
+      "reference": "references/modules/text-to-video.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "t2v"
+      ]
+    },
+    {
+      "id": "image-to-video",
+      "title": "图生视频",
+      "summary": "从参考图延续动作与空间",
+      "stage": "production",
+      "reference": "references/modules/image-to-video.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "i2v"
+      ]
+    },
+    {
+      "id": "keyframe-video",
+      "title": "首尾帧视频",
+      "summary": "在真实支持的管线中安排过渡",
+      "stage": "production",
+      "reference": "references/modules/keyframe-video.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "flf2v"
+      ]
+    },
+    {
+      "id": "camera-blocking",
+      "title": "机位与调度",
+      "summary": "协调相机、主体与透视变化",
+      "stage": "production",
+      "reference": "references/modules/camera-blocking.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "id": "micro-performance",
+      "title": "微表演",
+      "summary": "设计可见情绪变化和反应留白",
+      "stage": "production",
+      "reference": "references/modules/micro-performance.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "performance"
+      ]
+    },
+    {
+      "id": "identity-continuity",
+      "title": "AI资产一致性",
+      "summary": "保持身份、衣装与镜间状态",
+      "stage": "production",
+      "reference": "references/modules/identity-continuity.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "id": "motion-physics",
+      "title": "运动与接触",
+      "summary": "用准备、接触与结果组织复杂动作",
+      "stage": "production",
+      "reference": "references/modules/motion-physics.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "physics"
+      ]
+    },
+    {
+      "id": "prompt-evaluation",
+      "title": "提示词评测",
+      "summary": "控制变量记录真实失败与比较证据",
+      "stage": "review",
+      "reference": "references/modules/prompt-evaluation.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "model-selection",
+      "title": "模型选择",
+      "summary": "按具体能力、版本和许可匹配任务",
+      "stage": "production",
+      "reference": "references/modules/model-selection.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "model"
+      ]
+    },
+    {
+      "id": "workflow-reproducibility",
+      "title": "工作流复现",
+      "summary": "记录模型、节点、参数和素材版本",
+      "stage": "production",
+      "reference": "references/modules/workflow-reproducibility.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "workflow"
+      ]
+    },
+    {
+      "id": "revision-impact",
+      "title": "改稿影响检查",
+      "summary": "识别需要复核或重建的依赖",
+      "stage": "review",
+      "reference": "references/modules/revision-impact.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "impact"
+      ]
+    },
+    {
+      "id": "realism-diagnostics",
+      "title": "真实摄影与去AI感",
+      "summary": "用固定机位基准、单变量对照和后期对比定位失真",
+      "stage": "review",
+      "reference": "references/modules/realism-diagnostics.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "realism"
       ]
     }
   ]

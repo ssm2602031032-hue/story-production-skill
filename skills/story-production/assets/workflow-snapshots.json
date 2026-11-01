@@ -1,0 +1,28 @@
+{
+  "repository": "Comfy-Org/workflow_templates",
+  "commit": "c067929d7e9cc0f3fd15be348fa1a1d85da15946",
+  "license": "MIT",
+  "format": "ComfyUI UI workflows, not API prompt graphs",
+  "files": [
+    {
+      "file": "assets/workflows/video_wan2_2_5B_ti2v.json",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_wan2_2_5B_ti2v.json",
+      "sha256": "23c93b88adecbdf5bcf4c5438117070fe757f30aca373dd6a2eb488d2c6a585a"
+    },
+    {
+      "file": "assets/workflows/video_ltx2_5_t2v.json",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_t2v.json",
+      "sha256": "eb1a415a467a2ef1ea63cdb4e79a35315e29c971b1e4f7646ed149a2971fdbd7"
+    },
+    {
+      "file": "assets/workflows/video_ltx2_5_flf2v.json",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_flf2v.json",
+      "sha256": "d8107deef9a9b005a3eff41e12520225a344b65381d74686ac22dc4e65d19c21"
+    },
+    {
+      "file": "assets/workflows/video_hunyuan_video_1.5_720p_t2v.json",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_hunyuan_video_1.5_720p_t2v.json",
+      "sha256": "9b945d0dd0ce80133284fb5d3cf2233223566ac7321fbbd14ee06ce8158e5773"
+    }
+  ]
+}

@@ -77,3 +77,13 @@ Creative Writing Skills提供了研究证据与创作决策分离、角色有限
 Screenwriting Skills用于比较喜剧场面、类型承诺与连续剧持续产生故事的机制。本项目不收录其书籍、剧本引文、逐页案例表，也不把某位理论作者的节拍或固定比例当作所有作品的规则。保留上游NOTICE说明其许可范围。
 
 未确认再分发许可的聚合内容没有复制入包。模块选择与测试覆盖的是这次已列出的内容，不声称汇集互联网上全部创作技能。
+
+## v1.2 视频资料与模板
+
+按2026年11月1日可访问提交核验的视频模型、软件、适配器与提示词资料保存在[video-projects.json](skills/story-production/assets/video-projects.json)，其中每项均有精确提交、来源文件、哈希及许可说明。模型文档和源码用于核对能力，不复制模型权重、源视频、输入图或其中的示范作品。
+
+4份Comfy-Org/workflow_templates的MIT许可界面工作流原JSON随包保留，来源与哈希见[workflow-snapshots.json](skills/story-production/assets/workflow-snapshots.json)，[原LICENSE](skills/story-production/assets/workflows/LICENSE)一并附上。工作流模板许可不授权模型权重或样例媒体，也不表示API兼容性或实际生成质量已验证。
+
+Rylaispirit/cinematic-video-prompt-skill的摄影词汇组织与单镜约束供写实诊断参考。本项目独立重写中文方法与24个英文原创提示词例子，没有复制其词典全文或采用“所有工具必须英文”等通用命令。[MIT许可](skills/story-production/references/upstream/cinematic/LICENSE)保留，固定提交与入口文件在video-projects.json中列出。
+
+LTX与Hunyuan模型/适配器采用自定义社区许可，不以本项目MIT条款重新授权。Vidu技能仓库在核验提交中未见明确再分发许可证，因此仅提供来源索引。Wan、ComfyUI、Diffusers及其他适配器的许可范围按各仓库与依赖分别核对；本包不执行其安装脚本。

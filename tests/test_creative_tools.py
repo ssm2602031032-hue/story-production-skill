@@ -18,6 +18,15 @@ class CreativeToolsTests(unittest.TestCase):
  def test_novel_full_does_not_require_film_production_modules(self):
   p=creative.plan('写一部成长小说的完整正文')
   self.assertEqual(p['mode'],'novel');self.assertIn('prose-voice',self.selected(p));self.assertNotIn('visual-design',self.selected(p))
+ def test_realism_requirement_does_not_replace_full_creation(self):
+  p=creative.plan('写一部完整电影，全套都要超级真实')
+  self.assertEqual(p['task'],'full');self.assertIn('structure',self.selected(p));self.assertIn('realism-diagnostics',self.selected(p))
+  p=creative.plan('为完整电影写视频提示词，不改剧情')
+  self.assertEqual(p['task'],'prompts')
+ def test_video_specialist_routes_and_genres_exist(self):
+  for request,task,mid in [('全部画面有AI感，运镜很假','realism','realism-diagnostics'),('优化图生视频提示词','prompts','image-to-video'),('做提示词对比','evaluation','prompt-evaluation'),('检查改稿影响','impact','revision-impact')]:
+   p=creative.plan(request);self.assertEqual(p['task'],task);self.assertIn(mid,self.selected(p))
+  for genre,mid in [('crime','crime-procedural'),('horror','horror-atmosphere'),('sci-fi','science-fiction'),('historical','historical-period')]:self.assertIn(mid,self.selected(creative.plan('完整新作',genres=[genre])))
  def test_naming_only_does_not_create_a_whole_story(self):
   p=creative.plan('只给这部悬疑小说起书名')
   self.assertEqual(p['task'],'naming');self.assertEqual(self.selected(p),{'title-logline'})

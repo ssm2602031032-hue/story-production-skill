@@ -2,7 +2,7 @@
   "version": "1.1.0",
   "status": "working",
   "source": "example-film.json",
-  "source_sha256": "228858a50fc4061a447fce2fcd6ce73d3800c544cc76290c42aaf43bab496932",
+  "source_sha256": "5a62bbe8c280574469e9073df5e82f628dbe4a902e867b8cbd628b03dc3dfafb",
   "dependencies": {},
   "facts": [
     {

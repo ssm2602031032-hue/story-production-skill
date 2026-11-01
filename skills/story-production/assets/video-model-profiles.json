@@ -1,0 +1,215 @@
+{
+  "version": "1.2.0",
+  "checked_on": "2026-11-01",
+  "profiles": [
+    {
+      "id": "wan22-t2v-a14b",
+      "title": "Wan2.2 T2V A14B",
+      "project": "wan22",
+      "source_commit": "1ea34ff48f87168174e12956e200b1d908b1c5ff",
+      "modes": [
+        "t2v"
+      ],
+      "native_fps": 16,
+      "preset_frames": 81,
+      "frame_grid": {
+        "multiple": 4,
+        "offset": 1
+      },
+      "preset_width": 1280,
+      "preset_height": 720,
+      "native_audio": false,
+      "prompt_style": "subject-motion-scene-camera-light",
+      "max_english_words": null,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_wan2_2_14B_t2v.json",
+      "notes": "帧率与81帧来自共享配置；14B与5B不要共用帧率假设。",
+      "license_label": "Apache-2.0",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/README.md",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/generate.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/shared_config.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/wan_ti2v_5B.py"
+      ]
+    },
+    {
+      "id": "wan22-i2v-a14b",
+      "title": "Wan2.2 I2V A14B",
+      "project": "wan22",
+      "source_commit": "1ea34ff48f87168174e12956e200b1d908b1c5ff",
+      "modes": [
+        "i2v"
+      ],
+      "native_fps": 16,
+      "preset_frames": 81,
+      "frame_grid": {
+        "multiple": 4,
+        "offset": 1
+      },
+      "preset_width": 1280,
+      "preset_height": 720,
+      "native_audio": false,
+      "prompt_style": "subject-motion-scene-camera-light",
+      "max_english_words": null,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_wan2_2_14B_i2v.json",
+      "notes": "I2V输出宽高比跟随输入图，尺寸参数为面积；首尾帧需要另一个明确支持的管线。",
+      "license_label": "Apache-2.0",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/README.md",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/generate.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/shared_config.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/wan_ti2v_5B.py"
+      ]
+    },
+    {
+      "id": "wan22-ti2v-5b",
+      "title": "Wan2.2 TI2V 5B",
+      "project": "wan22",
+      "source_commit": "1ea34ff48f87168174e12956e200b1d908b1c5ff",
+      "modes": [
+        "t2v",
+        "i2v"
+      ],
+      "native_fps": 24,
+      "preset_frames": 121,
+      "frame_grid": {
+        "multiple": 4,
+        "offset": 1
+      },
+      "preset_width": 1280,
+      "preset_height": 704,
+      "native_audio": false,
+      "prompt_style": "subject-motion-scene-camera-light",
+      "max_english_words": null,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_wan2_2_5B_ti2v.json",
+      "notes": "配置24fps/121帧；尺寸按官方5B示例1280×704，支持文生与图生。",
+      "license_label": "Apache-2.0",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/README.md",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/generate.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/shared_config.py",
+        "https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/wan/configs/wan_ti2v_5B.py"
+      ]
+    },
+    {
+      "id": "ltx25-comfy-t2v",
+      "title": "LTX-2.5 ComfyUI T2V distilled template",
+      "project": "ltx2",
+      "source_commit": "e98f6d927d83c92ef2be6aec76c8440b19306e39",
+      "modes": [
+        "t2v"
+      ],
+      "native_fps": 24,
+      "preset_frames": 97,
+      "frame_grid": {
+        "multiple": 8,
+        "offset": 1
+      },
+      "preset_width": 768,
+      "preset_height": 512,
+      "native_audio": true,
+      "prompt_style": "flowing-action-paragraph",
+      "max_english_words": 200,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_t2v.json",
+      "notes": "97帧与潜变量尺寸来自固定模板，模板有后续空间放大；不是最终画质或速度保证。",
+      "license_label": "LTX Community License",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Lightricks/LTX-2/blob/e98f6d927d83c92ef2be6aec76c8440b19306e39/README.md",
+        "https://github.com/Lightricks/LTX-2/blob/e98f6d927d83c92ef2be6aec76c8440b19306e39/packages/ltx-pipelines/docs/installation.md",
+        "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_t2v.json"
+      ]
+    },
+    {
+      "id": "ltx25-comfy-flf",
+      "title": "LTX-2.5 ComfyUI first/last frame template",
+      "project": "ltx2",
+      "source_commit": "e98f6d927d83c92ef2be6aec76c8440b19306e39",
+      "modes": [
+        "flf2v"
+      ],
+      "native_fps": 24,
+      "preset_frames": 97,
+      "frame_grid": {
+        "multiple": 8,
+        "offset": 1
+      },
+      "preset_width": 768,
+      "preset_height": 512,
+      "native_audio": true,
+      "prompt_style": "flowing-action-paragraph",
+      "max_english_words": 200,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_flf2v.json",
+      "notes": "这份Comfy模板使用distilled检查点；不得与官方Python guided keyframe所用dev+LoRA流程混写。",
+      "license_label": "LTX Community License",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Lightricks/LTX-2/blob/e98f6d927d83c92ef2be6aec76c8440b19306e39/README.md",
+        "https://github.com/Lightricks/LTX-2/blob/e98f6d927d83c92ef2be6aec76c8440b19306e39/packages/ltx-pipelines/docs/installation.md",
+        "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_ltx2_5_flf2v.json"
+      ]
+    },
+    {
+      "id": "hunyuan15-t2v-720p",
+      "title": "HunyuanVideo 1.5 720p T2V",
+      "project": "hunyuan15",
+      "source_commit": "60783e704160023913bee78f0b47036d393d4dfa",
+      "modes": [
+        "t2v"
+      ],
+      "native_fps": 24,
+      "preset_frames": 121,
+      "frame_grid": null,
+      "preset_width": 1280,
+      "preset_height": 720,
+      "native_audio": false,
+      "prompt_style": "subject-motion-scene-camera-light",
+      "max_english_words": null,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_hunyuan_video_1.5_720p_t2v.json",
+      "notes": "121帧/24fps为官方示例，不推断任意帧数或最大时长；许可含地区范围。",
+      "license_label": "Tencent Hunyuan Community License",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/README.md",
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/ComfyUI/README.md",
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/assets/HunyuanVideo_1_5_Prompt_Handbook_EN.md"
+      ]
+    },
+    {
+      "id": "hunyuan15-i2v-720p",
+      "title": "HunyuanVideo 1.5 720p I2V",
+      "project": "hunyuan15",
+      "source_commit": "60783e704160023913bee78f0b47036d393d4dfa",
+      "modes": [
+        "i2v"
+      ],
+      "native_fps": 24,
+      "preset_frames": 121,
+      "frame_grid": null,
+      "preset_width": 1280,
+      "preset_height": 720,
+      "native_audio": false,
+      "prompt_style": "subject-motion-scene-camera-light",
+      "max_english_words": null,
+      "negative_prompt": "workflow-dependent",
+      "workflow_url": "https://github.com/Comfy-Org/workflow_templates/blob/c067929d7e9cc0f3fd15be348fa1a1d85da15946/templates/video_hunyuan_video_1.5_720p_i2v.json",
+      "notes": "使用I2V检查点与对应配置，不把T2V CFG、flow shift原样混用；许可含地区范围。",
+      "license_label": "Tencent Hunyuan Community License",
+      "validation_level": "official-documentation-and-config; not GPU-tested",
+      "evidence": [
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/README.md",
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/ComfyUI/README.md",
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/60783e704160023913bee78f0b47036d393d4dfa/assets/HunyuanVideo_1_5_Prompt_Handbook_EN.md"
+      ]
+    }
+  ],
+  "preset_policy": "Observed presets are conservative planning choices, not proven maximum lengths. No GPU model was run."
+}

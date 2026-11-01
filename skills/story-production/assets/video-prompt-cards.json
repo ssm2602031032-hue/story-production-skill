@@ -1,0 +1,390 @@
+{
+  "version": "1.2.0",
+  "cards": [
+    {
+      "id": "hesitation",
+      "title": "迟疑近景",
+      "mode": "t2v",
+      "positive_en": "A tired clerk stands beside a closed office door. She raises her hand toward the handle, pauses before touching it, then lets her hand fall. Static medium close-up at eye level, soft window light from camera left. Her face remains restrained; the door stays closed.",
+      "design_zh": "一次抬手—停住—放下，情绪由未完成动作呈现。",
+      "first_state": "双手垂下，门关闭",
+      "last_state": "手落回身侧，门仍关闭",
+      "review_checks": [
+        "脸与门把位置稳定，不能自动开门",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "listening",
+      "title": "画外声反应",
+      "mode": "i2v",
+      "positive_en": "The woman in the reference image listens to someone outside the frame. Her eyes shift slightly toward the doorway and her breathing slows. She keeps her lips closed. The camera remains still and the room lighting does not change.",
+      "design_zh": "画外角色只存在于独立音轨，听者不做口型。",
+      "first_state": "人物看桌面",
+      "last_state": "人物看门口但未说话",
+      "review_checks": [
+        "没有额外人脸或同步张嘴",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "handoff",
+      "title": "物件交接",
+      "mode": "i2v",
+      "positive_en": "The right hand already holding the envelope moves a short distance forward. The other person supports its bottom edge before the first hand releases it. Both hands separate slowly. Static close-up of the hands and envelope, with the background unchanged.",
+      "design_zh": "先承托后松手，强调唯一物件。",
+      "first_state": "信封由第一人持有",
+      "last_state": "信封由第二人稳定持有",
+      "review_checks": [
+        "不复制信封、不穿透手指",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "follow-walk",
+      "title": "侧向跟走",
+      "mode": "t2v",
+      "positive_en": "An adult courier walks steadily from left to right along a covered walkway, carrying one small canvas bag in her right hand. The camera tracks beside her at walking speed, maintaining a medium full shot. Pillars pass behind her; the bag swings gently and remains in the same hand.",
+      "design_zh": "主体走向与相机平移分开写。",
+      "first_state": "人物在左侧迈步",
+      "last_state": "人物继续向右，相对构图稳定",
+      "review_checks": [
+        "步态自然、背景方向一致",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "door-reveal",
+      "title": "开门揭示",
+      "mode": "i2v",
+      "positive_en": "The man in the starting image pulls the door inward by its handle. He steps slightly aside, revealing the dim room beyond. The camera makes a small forward move without crossing the doorway. Light from the hall reaches the nearest floorboards.",
+      "design_zh": "只揭出预先设计的房间部分。",
+      "first_state": "门关闭，手在把手上",
+      "last_state": "门半开，人物让出视线",
+      "review_checks": [
+        "门铰链侧和开门方向正确",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "quiet-work",
+      "title": "固定镜头劳动",
+      "mode": "t2v",
+      "positive_en": "A ceramic artist sits at a worktable and smooths one small clay bowl with a damp sponge. Her movements are slow and precise. Static medium shot includes both hands and the bowl. Diffuse daylight enters through a window on the right; tools remain still in the background.",
+      "design_zh": "一个持续动作，不额外转场。",
+      "first_state": "海绵靠近碗沿",
+      "last_state": "一圈整理完成，海绵离开",
+      "review_checks": [
+        "碗形和工具数量一致",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "wind-motion",
+      "title": "轻环境运动",
+      "mode": "i2v",
+      "positive_en": "The person holds the same pose and looks toward the distant road. A light breeze moves the coat hem and nearby leaves gently. The camera remains locked. Keep the face, clothing details, horizon and background layout consistent with the reference.",
+      "design_zh": "环境微动与身份稳定优先。",
+      "first_state": "衣摆垂下",
+      "last_state": "衣摆轻摆回落",
+      "review_checks": [
+        "不让面部和场景跟着波动",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "car-side",
+      "title": "车辆侧向行驶",
+      "mode": "t2v",
+      "positive_en": "One black two-door coupe travels from left to right on a closed dry test lane at a steady moderate speed. A side-tracking camera keeps the full car visible. Wheel rotation matches forward movement. Soft overcast daylight reveals the original body shape without dramatic reflections.",
+      "design_zh": "虚构封闭路段，先验证车身与轮位。",
+      "first_state": "车辆进入左侧车道",
+      "last_state": "车辆继续向右，车身不变",
+      "review_checks": [
+        "门数轮数稳定，轮胎不滑行",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "establish",
+      "title": "地点建立",
+      "mode": "t2v",
+      "positive_en": "A quiet riverside workshop is seen from across a narrow lane at dawn. One worker unlocks the south-facing door while a bicycle remains beside the wall. Static wide shot, pale sky and a warm practical lamp above the entrance. The layout stays clear and unchanging.",
+      "design_zh": "说明出入口与主体位置，为后镜建立地理。",
+      "first_state": "门锁着，人物在门外",
+      "last_state": "门解锁，人物仍在入口",
+      "review_checks": [
+        "出口位置能供后续接镜",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "push-reaction",
+      "title": "短距离推进",
+      "mode": "i2v",
+      "positive_en": "The seated woman finishes looking at the folded letter and raises her eyes toward the person opposite her. The camera slowly moves closer by a small distance, keeping the same angle. Window light and shallow background blur remain consistent. Her expression changes only slightly.",
+      "design_zh": "一次反应配一次缓慢推进。",
+      "first_state": "眼睛落在信上",
+      "last_state": "目光抬起，构图略近",
+      "review_checks": [
+        "不变焦与推轨混乱、不突变表情",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "flf-sit",
+      "title": "首尾帧坐下",
+      "mode": "flf2v",
+      "positive_en": "Starting from the first frame, the woman bends her knees and lowers herself onto the chair already behind her. Her left hand briefly steadies the seat edge, then rests on her lap. End at the seated pose in the final frame. The camera and room stay fixed.",
+      "design_zh": "两帧同一空间与椅位，动作有可达路径。",
+      "first_state": "站在椅前",
+      "last_state": "坐稳、双手归位",
+      "review_checks": [
+        "身体不穿椅、衣服不变",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "flf-turn",
+      "title": "首尾帧转身",
+      "mode": "flf2v",
+      "positive_en": "The man turns his shoulders and head slowly toward the window, following the short rotation between the two reference poses. His feet remain near their original positions. End with his gaze outside as shown in the final frame. Keep the camera stationary and the lighting continuous.",
+      "design_zh": "只做短角度转向，不用180度未知背面。",
+      "first_state": "人物侧向桌面",
+      "last_state": "人物转向窗",
+      "review_checks": [
+        "肩颈与脚的转动协调",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "rain-shelter",
+      "title": "雨檐下人物",
+      "mode": "t2v",
+      "positive_en": "An adult woman stands under a narrow awning, keeping her dry shoulder close to the wall. Rain falls outside the covered area. She closes a wet umbrella and holds it downward over the drain. Static medium-wide shot with soft streetlight reflections beyond the awning.",
+      "design_zh": "干湿边界与排水位置先明确。",
+      "first_state": "伞打开，人站檐下",
+      "last_state": "伞收拢向下滴水",
+      "review_checks": [
+        "室内不下雨，伞骨不变形",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "night-practical",
+      "title": "夜间动机光",
+      "mode": "i2v",
+      "positive_en": "The person leans slightly toward the small desk lamp to read the paper. Warm light falls on the hands and lower face, while the background remains dim. The camera is fixed. The lamp stays in place and does not change brightness or color during the movement.",
+      "design_zh": "灯光有实际来源，不生成随机轮廓光。",
+      "first_state": "纸在暗处",
+      "last_state": "纸移入灯下",
+      "review_checks": [
+        "光源方向和阴影一致",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "team-signal",
+      "title": "团队同框",
+      "mode": "t2v",
+      "positive_en": "Three adult technicians stand at their assigned positions around a workbench. The person at center gives one small hand signal; the left person steadies the box while the right person stops turning the handle. Static wide shot keeps all three actions visible and clearly separated.",
+      "design_zh": "明确三人分工，避免大家做同一动作。",
+      "first_state": "三人各在原位",
+      "last_state": "两侧动作响应中间信号",
+      "review_checks": [
+        "人数和站位不变，动作归属清楚",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "contact-lift",
+      "title": "协作抬物",
+      "mode": "i2v",
+      "positive_en": "Both people keep their hands on the marked handles of the crate. They bend slightly, lift it only a few centimeters together, and place it on the adjacent low support. The camera stays at waist height, showing the contact points and the short distance traveled.",
+      "design_zh": "低幅度单次抬放，复杂接触可分层。",
+      "first_state": "箱在地面、手已握柄",
+      "last_state": "箱落低台、手未立刻消失",
+      "review_checks": [
+        "箱重量感、手与柄接触连续",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "screen-post",
+      "title": "屏幕内容后期",
+      "mode": "i2v",
+      "positive_en": "The woman taps once near the lower edge of the blank display, then withdraws her finger. A subtle screen glow reflects on her face. Keep the display surface visually simple for later compositing, with no generated readable text. Static over-shoulder shot.",
+      "design_zh": "准确文字另做贴合，不要求模型写长文件。",
+      "first_state": "手靠近空白屏幕",
+      "last_state": "手离开，屏幕角度不变",
+      "review_checks": [
+        "屏幕边界可跟踪",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "match-object",
+      "title": "物件匹配切点",
+      "mode": "t2v",
+      "positive_en": "A hand places a plain round cup at the center of a wooden table and leaves the frame. Static overhead close-up. The cup remains still for a brief beat at the end, with its handle pointing to the right. Soft even daylight keeps the rim readable.",
+      "design_zh": "结尾稳定状态供下一镜匹配，不自动剪切。",
+      "first_state": "杯子在手中",
+      "last_state": "杯静止、柄向右",
+      "review_checks": [
+        "杯位和柄向可与邻镜对齐",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "stop-motion",
+      "title": "定格风格",
+      "mode": "t2v",
+      "positive_en": "A small original clay bird on a miniature desk takes two short hops toward a seed and pauses. Its clay surface and simple eyes remain consistent. Static low-angle close-up with soft studio lighting. Motion has a deliberate stop-motion cadence without changing the desk layout.",
+      "design_zh": "风格保持与动作次数具体。",
+      "first_state": "小鸟距种子两步",
+      "last_state": "鸟在种子旁停住",
+      "review_checks": [
+        "材质不变成真人，动作不无限循环",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "ink-style",
+      "title": "水墨轻动作",
+      "mode": "i2v",
+      "positive_en": "The painted boat glides a short distance across the empty water area, leaving a restrained ink-like ripple. Reeds near the lower edge sway slightly. The camera stays fixed and the original paper texture remains visible. Preserve the sparse composition and broad blank areas.",
+      "design_zh": "保留原图留白，少量运动。",
+      "first_state": "船在水面左侧",
+      "last_state": "船稍向右、涟漪渐淡",
+      "review_checks": [
+        "不填满空白、不切换三维材质",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "sport-rhythm",
+      "title": "运动节奏",
+      "mode": "t2v",
+      "positive_en": "Two adult rowers in a practice boat complete one coordinated slow stroke. Their hands follow the same timing while each oar stays on its assigned side. A fixed side view shows the upper bodies, oars and nearby water. The boat moves a short distance forward.",
+      "design_zh": "先验证少人数与划向，再扩到群像。",
+      "first_state": "桨接近入水点",
+      "last_state": "一次划桨完成、舟短距前进",
+      "review_checks": [
+        "桨数、船员左右和水流方向稳定",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "background-focus",
+      "title": "焦点转移",
+      "mode": "i2v",
+      "positive_en": "The foreground hand holds the key still while the person behind it stops moving. Focus shifts slowly from the key to the face of the person without changing camera position. The hand and key remain in the same place, becoming softly blurred as the face becomes clear.",
+      "design_zh": "转焦不同时平移，保留道具位置。",
+      "first_state": "钥匙清晰、人物虚",
+      "last_state": "人物清晰、钥匙虚",
+      "review_checks": [
+        "不是物体变形或突然换脸",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "retake-brief",
+      "title": "局部重做说明",
+      "mode": "t2v",
+      "positive_en": "Recreate only the approved short shot: the worker looks down at the closed notebook and then closes her hand around its spine. Keep the approved framing, wardrobe, lighting and background arrangement. One restrained action, no scene transition or additional object.",
+      "design_zh": "实际retake需支持源视频与时间窗；此文本是修复意图，不是参数。",
+      "first_state": "手靠书脊",
+      "last_state": "手握稳书脊",
+      "review_checks": [
+        "与批准版本对比，仅修指定失败",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    },
+    {
+      "id": "ending-hold",
+      "title": "自然收尾",
+      "mode": "i2v",
+      "positive_en": "The two adults finish placing their cups on the table and settle into a quiet pause. One looks toward the other, who answers with a small relaxed smile. The camera remains still. Hold the final composition without fading to black or adding a new action.",
+      "design_zh": "保留尾部可用把手，淡黑由后期决定。",
+      "first_state": "杯刚落桌",
+      "last_state": "人物自然停住",
+      "review_checks": [
+        "不新增亲吻、挥手或自行转场",
+        "与批准角色/道具/空间参考核对",
+        "确认所选模型和工作流支持此模式"
+      ],
+      "negative_guidance": "仅针对实际失败增加简短约束；负向字段由所用工作流决定。",
+      "status": "original writing example; no generated video or measured quality claim"
+    }
+  ],
+  "use": "Replace scene-specific details; do not add every card to one prompt. These are original, unbenchmarked examples."
+}

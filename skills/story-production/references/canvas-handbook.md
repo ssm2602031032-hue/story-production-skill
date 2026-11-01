@@ -20,7 +20,7 @@ python scripts/canvas_board.py from-bridge project/scene-package/shot-packages.j
 python scripts/canvas_board.py build project/canvas-spec.json --out project/board-v1
 ```
 
-输入shot-packages来自script_bridge；完整提示词保留在详情，候选媒体初始为“待制作”，不会因为提示词存在就标成已生成/已批准。单个详细板最多120卡（六列时20镜），更多内容用下面的project模式。
+输入shot-packages来自script_bridge；完整提示词保留在详情，候选媒体初始为“待制作”，不会因为提示词存在就标成已生成/已批准。该导入器只提取参考条件信息，不自动迁移原包中的参考文件；要在画布显示实际媒体，应在规范节点明确填写file与实际sha256。单个详细板最多120卡（六列时20镜），更多内容用下面的project模式。
 
 ```text
 python scripts/canvas_board.py project project/scene-package/shot-packages.json --out project/all-boards-v1

@@ -50,7 +50,7 @@ def layout(source,previous=None):
  if previous:
   before=read(previous)
   if before.get('layout_engine')!='stage-grid':raise ValueError('Only a prior stage-grid layout can be preserved')
-  old={x['id']:x for x in before.get('cards',[])}
+  old=index(before.get('cards',[]),'previous cards')
  reserved={}
  for nid,n in nodes.items():
   position=n.get('pinned') or (old.get(nid) if old.get(nid,{}).get('group')==n['group'] and old.get(nid,{}).get('stage')==n['stage'] else None)
@@ -190,7 +190,7 @@ def from_bridge(packages,out,scenes=None):
  stages=[{'id':x,'title':y} for x,y in [('source','原文与作用'),('reference','参考与身份'),('prompt','画面与台词'),('media','候选素材'),('review','审看与修复'),('edit','剪辑与交付')]]
  for i,s in enumerate(shots):
   jid=s['id'];scene=s['director_context'];gid=scene['id'];groups.setdefault(gid,{'id':gid,'title':gid+' · '+scene['situation'][:40]});missing=s['visual_conditions'].get('missing_conditions',[])
-  cards=[('source','原文 / '+jid,s['shot_function']['purpose'], '\n\n'.join(b['anchor']+'：'+b['quote'] for b in s['source_beats'])) ,('reference','参考 / '+jid,'待补：'+', '.join(missing) if missing else '已绑定文件；仍需实际生成审看',json.dumps(s['visual_conditions'],ensure_ascii=False,indent=2)),('prompt','提示词 / '+jid,s['visible_prompt'][:65]+'…',s['visible_prompt']+'\n\n对白：\n'+json.dumps(s['speech_track'],ensure_ascii=False,indent=2)),('media','素材 / '+jid,'尚未关联真实take；不将提示词当成已生成素材。','在选片记录中填写实际路径、版本和审看意见，再关联此卡。'),('review','检查 / '+jid,s['editorial_policy']['priority'],s['shot_function']['fallback']+'\n\n'+json.dumps(s['shot_function']['protected_windows'],ensure_ascii=False,indent=2)),('edit','剪辑 / '+jid,s['shot_function']['cut_trigger'],json.dumps(s['editorial_policy'],ensure_ascii=False,indent=2))]
+  cards=[('source','原文 / '+jid,s['shot_function']['purpose'], '\n\n'.join(b['anchor']+'：'+b['quote'] for b in s['source_beats'])) ,('reference','参考 / '+jid,'待补：'+', '.join(missing) if missing else '源包声明已绑定参考；本卡记录条件，实际文件需显式关联。',json.dumps(s['visual_conditions'],ensure_ascii=False,indent=2)),('prompt','提示词 / '+jid,s['visible_prompt'][:65]+'…',s['visible_prompt']+'\n\n对白：\n'+json.dumps(s['speech_track'],ensure_ascii=False,indent=2)),('media','素材 / '+jid,'尚未关联真实take；不将提示词当成已生成素材。','在选片记录中填写实际路径、版本和审看意见，再关联此卡。'),('review','检查 / '+jid,s['editorial_policy']['priority'],s['shot_function']['fallback']+'\n\n'+json.dumps(s['shot_function']['protected_windows'],ensure_ascii=False,indent=2)),('edit','剪辑 / '+jid,s['shot_function']['cut_trigger'],json.dumps(s['editorial_policy'],ensure_ascii=False,indent=2))]
   for stage,title,summary,details in cards:nodes.append({'id':jid+'__'+stage,'group':gid,'stage':stage,'order':i,'title':title,'summary':summary,'details':details,'status':'planned' if stage in ('reference','media') else 'draft'})
   for a,b in zip(stages,stages[1:]):edges.append({'id':jid+'__'+a['id']+'_'+b['id'],'from':jid+'__'+a['id'],'to':jid+'__'+b['id'],'label':'支撑下一步'})
  d={'version':'1.8.0','title':'制作素材总览','source_packages_sha256':digest(packages),'groups':list(groups.values()),'stages':stages,'nodes':nodes,'edges':edges};safe_write(out,d);return {'output':str(out),'cards':len(nodes),'media_generated':False}
@@ -204,7 +204,7 @@ def project(packages,out,font=None):
  overview=[];pages=[];relations=[];markdown=['# 全片素材导航','按场景和镜头顺序进入分板；详细画布每页最多8镜，避免把整部长片压在一张巨图中。']
  for sid,items in scenes.items():
   for offset in range(0,len(items),8):
-   number=len(pages)+1;key=f'page-{number:03}';subset=items[offset:offset+8];page_root=out/'boards'/key;page_root.mkdir(parents=True);part=page_root/'shot-packages.json';safe_write(part,{**data,'shots':subset});spec=page_root/'spec.json';from_bridge(part,spec);bundle=page_root/'board';export_bundle(spec,bundle,font=font);rel=(bundle/'board.canvas').relative_to(out).as_posix();label=sid+f' · 镜头 {offset+1}—{offset+len(subset)}';pages.append({'id':key,'scene':sid,'jobs':[s['id'] for s in subset],'canvas':rel,'index':(bundle/'index.md').relative_to(out).as_posix()})
+   number=len(pages)+1;key=f'page-{number:03}';subset=items[offset:offset+8];page_root=out/'boards'/key;page_root.mkdir(parents=True);part=page_root/'planning-snapshot.json';safe_write(part,{'source_packages_sha256':digest(packages),'shots':subset,'scope':'Planning cards only; reference path strings are source-package metadata, not relocated generation inputs'});spec=page_root/'spec.json';from_bridge(part,spec);bundle=page_root/'board';export_bundle(spec,bundle,font=font);rel=(bundle/'board.canvas').relative_to(out).as_posix();label=sid+f' · 镜头 {offset+1}—{offset+len(subset)}';pages.append({'id':key,'scene':sid,'jobs':[s['id'] for s in subset],'canvas':rel,'index':(bundle/'index.md').relative_to(out).as_posix()})
    overview.append({'id':key,'type':'text','x':60+((number-1)%3)*500,'y':180+((number-1)//3)*260,'width':400,'height':200,'text':'## '+label+'\n\n[打开详细画布]('+rel+')\n\n[文字目录]('+pages[-1]['index']+')\n\n'+', '.join(pages[-1]['jobs'])})
    if number>1:relations.append({'id':'next-'+key,'fromNode':pages[-2]['id'],'toNode':key,'label':'阅读顺序','toEnd':'arrow'})
    markdown.append('- ['+label+']('+rel+') · [文字目录]('+pages[-1]['index']+')')

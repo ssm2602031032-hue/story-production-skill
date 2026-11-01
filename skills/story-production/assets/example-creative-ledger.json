@@ -1,0 +1,77 @@
+{
+  "version": "1.1.0",
+  "status": "working",
+  "source": "example-film.json",
+  "source_sha256": "228858a50fc4061a447fce2fcd6ce73d3800c544cc76290c42aaf43bab496932",
+  "dependencies": {},
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "canon",
+      "entity_id": "C01",
+      "statement": "开场简宁正在整理修理铺收工，旧灯与门口空间已经出现。",
+      "at": [
+        "S01_001"
+      ],
+      "quote": "简宁把空纸箱推入桌下，准备拿门边旧灯。看到灯座旁定时器，她的手先停在灯罩上方。"
+    },
+    {
+      "id": "F02",
+      "kind": "proposal",
+      "statement": "如果将来改成雨夜，可增加避雨人的需要；当前正文没有采用。",
+      "at": []
+    }
+  ],
+  "promises": [
+    {
+      "id": "P01",
+      "setup": [
+        "S01"
+      ],
+      "resolution": [
+        "S03"
+      ],
+      "status": "resolved",
+      "note": "开场旧灯是否搬走的选择，在结尾让门灯继续照明得到回应。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I01",
+      "kind": "production",
+      "at": [
+        "S03"
+      ],
+      "observation": "门内灯照向门外的照明与人物走位，需要代表镜验证。",
+      "status": "deferred",
+      "fix_at": [],
+      "verification": ""
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "decision": "保留简宁照常收工的结局，不把关怀写成无限加班。",
+      "reason": "与本片的有限承担主题一致。",
+      "status": "adopted",
+      "affects": [
+        "S03"
+      ]
+    }
+  ],
+  "scope_note": "人工填写实际证据；空表不代表已审校。",
+  "available_anchor_examples": [
+    "S01_001",
+    "S01_002",
+    "S01_003",
+    "S01_004",
+    "S01",
+    "S02_001",
+    "S02_002",
+    "S02_003",
+    "S02_004",
+    "S02",
+    "S03_001",
+    "S03_002"
+  ]
+}

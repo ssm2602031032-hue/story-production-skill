@@ -1,0 +1,392 @@
+{
+  "version": "1.1.0",
+  "module_count": 28,
+  "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
+  "modules": [
+    {
+      "id": "premise",
+      "title": "构思与主题",
+      "summary": "把点子变成能持续产生选择的处境",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-premise.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "premise"
+      ]
+    },
+    {
+      "id": "character",
+      "title": "人物与关系",
+      "summary": "用欲望、资源、边界解释人物选择",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-character.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "character"
+      ]
+    },
+    {
+      "id": "structure",
+      "title": "结构与叙事顺序",
+      "summary": "连接前因、行动、后果与多线推进",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-structure.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "structure"
+      ]
+    },
+    {
+      "id": "scene",
+      "title": "场景与动作",
+      "summary": "展开可表演事件与局部节奏",
+      "stage": "draft",
+      "reference": "references/upstream/kunka/kunka-scene.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "id": "dialogue",
+      "title": "对白与潜台词",
+      "summary": "区分人物声音、策略与真实交流",
+      "stage": "draft",
+      "reference": "references/upstream/kunka/kunka-dialogue.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "dialogue"
+      ]
+    },
+    {
+      "id": "continuity",
+      "title": "连续性审校",
+      "summary": "核对时间、知情、道具、空间与规则",
+      "stage": "review",
+      "reference": "references/upstream/kunka/kunka-continuity.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "continuity"
+      ]
+    },
+    {
+      "id": "revision",
+      "title": "综合改稿",
+      "summary": "按实际证据排序问题并最小修复",
+      "stage": "review",
+      "reference": "references/upstream/kunka/kunka-revision.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "revision"
+      ]
+    },
+    {
+      "id": "style-lab",
+      "title": "风格实验",
+      "summary": "固定故事事实后比较表达选择",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-style-lab.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "style-lab"
+      ]
+    },
+    {
+      "id": "series",
+      "title": "分集结构",
+      "summary": "协调单集兑现与全季变化",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-series.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "series"
+      ]
+    },
+    {
+      "id": "adaptation",
+      "title": "影视改编",
+      "summary": "保留原作体验并追踪媒介转换代价",
+      "stage": "develop",
+      "reference": "references/upstream/kunka/kunka-adaptation.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "adaptation"
+      ]
+    },
+    {
+      "id": "format",
+      "title": "剧本格式",
+      "summary": "中文场号、Fountain与真实导出",
+      "stage": "delivery",
+      "reference": "references/upstream/kunka/kunka-format.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "format"
+      ]
+    },
+    {
+      "id": "pitch",
+      "title": "简介与项目提案",
+      "summary": "针对读者用途写梗概与推介",
+      "stage": "delivery",
+      "reference": "references/upstream/kunka/kunka-pitch.md",
+      "sources": [
+        "kunka"
+      ],
+      "integration": "unmodified-snapshot",
+      "tags": [
+        "pitch"
+      ]
+    },
+    {
+      "id": "research",
+      "title": "题材与职业研究",
+      "summary": "为具体场面寻找可核查细节和事实边界",
+      "stage": "develop",
+      "reference": "references/modules/research.md",
+      "sources": [
+        "creative"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "historical",
+        "research"
+      ]
+    },
+    {
+      "id": "worldbuilding",
+      "title": "世界与能力规则",
+      "summary": "让制度、资源、地理和能力限制作用于选择",
+      "stage": "develop",
+      "reference": "references/modules/worldbuilding.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "fantasy",
+        "sci-fi",
+        "historical"
+      ]
+    },
+    {
+      "id": "prose-voice",
+      "title": "小说文风与视角",
+      "summary": "维持叙述距离、感知范围和行文节奏",
+      "stage": "draft",
+      "reference": "references/modules/prose-voice.md",
+      "sources": [
+        "creative"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "novel",
+        "prose"
+      ]
+    },
+    {
+      "id": "comedy",
+      "title": "喜剧情境与笑点",
+      "summary": "让人物努力、反差、升级和回调改变处境",
+      "stage": "draft",
+      "reference": "references/modules/comedy.md",
+      "sources": [
+        "screenwriting"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "comedy"
+      ]
+    },
+    {
+      "id": "mystery-thriller",
+      "title": "悬疑线索与惊悚",
+      "summary": "区分真实事实、角色相信与观众已知",
+      "stage": "develop",
+      "reference": "references/modules/mystery-thriller.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "mystery",
+        "thriller",
+        "horror"
+      ]
+    },
+    {
+      "id": "romance",
+      "title": "爱情与关系进展",
+      "summary": "用具体双向行动推进吸引、信任与修复",
+      "stage": "draft",
+      "reference": "references/modules/romance.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "romance"
+      ]
+    },
+    {
+      "id": "action-stakes",
+      "title": "动作与团队代价",
+      "summary": "先有目标地理和限制，再设计合作与后果",
+      "stage": "production",
+      "reference": "references/modules/action-stakes.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "action",
+        "sports"
+      ]
+    },
+    {
+      "id": "serial-rewards",
+      "title": "爽感与连载回报",
+      "summary": "让能力、反击、阶段回报和新责任有依据",
+      "stage": "develop",
+      "reference": "references/modules/serial-rewards.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "serial",
+        "revenge"
+      ]
+    },
+    {
+      "id": "genre-blend",
+      "title": "类型承诺与混合",
+      "summary": "确定主要体验，协调类型而不套统一节拍",
+      "stage": "develop",
+      "reference": "references/modules/genre-blend.md",
+      "sources": [
+        "screenwriting"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "genre"
+      ]
+    },
+    {
+      "id": "character-rehearsal",
+      "title": "角色演练",
+      "summary": "在有限知情下测试声音与压力选择",
+      "stage": "draft",
+      "reference": "references/modules/character-rehearsal.md",
+      "sources": [
+        "creative"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "rehearsal"
+      ]
+    },
+    {
+      "id": "reader-experience",
+      "title": "读者体验模拟",
+      "summary": "定位期待、困惑与情感距离，明确模拟边界",
+      "stage": "review",
+      "reference": "references/modules/reader-experience.md",
+      "sources": [
+        "creative"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "reader"
+      ]
+    },
+    {
+      "id": "visual-design",
+      "title": "视觉叙事与美术",
+      "summary": "统一造型、空间、动机光和构图表达",
+      "stage": "production",
+      "reference": "references/modules/visual-design.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "visual"
+      ]
+    },
+    {
+      "id": "sound-design",
+      "title": "声音与音乐叙事",
+      "summary": "组织声场、表演、母音频复用与留白",
+      "stage": "production",
+      "reference": "references/modules/sound-design.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "sound"
+      ]
+    },
+    {
+      "id": "project-memory",
+      "title": "长篇记忆与交接",
+      "summary": "区分正史、信念、提案与未兑现承诺",
+      "stage": "review",
+      "reference": "references/modules/project-memory.md",
+      "sources": [
+        "creative"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "id": "production-limits",
+      "title": "制作约束改稿",
+      "summary": "在资源与模型限制中保住戏剧作用",
+      "stage": "production",
+      "reference": "references/modules/production-limits.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "budget"
+      ]
+    },
+    {
+      "id": "series-room",
+      "title": "全季开发与编剧室",
+      "summary": "维护持续故事来源、分工边界与跨集交接",
+      "stage": "develop",
+      "reference": "references/modules/series-room.md",
+      "sources": [
+        "screenwriting",
+        "kunka"
+      ],
+      "integration": "local-adaptation",
+      "tags": [
+        "series"
+      ]
+    }
+  ]
+}

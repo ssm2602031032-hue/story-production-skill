@@ -1,0 +1,147 @@
+{
+  "version": "1.1.0",
+  "reviewed_on": "2026-11-01",
+  "sources": [
+    {
+      "id": "kunka",
+      "repository": "geslie1/kunka-screenwriting-master",
+      "commit": "8d5b157fa6ce9136ab3bde28ab934cf9633c700c",
+      "license": "MIT",
+      "integration": "12 unmodified skill-text snapshots, renamed as references",
+      "reviewed_paths": [
+        "plugins/kunka-screenwriting/skills/kunka-premise/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-character/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-structure/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-scene/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-dialogue/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-continuity/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-revision/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-style-lab/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-series/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-adaptation/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-format/SKILL.md",
+        "plugins/kunka-screenwriting/skills/kunka-pitch/SKILL.md"
+      ],
+      "files": [
+        {
+          "path": "references/upstream/kunka/kunka-premise.md",
+          "sha256": "a5c1595747cc2c3b68109ae68a826e5bb57e160406f49bbf2e86336344ce5643",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-premise/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-character.md",
+          "sha256": "f8f317327314744ae504d95b6796ef4267b45f03557eee0c799ee7cfc75d3c01",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-character/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-structure.md",
+          "sha256": "b575ad799008b2ee581d38cbdc6e2c47567bc31721b2df7c79b1e29d16de905b",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-structure/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-scene.md",
+          "sha256": "35a02f98612d03ee1f10036a9f75fe12ab2fbb99fc3122c35278a0a873bad507",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-scene/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-dialogue.md",
+          "sha256": "31f1a813dd558c6f037cc620be7d38a46a529964e88e3a86b9beaf748263fdfd",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-dialogue/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-continuity.md",
+          "sha256": "00b6536d83566bd1840fe2136e5fee65101c0697fa70265d3c5d6a2e87be1b07",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-continuity/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-revision.md",
+          "sha256": "87b3b8578ebb05faa7d52afe0c38271dcad1706cb3722618b52704beeb3810d2",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-revision/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-style-lab.md",
+          "sha256": "ef045f97fa022a5e0bdc1cabfff303071e122028bea1559f26b0cb14cd8d2fe3",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-style-lab/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-series.md",
+          "sha256": "2874b24ffcb44b7711246ff1448507e173040cf0516426331a683fd095aff097",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-series/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-adaptation.md",
+          "sha256": "bade93157eb5fec3dd4f996a19ad94b476ed7cbbf8ebb8b83aefaeb070e8ffad",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-adaptation/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-format.md",
+          "sha256": "cfe741e22d48312c475cd582102544caa2e43c999d0da8fc26da6cdb30297a35",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-format/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/kunka-pitch.md",
+          "sha256": "0d083a1c91af2a1d0692c6fdfcf937859569cf3074aeeec1acd1ad062e7cc210",
+          "upstream_path": "plugins/kunka-screenwriting/skills/kunka-pitch/SKILL.md"
+        },
+        {
+          "path": "references/upstream/kunka/LICENSE",
+          "sha256": "e04a9fdfecdfee43cc2e078ff3624a25d1ed295a457e2cb61f9c0566c9e90967",
+          "upstream_path": "LICENSE"
+        },
+        {
+          "path": "references/upstream/kunka/NOTICE.md",
+          "sha256": "2c8d7f3d5755372e784dcf9d846202260f0193b82c54b1f9595d2c52d0031778",
+          "upstream_path": "NOTICE.md"
+        }
+      ]
+    },
+    {
+      "id": "creative",
+      "repository": "haowjy/creative-writing-skills",
+      "commit": "1cb520f9c61e79ce2b1c56dba18601b2d6873433",
+      "license": "Apache-2.0",
+      "integration": "Independently rewritten integration notes; upstream entrypoints studied, no upstream book excerpts or dependent runtime bundled",
+      "reviewed_paths": [
+        "skills/creative-research/SKILL.md",
+        "skills/creative-writing-craft/SKILL.md",
+        "skills/creative-writing-muse/SKILL.md",
+        "skills/character-sim/SKILL.md",
+        "skills/reader-sim/SKILL.md",
+        "skills/story-memory/SKILL.md",
+        "skills/story-review/SKILL.md"
+      ],
+      "files": [
+        {
+          "path": "references/upstream/creative/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "upstream_path": "LICENSE"
+        }
+      ]
+    },
+    {
+      "id": "screenwriting",
+      "repository": "jtydhr88/screenwriting-skills",
+      "commit": "51115f18d160aa8b2ac5813e4432b6f0b425358f",
+      "license": "MIT",
+      "integration": "Independently rewritten integration notes; upstream entrypoints studied, no upstream book excerpts or dependent runtime bundled",
+      "reviewed_paths": [
+        "plugins/screenwriting/skills/sw-sitcom-comedy/SKILL.md",
+        "plugins/screenwriting/skills/sw-genre-anatomy/SKILL.md",
+        "plugins/screenwriting/skills/sw-series-engine-bible/SKILL.md",
+        "plugins/screenwriting/skills/sw-writers-room/SKILL.md"
+      ],
+      "files": [
+        {
+          "path": "references/upstream/screenwriting/LICENSE",
+          "sha256": "dcf1862caccc15b318642682e347ae9794ca5d3376ece18a0e94773968959276",
+          "upstream_path": "LICENSE"
+        },
+        {
+          "path": "references/upstream/screenwriting/NOTICE",
+          "sha256": "e6a992ef62ff5eb4b4a5f55223b30f496388a75071d45265395476ec72324bc3",
+          "upstream_path": "NOTICE"
+        }
+      ]
+    }
+  ]
+}

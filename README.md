@@ -6,6 +6,21 @@
 
 这是创作与拍前制作Skill。它不包含视频模型，不保证一次生成影院成片，也不会因为调用Skill就自动付费或公开用户作品。
 
+## v1.1 创作技能整合
+
+现在内置 **28个按需调用的创作模块**，不需要逐个安装。12个昆卡技能覆盖构思、人物、结构、场景、对白、连续性、改稿、风格、剧集、改编、格式和提案；16个扩展模块补上题材研究、世界规则、小说文风、喜剧、悬疑、爱情、动作、连载回报、类型混合、角色演练、读者模拟、视觉、声音、长篇记忆、制作约束与编剧室。
+
+模块按当前任务分批加载。只改一句台词时不会默认重写整季；完整作品则按阶段继续完成正文与制作包。可查看[全部模块](skills/story-production/references/module-catalog.md)与[第三方来源及许可证](THIRD_PARTY_NOTICES.md)。整合参考固定于公开提交，日常调用不需要连接上游仓库。
+
+新增请求示例：
+
+```text
+$story-production 只润色第三场对白，保留情节和镜长，让两个人的声音更有区别。
+$story-production 审查这部穿越小说的规则漏洞和伏笔，不改正文，引用具体章号。
+$story-production 把这个点子开发成12集爱情悬疑剧，人物、线索和每集兑现都要完整。
+$story-production 给这部电影做视觉与声音方案，说明哪些镜头需要分层生成。
+```
+
 ## 安装
 
 在支持Skill安装的Codex中输入：
@@ -73,6 +88,16 @@ tests/
 ## 本地运行工具
 
 核心脚本需要Python 3.10+，不需API密钥或网络。以下命令从`skills/story-production`目录运行：
+
+先按实际请求选择方法，或建立带源版本指纹的创作记录：
+
+```text
+python scripts/creative_tools.py plan --request "校园爱情喜剧电影全套" --out my-film/creative-plan.json
+python scripts/creative_tools.py ledger-init --source my-film/film.json --out my-film/creative-ledger.json
+python scripts/creative_tools.py ledger-check my-film/creative-ledger.json --source my-film/film.json
+```
+
+计划不生成正文，空记录不代表审校完成。记录中的事实、角色信念、伏笔、已修问题必须对应实际章节或镜头；源稿变化会提示记录过期。字段及小型工作表见[创作记录工具](skills/story-production/references/creative-ledger.md)。仅构思时可跳过尚不存在源文件的后两条命令。
 
 ```text
 python scripts/film_pipeline.py init --theme "示例主题" --project my-film --format feature --minutes 100

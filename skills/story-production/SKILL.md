@@ -9,7 +9,7 @@ description: "把主题开发成小说、长篇剧集或电影制作包；按需
 
 ## 先选择本次需要的方法
 
-本包内置[69个创作模块](references/module-catalog.md)：12份昆卡编剧技能参考与57个扩展模块。完整来源、固定版本及许可证见[整合说明](references/integrations.md)。使用当前任务需要的模块，每阶段先读两三个；不要默认通读全部。
+本包内置[80个创作模块](references/module-catalog.md)：12份昆卡编剧技能参考与68个扩展模块。完整来源、固定版本及许可证见[整合说明](references/integrations.md)。使用当前任务需要的模块，每阶段先读两三个；不要默认通读全部。
 
 | 本次需求 | 优先入口 |
 | --- | --- |
@@ -21,6 +21,7 @@ description: "把主题开发成小说、长篇剧集或电影制作包；按需
 | 研究/角色演练/读者模拟 | 对应专项；探索不自动变成正史或真实观众数据 |
 | 视觉/声音/制作约束 | 对应专项与已完成正文；记录真实媒体状态 |
 | 提示词模板回归/已有视频/字幕/剪辑工程 | [扩展工具手册](references/integration-tools.md)，按实际文件与目标选择，不默认安装媒体依赖 |
+| 研究证据/因果知情/跨集兑现/EPUB与FDX/选片与声音 | [交付扩展手册](references/delivery-extensions.md)，按请求处理已有文本或实际媒体 |
 | 视频提示词/去AI感/模型适配 | [AI视频手册](references/video-handbook.md)，按文生、图生、首尾帧和实际工作流选择 |
 
 可运行`python scripts/creative_tools.py plan --request "用户的实际请求"`得到透明的模块建议。`--task`与`--mode`用于纠正关键词推断，结果仅是路线，不是已完成作品。具体工具与事实、伏笔、问题记录见[创作记录](references/creative-ledger.md)。

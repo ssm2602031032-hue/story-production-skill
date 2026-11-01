@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "projects": [
     {
       "id": "chinese-novelist",
@@ -375,6 +375,407 @@
       "verification": {
         "level": "real-cpu-tested",
         "details": "17.1.0解码真实48帧24fps MPEG-4技术素材，检查fps/帧数/时间戳"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "novel-skills",
+      "repository": "imerzzhu/ai-novel-writing-skills",
+      "repository_url": "https://github.com/imerzzhu/ai-novel-writing-skills",
+      "commit": "0986c4882137d7d350700f3d13617ebec9889dd1",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/imerzzhu/ai-novel-writing-skills/0986c4882137d7d350700f3d13617ebec9889dd1/LICENSE",
+          "sha256": "b49a8e55a492131c6a3c3e711db4b1461dec733acafd434435f796c670183988",
+          "bytes": 1065,
+          "bundled_path": "references/upstream/novel-skills/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/imerzzhu/ai-novel-writing-skills/0986c4882137d7d350700f3d13617ebec9889dd1/README.md",
+          "sha256": "59f8f495369b138a323c9ba1b11507167440a000c02919e4ec9a558037c55a84",
+          "bytes": 3656
+        },
+        {
+          "path": "skills/webnovel-finalize/SKILL.md",
+          "url": "https://raw.githubusercontent.com/imerzzhu/ai-novel-writing-skills/0986c4882137d7d350700f3d13617ebec9889dd1/skills/webnovel-finalize/SKILL.md",
+          "sha256": "01021fc813e465065887360ed61161d424053720686c5e6973c9fd15f3208340",
+          "bytes": 7775
+        },
+        {
+          "path": "skills/webnovel-review/SKILL.md",
+          "url": "https://raw.githubusercontent.com/imerzzhu/ai-novel-writing-skills/0986c4882137d7d350700f3d13617ebec9889dd1/skills/webnovel-review/SKILL.md",
+          "sha256": "3a40939c4a456c4d3116f821bb2dd98bc471af20c00576b16f2db4d1bacea4db",
+          "bytes": 11563
+        }
+      ],
+      "modules": [
+        "season-payoff-grid",
+        "manuscript-proofing"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "强制凑字数、固定每代理3章和未经请求的自动重写",
+        "未经核验的平台格式、敏感词替换、推广与强制访谈"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "仅采用审稿与完稿分层、问题定位；机械校对脚本实测"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "epubcheck",
+      "repository": "w3c/epubcheck",
+      "repository_url": "https://github.com/w3c/epubcheck",
+      "commit": "1633173d828122d43313798ecef039172f44bf24",
+      "license": "BSD-3-Clause",
+      "license_detection": "BSD-3-Clause",
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/w3c/epubcheck/1633173d828122d43313798ecef039172f44bf24/LICENSE.md",
+          "sha256": "30639fa2b228607910b33c58b3748e7a94c29795d14e1134cbb5f287daf284e9",
+          "bytes": 1561,
+          "bundled_path": "references/upstream/epubcheck/LICENSE.md"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/w3c/epubcheck/1633173d828122d43313798ecef039172f44bf24/README.md",
+          "sha256": "a9c67e0c86d5bb96a3e51ef298647d29f4200790fa656dda183e3f03300a7a66",
+          "bytes": 8689
+        }
+      ],
+      "modules": [
+        "epub-publication"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "ci-conformance-check",
+        "details": "本地导出器检查ZIP/XML；独立CI使用固定EPUBCheck发行包验收样例，未来输出需分别验证"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "citation-js",
+      "repository": "citation-js/citation-js",
+      "repository_url": "https://github.com/citation-js/citation-js",
+      "commit": "75a422b4275740aa2b18753e5264f048c2b0cb48",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/citation-js/citation-js/75a422b4275740aa2b18753e5264f048c2b0cb48/LICENSE.md",
+          "sha256": "f1b1ce790ec4a574930a32b6d684e0a69a3abe044655bc4ba2841ec12ad52705",
+          "bytes": 1088,
+          "bundled_path": "references/upstream/citation-js/LICENSE.md"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/citation-js/citation-js/75a422b4275740aa2b18753e5264f048c2b0cb48/README.md",
+          "sha256": "f38539b36787cf0ea26d7096a398828018cca1cb709b9cca80e63c30ffcb66df",
+          "bytes": 6196
+        }
+      ],
+      "modules": [
+        "research-evidence"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "interface-output-tested",
+        "details": "本包输出CSL-JSON字段；未调用Citation.js运行时或联网解析"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "networkx",
+      "repository": "networkx/networkx",
+      "repository_url": "https://github.com/networkx/networkx",
+      "commit": "a325f6a948c0c2959fb48db205fa36534ea9429d",
+      "license": "BSD-3-Clause",
+      "license_detection": "NOASSERTION",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/networkx/networkx/a325f6a948c0c2959fb48db205fa36534ea9429d/LICENSE.txt",
+          "sha256": "6025f323ea29dc2f0ee0abd9523bf910186f55b0e148e6ebf646c55566278e2e",
+          "bytes": 1763,
+          "bundled_path": "references/upstream/networkx/LICENSE.txt"
+        },
+        {
+          "path": "README.rst",
+          "url": "https://raw.githubusercontent.com/networkx/networkx/a325f6a948c0c2959fb48db205fa36534ea9429d/README.rst",
+          "sha256": "f437309d99f5d72a71ff69b844561ac70bb68c68eb296ff4ec0063e9d53b6c4f",
+          "bytes": 2971
+        }
+      ],
+      "modules": [
+        "causal-knowledge-checks"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "图结构方法参考；本包标准库检查循环、先后与知情，不依赖NetworkX"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "pillow",
+      "repository": "python-pillow/Pillow",
+      "repository_url": "https://github.com/python-pillow/Pillow",
+      "commit": "658c4f92e361eac50147e6cf72e4bd14188364f6",
+      "license": "MIT-CMU",
+      "license_detection": "NOASSERTION",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/python-pillow/Pillow/658c4f92e361eac50147e6cf72e4bd14188364f6/LICENSE",
+          "sha256": "15181e7363dca9aed78b79bebebc7fde7f1814b8bd311ea3b87ae8ccadfc185b",
+          "bytes": 1457,
+          "bundled_path": "references/upstream/pillow/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/python-pillow/Pillow/658c4f92e361eac50147e6cf72e4bd14188364f6/README.md",
+          "sha256": "2f3ec803ba406523e5686cc17253b84bf0a5d10a8da9eb8c3008e77c07680727",
+          "bytes": 5778
+        }
+      ],
+      "modules": [
+        "visual-contact-review"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "真实视频帧制作PNG接触表并检查实际像素"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "controlnet",
+      "repository": "lllyasviel/ControlNet",
+      "repository_url": "https://github.com/lllyasviel/ControlNet",
+      "commit": "ed85cd1e25a5ed592f7d8178495b4483de0331bf",
+      "license": "Apache-2.0",
+      "license_detection": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/lllyasviel/ControlNet/ed85cd1e25a5ed592f7d8178495b4483de0331bf/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "bundled_path": "references/upstream/controlnet/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/lllyasviel/ControlNet/ed85cd1e25a5ed592f7d8178495b4483de0331bf/README.md",
+          "sha256": "c2cc1b1620119b50bcce16903a83b50366cdba7600732720432aad6eb4d55e39",
+          "bytes": 16623
+        }
+      ],
+      "modules": [
+        "reference-control-assets"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "模型权重和检测器",
+        "将SD1.5条件误当所有视频模型通用能力"
+      ],
+      "verification": {
+        "level": "documentation-reviewed",
+        "details": "只吸收条件输入类型和对照方法，未安装或GPU测试"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "cameractrl",
+      "repository": "hehao13/CameraCtrl",
+      "repository_url": "https://github.com/hehao13/CameraCtrl",
+      "commit": "af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2",
+      "license": "Apache-2.0",
+      "license_detection": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/hehao13/CameraCtrl/af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2/LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "bundled_path": "references/upstream/cameractrl/LICENSE.txt"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/hehao13/CameraCtrl/af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2/README.md",
+          "sha256": "7bb01ed915c828963b3fde0a480daacd6405e9981581039b80d6445b9697a1ca",
+          "bytes": 14027
+        }
+      ],
+      "modules": [
+        "reference-control-assets"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "模型权重、训练数据和训练/推理环境",
+        "将main与svd分支混用或宣称适配所有模型"
+      ],
+      "verification": {
+        "level": "documentation-reviewed",
+        "details": "核对main的AnimateDiffV3及独立svd分支边界，未GPU测试"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "pyloudnorm",
+      "repository": "csteinmetz1/pyloudnorm",
+      "repository_url": "https://github.com/csteinmetz1/pyloudnorm",
+      "commit": "b8d67bfd3ce5deef872f688fcfa491a0ca69fddd",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/csteinmetz1/pyloudnorm/b8d67bfd3ce5deef872f688fcfa491a0ca69fddd/LICENSE",
+          "sha256": "1616faebaa2add8b57d4f76403c0c4aa427fdb0d241d8e52b7a12dce4906beaa",
+          "bytes": 1076,
+          "bundled_path": "references/upstream/pyloudnorm/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/csteinmetz1/pyloudnorm/b8d67bfd3ce5deef872f688fcfa491a0ca69fddd/README.md",
+          "sha256": "785334fd8e20773300c2a52bc0cbd8f3bdefa6ff229441d460afedb989b1a204",
+          "bytes": 5734
+        }
+      ],
+      "modules": [
+        "audio-delivery-qc"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "0.2.0测量实际PCM16 WAV，峰值、LUFS和非破坏行为实测"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "subtitle-edit",
+      "repository": "SubtitleEdit/subtitleedit",
+      "repository_url": "https://github.com/SubtitleEdit/subtitleedit",
+      "commit": "28b5f675abd48d3090d2ba50439e70c19f42ef4e",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/SubtitleEdit/subtitleedit/28b5f675abd48d3090d2ba50439e70c19f42ef4e/LICENSE",
+          "sha256": "1bc4dcdb06d5507eacf67399674a5a6fa0f5f5270d15eefd7b4b2040319ceba0",
+          "bytes": 1071,
+          "bundled_path": "references/upstream/subtitle-edit/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/SubtitleEdit/subtitleedit/28b5f675abd48d3090d2ba50439e70c19f42ef4e/README.md",
+          "sha256": "d54760d684056a4fc6084d1b5d2632f9aa879cfe6b2f77dddd0809751d6cd7fe",
+          "bytes": 3540
+        }
+      ],
+      "modules": [
+        "subtitle-localization"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "参考手工字幕复核工作流；本地SRT一对一比较脚本实测，未运行桌面编辑器"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "screenplain",
+      "repository": "vilcans/screenplain",
+      "repository_url": "https://github.com/vilcans/screenplain",
+      "commit": "abf0d0800ab0b9dfd5bbe780137641e746afbad4",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/vilcans/screenplain/abf0d0800ab0b9dfd5bbe780137641e746afbad4/LICENSE.txt",
+          "sha256": "ad2d07298f1365a2deb11f13eb26f0970932b6f9f725ce66fdb446b9362b3bc4",
+          "bytes": 1075,
+          "bundled_path": "references/upstream/screenplain/LICENSE.txt"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/vilcans/screenplain/abf0d0800ab0b9dfd5bbe780137641e746afbad4/README.md",
+          "sha256": "56b8bcea08b2a0eb122cec4ec3fae67732efa9127e8f0e946e5e43047e323c6a",
+          "bytes": 3549
+        }
+      ],
+      "modules": [
+        "screenplay-interchange"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "0.12.0实际序列化FDX并解析中文Fountain，未运行商业编剧软件"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "dvc",
+      "repository": "treeverse/dvc",
+      "repository_url": "https://github.com/treeverse/dvc",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "license": "Apache-2.0",
+      "license_detection": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/treeverse/dvc/56e59829512ff134aa269099a2099587b810b4dd/LICENSE",
+          "sha256": "e817a2cc039b0cf9902431510648773913ccc942dc01a07697cd6f88cf479e15",
+          "bytes": 11340,
+          "bundled_path": "references/upstream/dvc/LICENSE"
+        },
+        {
+          "path": "README.rst",
+          "url": "https://raw.githubusercontent.com/treeverse/dvc/56e59829512ff134aa269099a2099587b810b4dd/README.rst",
+          "sha256": "d10985fd1a1efb7ee4a28c0a4dac8a3f40cebe564dc86404aa5300e659ddeb39",
+          "bytes": 12874
+        }
+      ],
+      "modules": [
+        "take-registry-budget"
+      ],
+      "integration": "Independently authored guidance and explicitly described local adapter; upstream runtime not bundled",
+      "omitted": [
+        "上游运行时、样本媒体、远程服务或未执行效果结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "素材与计划分版本思路；本包JSON指纹及人工选片检查实测，未安装DVC"
       },
       "reviewed_at": "2026-11-01"
     }

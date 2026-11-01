@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和57个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和68个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)
@@ -32,3 +32,21 @@
 - [PyAV-Org/PyAV](https://github.com/PyAV-Org/PyAV/tree/31cf756fcc773106f2900d44b83f31bfc8fd634d)：BSD-3-Clause；17.1.0解码真实48帧24fps MPEG-4技术素材，检查fps/帧数/时间戳。 [许可](upstream/pyav/LICENSE.txt)
 
 OpenTimelineIO的[NOTICE](upstream/opentimelineio/NOTICE.txt)随许可保留。其余模型和传递依赖许可证由各自发行包管理，本包不重新分发运行时。
+
+## v1.4 创作与交付补强
+
+方法和工具入口见[交付扩展手册](delivery-extensions.md)。以下来源的版本、文档哈希和是否真正执行记录在[integration-projects.json](../assets/integration-projects.json)。
+
+- [imerzzhu/ai-novel-writing-skills](https://github.com/imerzzhu/ai-novel-writing-skills/tree/0986c4882137d7d350700f3d13617ebec9889dd1)：仅采用审稿与完稿分层、问题定位；机械校对脚本实测。 [许可](upstream/novel-skills/LICENSE)
+- [w3c/epubcheck](https://github.com/w3c/epubcheck/tree/1633173d828122d43313798ecef039172f44bf24)：本地导出器检查ZIP/XML；独立CI使用固定EPUBCheck发行包验收样例，未来输出需分别验证。 [许可](upstream/epubcheck/LICENSE.md)
+- [citation-js/citation-js](https://github.com/citation-js/citation-js/tree/75a422b4275740aa2b18753e5264f048c2b0cb48)：本包输出CSL-JSON字段；未调用Citation.js运行时或联网解析。 [许可](upstream/citation-js/LICENSE.md)
+- [networkx/networkx](https://github.com/networkx/networkx/tree/a325f6a948c0c2959fb48db205fa36534ea9429d)：图结构方法参考；本包标准库检查循环、先后与知情，不依赖NetworkX。 [许可](upstream/networkx/LICENSE.txt)
+- [python-pillow/Pillow](https://github.com/python-pillow/Pillow/tree/658c4f92e361eac50147e6cf72e4bd14188364f6)：真实视频帧制作PNG接触表并检查实际像素。 [许可](upstream/pillow/LICENSE)
+- [lllyasviel/ControlNet](https://github.com/lllyasviel/ControlNet/tree/ed85cd1e25a5ed592f7d8178495b4483de0331bf)：只吸收条件输入类型和对照方法，未安装或GPU测试。 [许可](upstream/controlnet/LICENSE)
+- [hehao13/CameraCtrl](https://github.com/hehao13/CameraCtrl/tree/af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2)：核对main的AnimateDiffV3及独立svd分支边界，未GPU测试。 [许可](upstream/cameractrl/LICENSE.txt)
+- [csteinmetz1/pyloudnorm](https://github.com/csteinmetz1/pyloudnorm/tree/b8d67bfd3ce5deef872f688fcfa491a0ca69fddd)：0.2.0测量实际PCM16 WAV，峰值、LUFS和非破坏行为实测。 [许可](upstream/pyloudnorm/LICENSE)
+- [SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit/tree/28b5f675abd48d3090d2ba50439e70c19f42ef4e)：参考手工字幕复核工作流；本地SRT一对一比较脚本实测，未运行桌面编辑器。 [许可](upstream/subtitle-edit/LICENSE)
+- [vilcans/screenplain](https://github.com/vilcans/screenplain/tree/abf0d0800ab0b9dfd5bbe780137641e746afbad4)：0.12.0实际序列化FDX并解析中文Fountain，未运行商业编剧软件。 [许可](upstream/screenplain/LICENSE.txt)
+- [treeverse/dvc](https://github.com/treeverse/dvc/tree/56e59829512ff134aa269099a2099587b810b4dd)：素材与计划分版本思路；本包JSON指纹及人工选片检查实测，未安装DVC。 [许可](upstream/dvc/LICENSE)
+
+未采用cnskycn/novel-writing-skill的内容：本次核验未见明确许可证。已采用的网文Skill仅吸收分层审稿方法，不带入其敏感词替换、强制补字数、代理数量和平台规则。

@@ -13,6 +13,19 @@ GENRES={
  'fantasy':('奇幻','穿越','修仙','魔法','fantasy'), 'sci-fi':('科幻','science fiction','sci-fi'),
  'historical':('历史','年代','考据','historical'), 'horror':('恐怖','horror'),
  'serial':('爽文','网文','连载','升级流','serial'), 'revenge':('复仇','逆袭','revenge'),'crime':('刑侦','警匪','卧底','procedural','crime')}
+EXTENSIONS={
+ 'evidence':('research-evidence',('研究证据','资料溯源','检查引用','csl-json')),
+ 'causal':('causal-knowledge-checks',('因果图','知情检查','提前知道','事件依赖')),
+ 'season-grid':('season-payoff-grid',('整季兑现','跨集兑现','承诺兑现表','全季伏笔表')),
+ 'proofread':('manuscript-proofing',('机械校对','重复段落','完稿校对')),
+ 'publish-book':('epub-publication',('epub','电子书导出','导出电子书')),
+ 'screenplay-export':('screenplay-interchange',('fdx','fountain','标准剧本导出')),
+ 'reference-controls':('reference-control-assets',('控制参考','controlnet','cameractrl','姿态控制','深度控制')),
+ 'takes':('take-registry-budget',('选片','费用估算','费用情景','候选镜头','take registry')),
+ 'contact':('visual-contact-review',('接触表','抽帧对照','contact sheet')),
+ 'audio-qc':('audio-delivery-qc',('响度','lufs','音频质检','对白wav','audio qc')),
+ 'localize':('subtitle-localization',('翻译字幕','译文字幕','字幕本地化','subtitle localization'))}
+TASKS=TASKS+tuple(EXTENSIONS)
 GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'horror-atmosphere','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'science-fiction','historical':'historical-period','serial':'serial-rewards','revenge':'serial-rewards','crime':'crime-procedural'}
 def read(path):
  value=json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -31,6 +44,8 @@ def infer_mode(text):
  return 'film'
 def infer_task(text):
  if re.search(r'(?:写|创作|制作|完成).{0,16}(?:完整电影|电影全套|完整小说|整季剧本|小说全文|剧集全套)',text) and not has(text,('只审','只检查','不改正文')):return 'full'
+ for task,(_,terms) in EXTENSIONS.items():
+  if has(text,terms):return task
  if has(text,('otio','剪辑工程','剪辑交接','editorial handoff')):return 'editorial'
  if has(text,('字幕校时','字幕检查','检查字幕','asr','srt','字幕导入')):return 'subtitles'
  if has(text,('切点检测','切点候选','scenedetect','检测切点')):return 'cuts'
@@ -71,7 +86,9 @@ def infer_task(text):
  return 'full'
 def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  if not isinstance(request,str) or not request.strip():raise ValueError('A non-empty request is required')
+ infer_requested_mode=mode=='auto'
  clean=cleaned(request);mode=infer_mode(clean) if mode=='auto' else mode;task=infer_task(clean) if task=='auto' else task
+ if infer_requested_mode and task=='publish-book':mode='novel'
  if mode not in ('film','novel','series') or task not in TASKS[1:]:raise ValueError('Unknown mode or task')
  selected_genres=list(dict.fromkeys(genres or [g for g,terms in GENRES.items() if has(clean,terms)]))
  if any(g not in GENRES for g in selected_genres):raise ValueError('Unknown genre')
@@ -94,7 +111,11 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
        'media-qc':['technical-media-qc'],'subtitles':['subtitle-alignment'],
        'editorial':['editorial-handoff','technical-media-qc'],
        'metrics':['video-metric-reading'],'cuts':['scene-detection-review']}
+ base.update({task:[module] for task,(module,terms) in EXTENSIONS.items()})
  for mid in base[task]:add(mid,'当前任务的直接方法')
+ if task in EXTENSIONS or task in ('full','production','editorial','research','critique'):
+  for module,terms in EXTENSIONS.values():
+   if has(clean,terms):add(module,'请求中明确需要的创作或交付扩展')
  if task in ('audio','comics') and has(clean,('改编','adapt')):add('adaptation','跨媒介时保留源材料映射与取舍')
  if task in ('full','draft','rewrite','adapt','critique'):
   focused=[('opening-ending',('开篇','结局无力','首尾')),
@@ -170,8 +191,9 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'subtitles':['用户指定的字幕校验或ASR导入','识别与剧本差异待核对'],
   'editorial':['真实OTIO画面时间线或明确缺素材规划工程','素材范围、帧率与缺失引用记录'],
   'metrics':['与视频任务匹配的指标方案','实际评分证据或明确未运行状态'],
-  'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核']}[task]
- return {'version':'1.3.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+  'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核'],
+  **{key:[by[value[0]]['summary'],'实际产物与验证边界；不代替正文或生成媒体'] for key,value in EXTENSIONS.items()}}[task]
+ return {'version':'1.4.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

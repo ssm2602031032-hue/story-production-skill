@@ -1,0 +1,8 @@
+# Optional delivery functions; install only the subset needed for the task.
+# FDX serialization (no native editor bundled):
+screenplain>=0.12,<0.13
+# Contact sheets also need PyAV from requirements-media.txt:
+Pillow>=11,<14
+# PCM16 WAV loudness measurement:
+numpy>=1.26,<3
+pyloudnorm>=0.2,<0.3

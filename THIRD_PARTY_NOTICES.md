@@ -105,3 +105,21 @@ LTX与Hunyuan模型/适配器采用自定义社区许可，不以本项目MIT条
 |[PyAV-Org/PyAV](https://github.com/PyAV-Org/PyAV)|`31cf756fcc773106f2900d44b83f31bfc8fd634d`|BSD-3-Clause [LICENSE.txt](skills/story-production/references/upstream/pyav/LICENSE.txt)|
 
 吸收断点恢复、章节契约、改编映射、动作分解、离线评估和媒体交换方法。没有采用上游的强制访谈、逐章审批、固定短剧时长或所有项目均英文的要求。各项实际测试边界见项目资料表。
+
+## v1.4 新增创作与交付来源
+
+本项目独立编写适配模块；除许可外不复制上游完整Skill、库代码、训练数据或模型。固定来源和真实测试边界见[integration-projects.json](skills/story-production/assets/integration-projects.json)。NetworkX与Pillow的许可由原文核对，GitHub自动识别为NOASSERTION不替代原许可证。
+
+|项目|固定提交|许可|
+|---|---|---|
+|[imerzzhu/ai-novel-writing-skills](https://github.com/imerzzhu/ai-novel-writing-skills)|`0986c4882137d7d350700f3d13617ebec9889dd1`|[MIT](skills/story-production/references/upstream/novel-skills/LICENSE)|
+|[w3c/epubcheck](https://github.com/w3c/epubcheck)|`1633173d828122d43313798ecef039172f44bf24`|[BSD-3-Clause](skills/story-production/references/upstream/epubcheck/LICENSE.md)|
+|[citation-js/citation-js](https://github.com/citation-js/citation-js)|`75a422b4275740aa2b18753e5264f048c2b0cb48`|[MIT](skills/story-production/references/upstream/citation-js/LICENSE.md)|
+|[networkx/networkx](https://github.com/networkx/networkx)|`a325f6a948c0c2959fb48db205fa36534ea9429d`|[BSD-3-Clause](skills/story-production/references/upstream/networkx/LICENSE.txt)|
+|[python-pillow/Pillow](https://github.com/python-pillow/Pillow)|`658c4f92e361eac50147e6cf72e4bd14188364f6`|[MIT-CMU](skills/story-production/references/upstream/pillow/LICENSE)|
+|[lllyasviel/ControlNet](https://github.com/lllyasviel/ControlNet)|`ed85cd1e25a5ed592f7d8178495b4483de0331bf`|[Apache-2.0](skills/story-production/references/upstream/controlnet/LICENSE)|
+|[hehao13/CameraCtrl](https://github.com/hehao13/CameraCtrl)|`af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2`|[Apache-2.0](skills/story-production/references/upstream/cameractrl/LICENSE.txt)|
+|[csteinmetz1/pyloudnorm](https://github.com/csteinmetz1/pyloudnorm)|`b8d67bfd3ce5deef872f688fcfa491a0ca69fddd`|[MIT](skills/story-production/references/upstream/pyloudnorm/LICENSE)|
+|[SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit)|`28b5f675abd48d3090d2ba50439e70c19f42ef4e`|[MIT](skills/story-production/references/upstream/subtitle-edit/LICENSE)|
+|[vilcans/screenplain](https://github.com/vilcans/screenplain)|`abf0d0800ab0b9dfd5bbe780137641e746afbad4`|[MIT](skills/story-production/references/upstream/screenplain/LICENSE.txt)|
+|[treeverse/dvc](https://github.com/treeverse/dvc)|`56e59829512ff134aa269099a2099587b810b4dd`|[Apache-2.0](skills/story-production/references/upstream/dvc/LICENSE)|

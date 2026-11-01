@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共69个按需模块：12份昆卡原文参考、57个本项目扩展模块。每阶段只读取当前需要的两三个。
+共80个按需模块：12份昆卡原文参考、68个本项目扩展模块。每阶段只读取当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -73,5 +73,16 @@
 |`editorial-handoff`|[剪辑工程交接](modules/editorial-handoff.md)|以实际素材生成可重开的OTIO画面时间线|
 |`video-metric-reading`|[视频指标解读](modules/video-metric-reading.md)|用正确任务和对照条件分析视频真实感的失败|
 |`scene-detection-review`|[切点检测与场次复核](modules/scene-detection-review.md)|获取真实切点候选并与剧情场次分开|
+|`research-evidence`|[研究证据与书目](modules/research-evidence.md)|追溯事实、推断和虚构，检查引用及摘录|
+|`causal-knowledge-checks`|[因果与人物知情检查](modules/causal-knowledge-checks.md)|检查明确事件依赖、循环和信息提前使用|
+|`season-payoff-grid`|[整季承诺与兑现表](modules/season-payoff-grid.md)|发现跨集遗漏、假完成和过早兑现|
+|`manuscript-proofing`|[完稿机械校对](modules/manuscript-proofing.md)|定位重复长段和结构缺项，保留作者文本|
+|`epub-publication`|[小说电子书交付](modules/epub-publication.md)|导出真实EPUB全文、目录与章节顺序|
+|`screenplay-interchange`|[Fountain与FDX交换](modules/screenplay-interchange.md)|将实际剧本动作与对白交给编剧工具|
+|`reference-control-assets`|[参考与控制素材管理](modules/reference-control-assets.md)|分开身份、姿态、深度和机位约束|
+|`take-registry-budget`|[选片版本与费用情景](modules/take-registry-budget.md)|核对素材版本、人工选片和重试成本|
+|`visual-contact-review`|[真实帧接触表](modules/visual-contact-review.md)|对照实际首尾、光线、构图和服装|
+|`audio-delivery-qc`|[对白与混音技术检查](modules/audio-delivery-qc.md)|测量WAV响度、峰值和异常采样|
+|`subtitle-localization`|[字幕与配音本地化](modules/subtitle-localization.md)|保留条目对应、时序与人物术语|
 
-工具适配、来源与实测边界见[扩展工具手册](integration-tools.md)及[整合说明](integrations.md)。
+命令与输入见[交付扩展](delivery-extensions.md)、[媒体工具](integration-tools.md)；来源见[整合说明](integrations.md)。

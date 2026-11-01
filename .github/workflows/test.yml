@@ -34,6 +34,19 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install optional CPU media adapters
-        run: python -m pip install -r skills/story-production/scripts/requirements-media.txt
+        run: python -m pip install -r skills/story-production/scripts/requirements-media.txt -r skills/story-production/scripts/requirements-delivery.txt
       - name: Run all tests including actual media and OTIO
         run: python -m unittest discover -s tests -v
+  epub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Verify generated book with pinned official EPUBCheck
+        run: python tests/run_epubcheck.py --workdir "$RUNNER_TEMP/story-epubcheck"

@@ -49,13 +49,32 @@ def import_segments(data):
  result='\n'.join(blocks);report=check_srt(result)
  report.update(source_kind='ASR-supplied-segments',dialogue_authority='recognition hypothesis; compare against approved script and actual audio',word_timing_invented=False)
  return result,report
+def compare_versions(source_text,target_text,tolerance_ms=1):
+ if not isinstance(tolerance_ms,int) or isinstance(tolerance_ms,bool) or tolerance_ms<0:raise ValueError('tolerance_ms must be a nonnegative integer')
+ source=check_srt(source_text);target=check_srt(target_text)
+ if not source['valid'] or not target['valid']:raise ValueError('Both subtitle versions must pass syntax/timing validation first')
+ def cues(text):
+  result=[]
+  for block in re.split(r'\n\s*\n',text.strip()):
+   lines=block.strip().splitlines();a,b=(parse_time(t) for t in lines[1].split(' --> '));result.append((a,b,'\n'.join(lines[2:])))
+  return result
+ left,right=cues(source_text),cues(target_text);errors=[];changed=[]
+ if len(left)!=len(right):errors.append('Cue count changed; provide an explicit remapping before claiming timing-preserving localization')
+ for i,(a,b) in enumerate(zip(left,right),1):
+  if any(abs(a[j]-b[j])*1000>tolerance_ms+.00001 for j in (0,1)):errors.append(f'Cue {i}: timing changed')
+  if a[2]!=b[2]:changed.append(i)
+ return {'valid':not errors,'errors':errors,'warnings':target['warnings'],'changed_text_cues':changed,'source_cues':len(left),'target_cues':len(right),'limits':'One-to-one cue/time comparison only. Does not judge translation, speech duration, lip sync or whether unchanged text is an error.'}
 def main():
  p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
  c=sub.add_parser('check');c.add_argument('srt',type=Path);c.add_argument('--duration',type=float);c.add_argument('--report',type=Path)
  c=sub.add_parser('import-asr');c.add_argument('input',type=Path);c.add_argument('--out',type=Path,required=True)
+ c=sub.add_parser('compare');c.add_argument('source',type=Path);c.add_argument('target',type=Path);c.add_argument('--tolerance-ms',type=int,default=1);c.add_argument('--report',type=Path)
  a=p.parse_args()
  try:
-  if a.command=='check':
+  if a.command=='compare':
+   r=compare_versions(a.source.read_text(encoding='utf-8-sig'),a.target.read_text(encoding='utf-8-sig'),a.tolerance_ms)
+   if a.report:safe_write(a.report,r)
+  elif a.command=='check':
    r=check_srt(a.srt.read_text(encoding='utf-8-sig'),a.duration)
    if a.report:safe_write(a.report,r)
   else:

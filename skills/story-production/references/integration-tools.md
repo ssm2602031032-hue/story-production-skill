@@ -11,7 +11,7 @@ python scripts/chapter_context.py project/novel.json --chapter 2 --purpose conti
 python scripts/chapter_context.py project/novel.json --chapter 2 --purpose reader --out project/reader-C002.json
 ```
 
-`continue`只引用前文正文，`revise`含目标章，`reader`不带作者设定、结局规划或事实账。可用 `--ledger project/creative-ledger.json` 带入有效事实账；过期账会排除并警告。字符上限只约束所选正文，整章放不下会告警；当前章超限则失败。不会生成小说，也不会把提案变成正史。
+`continue`只引用前文正文，`revise`含目标章，`reader`不带作者设定、结局规划或事实账。可用 `--ledger project/creative-ledger.json` 带入有效事实账；过期/无效账会排除并警告。作者资料包也会提示“声明完成但章数未齐”的矛盾；地点引用与正文是否相符仍需阅读审查。字符上限只约束所选正文，整章放不下会告警；当前章超限则失败。不会生成小说，也不会把提案变成正史。
 
 写作方法见[章节契约](modules/novel-context-packs.md)。改编时另建事件到集/场的映射，按[改编覆盖](modules/adaptation-beat-transfer.md)保留因果，正文写完再接制作管线，不以覆盖表冒充剧本。
 

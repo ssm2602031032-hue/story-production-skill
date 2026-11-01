@@ -22,6 +22,7 @@ class ContextSubtitleTests(unittest.TestCase):
   with self.assertRaises(ValueError):build_context(self.novel,3,'continue')
   d=json.loads(self.novel.read_text(encoding='utf-8'));d['project']['planned_chapters']=3;self.novel.write_text(json.dumps(d))
   p=build_context(self.novel,3,'continue');self.assertEqual(p['target_contract']['status'],'not_authored')
+  self.assertTrue(any('claims complete' in warning for warning in p['warnings']))
   with self.assertRaises(ValueError):build_context(self.novel,5,'continue')
  def test_reader_target_is_not_silently_truncated(self):
   d=json.loads(self.novel.read_text(encoding='utf-8'));d['chapters'][1]['body']='长文本'*1000;self.novel.write_text(json.dumps(d))

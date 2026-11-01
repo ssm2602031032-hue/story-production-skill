@@ -20,6 +20,8 @@ def build_context(source,chapter,purpose='continue',window=2,ledger_path=None,ma
  end=chapter if purpose!='continue' else chapter-1
  selected=[chapters[n] for n in range(max(1,chapter-window),end+1) if n in chapters]
  warnings=[];text_units=[];used=0;omitted=[]
+ if purpose!='reader' and d.get('authoring_status')=='complete' and isinstance(planned,int) and len(chapters)!=planned:
+  warnings.append(f'Source claims complete but contains {len(chapters)} of {planned} planned chapters; reconcile authoring status and scope before continuing')
  # Preserve current/recent full units; no silent mid-chapter truncation.
  for c in reversed(selected):
   body=c.get('body','');size=len(body)

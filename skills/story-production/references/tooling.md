@@ -67,7 +67,7 @@ python scripts/export_artifacts.py project/output --font /path/to/CJK-font.ttf
 
 字体许可由实际使用环境决定，仓库不分发用户机器字体。若系统没有对应字形，应提供可用字体后重导，不能接受方框字或静默丢字。
 
-Excel导出使用运行环境提供的`@oai/artifact-tool`。需要可解析的Node模块路径；在支持它的宿主环境中使用已配置运行时，不把其专有依赖复制进仓库。不可用时保留CSV并说明缺少XLSX；不能把CSV改扩展名为`.xlsx`。
+Excel导出使用运行环境提供的`@oai/artifact-tool`。脚本先使用正常Node模块解析，再检查Codex常规缓存中的已安装运行时。若宿主依赖在其他位置，可将`STORY_PRODUCTION_NODE_MODULES`设为宿主提供的`node_modules`绝对路径。脚本只读取已有依赖，不下载或复制专有库。不可用时保留CSV并说明缺少XLSX；不能把CSV改扩展名为`.xlsx`。
 
 电影工作簿按镜头、分场、对白和生成单元组织。小说工作簿提供章节与人物，剧集工作簿提供逐集及跨集状态。镜长调整后后续时码可以重算，但静态SRT、JSON、HTML和生成分段仍需重新构建。
 

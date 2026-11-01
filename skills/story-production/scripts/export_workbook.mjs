@@ -5,10 +5,19 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {createRequire} from 'node:module';
+import {homedir} from 'node:os';
+import {pathToFileURL} from 'node:url';
 const args=process.argv.slice(2),folder=args[0];
 if(!folder){console.error('Usage: node export_workbook.mjs OUTPUT_DIR [--preview-dir DIR]');process.exit(2)}
-let Workbook,SpreadsheetFile;
-try{({Workbook,SpreadsheetFile}=await import('@oai/artifact-tool'))}catch{console.error('@oai/artifact-tool is unavailable. Use the complete CSV files or export with a supported spreadsheet tool. No XLSX was produced.');process.exit(1)}
+let Workbook,SpreadsheetFile,artifact;
+try{artifact=await import('@oai/artifact-tool')}catch{
+ const candidates=[process.env.STORY_PRODUCTION_NODE_MODULES,path.join(homedir(),'.cache','codex-runtimes','codex-primary-runtime','dependencies','node','node_modules')].filter(Boolean);
+ const require=createRequire(import.meta.url);
+ for(const moduleDir of candidates){try{const entry=require.resolve('@oai/artifact-tool',{paths:[path.dirname(path.resolve(moduleDir))]});artifact=await import(pathToFileURL(entry).href);break}catch{}}
+}
+if(!artifact){console.error('@oai/artifact-tool is unavailable. Set STORY_PRODUCTION_NODE_MODULES to the host node_modules directory, or use the complete CSV files. No XLSX was produced.');process.exit(1)}
+({Workbook,SpreadsheetFile}=artifact);
 const dir=path.resolve(folder),previewAt=args.indexOf('--preview-dir'),previewDir=previewAt>=0?path.resolve(args[previewAt+1]):null;
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
 function safe(v){return typeof v==='string'&&/^[\s]*[=+\-@]/.test(v)?"'"+v:v}

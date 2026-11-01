@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和88个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和96个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)
@@ -80,3 +80,16 @@ Remotion技能候选未见仓库级明确再分发许可证，因此未复制其
 - [opencv/opencv](https://github.com/opencv/opencv/tree/c4f7634256e3aaba0faa478605bb4e7bc0332292)：实际Farneback区域光流与时间戳归一化，用合成运动视频验证主体/背景区分，未推断物理速度。 [许可](upstream/opencv/LICENSE)
 
 InstantStyle未见仓库级明确再分发许可，未复制其内容。HunyuanCustom采用有地域/用途范围的社区许可，仅作调研候选，未导入其模型、代码或文档。VACE代码许可与所选基础模型许可分别核对，不将权重随包分发。
+
+## v1.7 编写、转化与情境剪辑
+
+入口见[剧本到情境剪辑](script-to-edit.md)。采用方法已按当前任务改写，不将上游固定节拍、模型断言或审批流程作为通用要求。
+
+- [YuYingRay/LaoYu-Professional-Screenwriter](https://github.com/YuYingRay/LaoYu-Professional-Screenwriter/tree/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1)：场景意图与因果方法改编，scene-intent-engine模块保留CC BY 4.0署名；不继承强制Full Bible或等待审批。 [许可](upstream/professional-screenwriter/LICENSE)
+- [adoria111/emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills/tree/da3aaae532a1509a3a4b70af994ceb4e89e80681)：改编功能与精修信息折叠方法，源故事事实/新方案/删除损失分开；不默认短剧付费点或爱情主线。 [许可](upstream/emma-screenwriting/LICENSE)
+- [oleo17/story-to-script-en](https://github.com/oleo17/story-to-script-en/tree/b1f5485c6e4cf3103ac87e901c558d17f5dd9701)：对白时间、分镜与生成任务层分离；不采用固定事件时长公式、镜头密度、强制英文或泛化模型能力断言。 [许可](upstream/story-to-script/LICENSE)
+- [62656456/ai-storyboard-director-v5.2](https://github.com/62656456/ai-storyboard-director-v5.2/tree/a8d9ad6362ed38d76857199cb9ba92956f87ae5d)：导演意图与可生成描述分开、剪辑动机和替代覆盖；不继承固定权重、母题次数、每次必反常规或确认关卡。 [许可](upstream/storyboard-director/LICENSE)
+- [chaoka-wooji/cinematic-storyboard-skill](https://github.com/chaoka-wooji/cinematic-storyboard-skill/tree/bce9211bd6e3a3dcad120ab3703afa864a46aa4e)：宏观故事/场面/镜头/视觉资产/生成描述层级，接入已有本包格式；未运行上游工作流或照搬模型参数。 [许可](upstream/cinematic-storyboard/LICENSE)
+- [TateZhouSiu/create-storyboard-skill](https://github.com/TateZhouSiu/create-storyboard-skill/tree/4b8662e2fee51b37488c77952bbfa302bfeaf36c)：镜间交出/接收、干净首帧与审看片板分离，映射/边界/剪辑保护用本包脚本测试；未运行上游图像模型或固定15秒流程。 [许可](upstream/continuity-storyboard/LICENSE)
+
+ai-video-storyboard-skill未见明确仓库许可，未复制内容。Storyboarder虽被调研，本次未接入其程序或原生工程，避免宣称未测试的导入能力。

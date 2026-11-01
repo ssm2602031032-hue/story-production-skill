@@ -52,6 +52,17 @@ VISUAL_EXTENSIONS={
  'look-ab':('look-ab-validation',('风格a/b','观感对照','材质对照','原尺寸细节','原始像素裁剪'))}
 TASKS=TASKS+tuple(VISUAL_EXTENSIONS)
 EXTENSIONS={**VISUAL_EXTENSIONS,**EXTENSIONS}
+BRIDGE_EXTENSIONS={
+ 'scene-intent':('scene-intent-engine',('场景因果设计','场景策略','人物策略与后果')),
+ 'script-bridge':('source-shot-trace',('剧本转分镜','原文到镜头','小说转分镜','剧本转提示词','改编映射')),
+ 'subtext-screen':('subtext-to-screen',('内心戏外化','心理描写转画面','潜台词转动作')),
+ 'speech-budget':('dialogue-performance-budget',('对白时间分配','台词超过镜长','对白表演时长')),
+ 'prompt-layers':('prompt-production-layers',('提示词分层','完整镜头工作包','分层提示词')),
+ 'scene-edit':('scene-context-editing',('情境化剪辑','根据当前情境','按场景剪辑','场景剪辑策略')),
+ 'handoff':('shot-handoff-contracts',('镜间交出','镜间接收','镜头交接','镜间衔接矩阵')),
+ 'story-guards':('editorial-story-guards',('关键反应被剪','剪辑叙事保护','保护关键动作','剪辑提前揭示'))}
+TASKS=TASKS+tuple(BRIDGE_EXTENSIONS)
+EXTENSIONS={**BRIDGE_EXTENSIONS,**EXTENSIONS}
 GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'horror-atmosphere','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'science-fiction','historical':'historical-period','serial':'serial-rewards','revenge':'serial-rewards','crime':'crime-procedural'}
 def read(path):
  value=json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -124,12 +135,12 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  base={'full':['premise','character','structure'],'brainstorm':['premise','genre-blend'],
        'draft':['scene','dialogue'],'rewrite':['revision','continuity'],'critique':['revision','continuity','reader-experience'],
        'dialogue':['dialogue'],'pitch':['pitch'],'production':['visual-design','sound-design','production-limits'],
-       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','adaptation-beat-transfer','structure'],
+       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','adaptation-beat-transfer','source-shot-trace','structure'],
        'opening':['opening-ending'],'emotion':['emotional-payoff'],'antagonist':['antagonist-design'],'ensemble':['ensemble-subplots'],
        'transitions':['scene-transitions'],'pacing':['pacing-compression','continuity'],'short-form':['short-vertical','series'],
        'audio':['audio-drama','sound-design'],'comics':['comics-webtoon','visual-design'],
        'nonfiction':['nonfiction-adaptation','research'],'naming':['title-logline'],'table-read':['table-read','dialogue'],
-       'prompts':['video-prompt-architecture','model-selection','identity-continuity'],
+       'prompts':['video-prompt-architecture','prompt-production-layers','model-selection','identity-continuity'],
        'models':['model-selection','workflow-reproducibility'],
        'evaluation':['prompt-evaluation'],'impact':['revision-impact','continuity'],
        'realism':['realism-diagnostics','camera-blocking','micro-performance','prompt-evaluation'],
@@ -219,7 +230,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'metrics':['与视频任务匹配的指标方案','实际评分证据或明确未运行状态'],
   'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核'],
   **{key:[by[value[0]]['summary'],'实际产物与验证边界；不代替正文或生成媒体'] for key,value in EXTENSIONS.items()}}[task]
- return {'version':'1.6.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+ return {'version':'1.7.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

@@ -155,3 +155,18 @@ LosslessCut仅作方法与链接参考，其GPL条款未被本项目MIT覆盖。
 |[kajisho5/color-grading-skill](https://github.com/kajisho5/color-grading-skill)|`2b5b1a5f0075824fedb51b7c92031d417527023a`|[MIT](skills/story-production/references/upstream/color-grading/LICENSE)|
 |[ali-vilab/VACE](https://github.com/ali-vilab/VACE)|`48eb44f1c4be87cc65a98bff985a26976841e9f3`|[Apache-2.0](skills/story-production/references/upstream/vace/LICENSE.txt)|
 |[opencv/opencv](https://github.com/opencv/opencv)|`c4f7634256e3aaba0faa478605bb4e7bc0332292`|[Apache-2.0](skills/story-production/references/upstream/opencv/LICENSE)|
+
+## v1.7 剧本转化与情境剪辑来源
+
+源提交及文档哈希见[integration-projects.json](skills/story-production/assets/integration-projects.json)。未复制上游完整Skill、商业剧本/教材段落或媒体。
+
+|项目|固定提交|许可|
+|---|---|---|
+|[YuYingRay/LaoYu-Professional-Screenwriter](https://github.com/YuYingRay/LaoYu-Professional-Screenwriter)|`1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1`|[CC-BY-4.0](skills/story-production/references/upstream/professional-screenwriter/LICENSE)|
+|[adoria111/emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills)|`da3aaae532a1509a3a4b70af994ceb4e89e80681`|[MIT](skills/story-production/references/upstream/emma-screenwriting/LICENSE)|
+|[oleo17/story-to-script-en](https://github.com/oleo17/story-to-script-en)|`b1f5485c6e4cf3103ac87e901c558d17f5dd9701`|[MIT](skills/story-production/references/upstream/story-to-script/LICENSE)|
+|[62656456/ai-storyboard-director-v5.2](https://github.com/62656456/ai-storyboard-director-v5.2)|`a8d9ad6362ed38d76857199cb9ba92956f87ae5d`|[MIT](skills/story-production/references/upstream/storyboard-director/LICENSE)|
+|[chaoka-wooji/cinematic-storyboard-skill](https://github.com/chaoka-wooji/cinematic-storyboard-skill)|`bce9211bd6e3a3dcad120ab3703afa864a46aa4e`|[MIT](skills/story-production/references/upstream/cinematic-storyboard/LICENSE)|
+|[TateZhouSiu/create-storyboard-skill](https://github.com/TateZhouSiu/create-storyboard-skill)|`4b8662e2fee51b37488c77952bbfa302bfeaf36c`|[MIT](skills/story-production/references/upstream/continuity-storyboard/LICENSE)|
+
+署名改编说明：LaoYu-Professional-Screenwriter，维护者YuYingRay，2026；[原始入口](https://github.com/YuYingRay/LaoYu-Professional-Screenwriter/blob/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/SKILL.md)，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。本包[scene-intent-engine模块](skills/story-production/references/modules/scene-intent-engine.md)依据其场景因果方法改写为按需工作流，移除强制项目结构和固定反转要求；该模块文本按CC BY 4.0提供，不能用仓库MIT条款覆盖。新编写工具脚本不包含上游代码。原有独立第三方许可继续适用。

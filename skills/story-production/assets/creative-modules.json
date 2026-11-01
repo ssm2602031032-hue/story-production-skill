@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "module_count": 100,
+  "version": "1.7.0",
+  "module_count": 108,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -1347,6 +1347,123 @@
       "integration": "independently-authored-adapter",
       "tags": [
         "look-ab-validation"
+      ]
+    },
+    {
+      "id": "scene-intent-engine",
+      "title": "场景欲望、策略与后果",
+      "summary": "先让人物在压力下选择，再写动作与对白",
+      "stage": "draft",
+      "reference": "references/modules/scene-intent-engine.md",
+      "sources": [
+        "professional-screenwriter"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "scene-intent-engine"
+      ]
+    },
+    {
+      "id": "source-shot-trace",
+      "title": "原文到镜头的改编追踪",
+      "summary": "记录保留、外化、移位、合并、省略及因果补救",
+      "stage": "review",
+      "reference": "references/modules/source-shot-trace.md",
+      "sources": [
+        "emma-screenwriting"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "source-shot-trace"
+      ]
+    },
+    {
+      "id": "subtext-to-screen",
+      "title": "潜台词与内心戏转成视听",
+      "summary": "保留心理作用，选择可表演的动作、声音或空间",
+      "stage": "draft",
+      "reference": "references/modules/subtext-to-screen.md",
+      "sources": [
+        "emma-screenwriting",
+        "storyboard-director"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "subtext-to-screen"
+      ]
+    },
+    {
+      "id": "dialogue-performance-budget",
+      "title": "对白表演与时间分配",
+      "summary": "分清镜内、画外与旁白，给语义和反应留时间",
+      "stage": "production",
+      "reference": "references/modules/dialogue-performance-budget.md",
+      "sources": [
+        "story-to-script"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "dialogue-performance-budget"
+      ]
+    },
+    {
+      "id": "prompt-production-layers",
+      "title": "完整镜头信息的分层提示词包",
+      "summary": "保留导演逻辑，分离可见描述、台词、参数与后期",
+      "stage": "production",
+      "reference": "references/modules/prompt-production-layers.md",
+      "sources": [
+        "story-to-script",
+        "cinematic-storyboard"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "prompt-production-layers"
+      ]
+    },
+    {
+      "id": "scene-context-editing",
+      "title": "按当前情境选择剪辑策略",
+      "summary": "用场景问题、知情与行为决定切点，不套统一节拍",
+      "stage": "production",
+      "reference": "references/modules/scene-context-editing.md",
+      "sources": [
+        "emma-screenwriting",
+        "storyboard-director"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "scene-context-editing"
+      ]
+    },
+    {
+      "id": "shot-handoff-contracts",
+      "title": "镜间交出、接收与替代覆盖",
+      "summary": "每个切点交代动作、空间、声音或信息怎样继续",
+      "stage": "production",
+      "reference": "references/modules/shot-handoff-contracts.md",
+      "sources": [
+        "continuity-storyboard",
+        "cinematic-storyboard"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "shot-handoff-contracts"
+      ]
+    },
+    {
+      "id": "editorial-story-guards",
+      "title": "剪辑保护关键动作、反应与揭示",
+      "summary": "追踪实际取帧是否删掉必须看见的叙事内容",
+      "stage": "review",
+      "reference": "references/modules/editorial-story-guards.md",
+      "sources": [
+        "continuity-storyboard",
+        "storyboard-director"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "editorial-story-guards"
       ]
     }
   ]

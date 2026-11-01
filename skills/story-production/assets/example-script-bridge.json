@@ -1,0 +1,192 @@
+{
+  "version": "1.7.0",
+  "title": "把伞交给你 · 原文到提示词与剪辑",
+  "source_fingerprint": {
+    "source_sha256": "31a120bc1234eb2e254b8ecd2fc85d7dad53e964d009334db14dfd15204f0402",
+    "dependencies": {}
+  },
+  "visual_sha256": "fed5e8b97b030c68ea8e0ec84487dedcdab5dfb0d6e84932a7fa8174667e727d",
+  "scope_mode": "full",
+  "scope": [
+    "C001"
+  ],
+  "anchor_omissions": [],
+  "scenes": [
+    {
+      "id": "SC01",
+      "context": "dialogue",
+      "situation": "一方习惯包办，另一方开始明确自己的需要",
+      "question": "甲会不会把选择交还给乙",
+      "change": "乙接过伞，甲退开，关系获得一点空间",
+      "viewpoint": "观众观察双方的手和反应，不能提前把关系变化解释成台词",
+      "editing_intent": "保持伸手—握稳—松开—抬眼的顺序，镜长根据真实表演复核"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B01",
+      "anchor": "C001",
+      "quote": "便先把自己的空手伸了出来。",
+      "goal": "乙希望主动承担自己的出行",
+      "obstacle": "甲仍习惯替她完成每一步",
+      "action": "乙伸出空手并提出接伞",
+      "outcome": "甲必须决定是否放手",
+      "treatment": "preserve",
+      "targets": [
+        "S01_001_G01"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "B02",
+      "anchor": "C001",
+      "quote": "灰色袖口下的手先握稳伞柄，米色袖口下的手随后松开。",
+      "goal": "把接伞变成实际行动",
+      "obstacle": "交接必须由两个人共同完成，不能只剪成物品换手后的结果",
+      "action": "乙先接住，甲随后松开",
+      "outcome": "伞由乙单独持有，甲停止包办",
+      "treatment": "preserve",
+      "targets": [
+        "S01_002_G01"
+      ],
+      "depends_on": [
+        "B01"
+      ]
+    },
+    {
+      "id": "B03",
+      "anchor": "C001",
+      "quote": "乙低头看了看蓝伞，再抬眼看向甲，紧绷的嘴角慢慢放松。",
+      "goal": "让观众看见她如何接收这次改变",
+      "obstacle": "情绪细微，不能用夸张庆祝替代",
+      "action": "乙从伞移开视线看向甲",
+      "outcome": "关系从紧绷转为愿意交流",
+      "treatment": "preserve",
+      "targets": [
+        "S01_003_G01"
+      ],
+      "depends_on": [
+        "B02"
+      ]
+    },
+    {
+      "id": "B04",
+      "anchor": "C001",
+      "quote": "甲侧过身，让出了通往门口的一小段路。乙这才伸手开门。",
+      "goal": "给关系变化留下行动余波",
+      "obstacle": "本次仅演示三镜选段",
+      "action": "甲让路，乙自己开门",
+      "outcome": "若做完整改编应补拍余波；当前选段在抬眼处结束",
+      "treatment": "omit",
+      "adaptation_note": "本次三镜选段明确省略开门余波，不宣称整章每句都已转化。",
+      "targets": [],
+      "depends_on": [
+        "B03"
+      ]
+    }
+  ],
+  "shot_links": [
+    {
+      "id": "S01_001_G01",
+      "scene": "SC01",
+      "function": "establish",
+      "purpose": "建立两人的关系与待交接物",
+      "audience_before": "知道伞还在甲手里",
+      "audience_after": "知道乙主动提出接伞",
+      "cut_trigger": "在选择发生后切手部，观众知道下一动作是什么",
+      "fallback": "同框静态构图保留伸手与迟疑",
+      "protected_windows": [
+        {
+          "id": "M1",
+          "in_sec": 0.3,
+          "out_sec": 2,
+          "reason": "保留主动请求与迟疑"
+        }
+      ]
+    },
+    {
+      "id": "S01_002_G01",
+      "scene": "SC01",
+      "function": "action",
+      "purpose": "让交接动作真正完成",
+      "audience_before": "知道乙想接伞，但甲是否松手未定",
+      "audience_after": "知道甲已经选择松手",
+      "cut_trigger": "交接完成后回到乙的反应，不靠剪切让道具瞬移",
+      "fallback": "若交接复杂则补接住与松开两镜，并核对持有人",
+      "protected_windows": [
+        {
+          "id": "M2",
+          "in_sec": 0.5,
+          "out_sec": 2.5,
+          "reason": "必须看见先握稳再松手"
+        }
+      ]
+    },
+    {
+      "id": "S01_003_G01",
+      "scene": "SC01",
+      "function": "reaction",
+      "purpose": "展示接过帮助后的关系变化",
+      "audience_before": "知道伞已交给乙",
+      "audience_after": "知道乙愿意回应关系变化",
+      "cut_trigger": "保留这次抬眼的情绪结果，再衔接下一场",
+      "fallback": "若微表情不稳，保留抬眼和身体放松，不硬加笑容",
+      "protected_windows": [
+        {
+          "id": "M3",
+          "in_sec": 0.5,
+          "out_sec": 2.5,
+          "reason": "保留抬眼接受信息后的反应"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "from": "S01_001_G01",
+      "to": "S01_002_G01",
+      "kind": "action_match",
+      "handoff": "乙的手接近伞柄，甲仍持有",
+      "receive": "灰袖口的手从尚未承重开始接住",
+      "reason": "把选择落实为能看懂的动作",
+      "audio_bridge": "保留同一走廊雨声与衣料声；对白不重复播放"
+    },
+    {
+      "from": "S01_002_G01",
+      "to": "S01_003_G01",
+      "kind": "reaction",
+      "handoff": "伞已由乙单独握住",
+      "receive": "乙先看手中的伞，再抬眼",
+      "reason": "用反应兑现交接的关系含义",
+      "audio_bridge": "保留同一走廊雨声与衣料声；对白不重复播放"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D01",
+      "anchor": "C001",
+      "quote": "我来拿吧。",
+      "spoken_text": "我来拿吧。",
+      "speaker": "乙",
+      "shot": "S01_001_G01",
+      "delivery": "visible",
+      "onset_sec": 0.3,
+      "duration_sec": 1.2,
+      "timing_basis": "estimate",
+      "speaker_asset": "C02"
+    }
+  ],
+  "reveal_order": [
+    {
+      "before": "B01",
+      "after": "B02",
+      "reason": "先看见主动请求，再看见选择被落实"
+    },
+    {
+      "before": "B02",
+      "after": "B03",
+      "reason": "先完成交接，反应才有原因"
+    }
+  ],
+  "status": "authored planning example; not a completed recording or generated scene"
+}

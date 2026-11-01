@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共100个按需模块：12份昆卡原文参考、88个本项目扩展模块。每阶段只读取当前需要的两三个。
+共108个按需模块：12份昆卡原文参考、96个扩展模块。每阶段只读当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -104,5 +104,13 @@
 |`reference-role-binding`|[参考角色与模型输入绑定](modules/reference-role-binding.md)|区分身份、风格、动作和场景首尾帧的职责|
 |`motion-evidence`|[实际图像运动证据](modules/motion-evidence.md)|用手动区域光流辅助主体与背景运动诊断|
 |`look-ab-validation`|[观感对照与原尺寸细节](modules/look-ab-validation.md)|用固定条件区分单因素修复与整体风格比较|
+|`scene-intent-engine`|[场景欲望、策略与后果](modules/scene-intent-engine.md)|先让人物在压力下选择，再写动作与对白|
+|`source-shot-trace`|[原文到镜头的改编追踪](modules/source-shot-trace.md)|记录保留、外化、移位、合并、省略及因果补救|
+|`subtext-to-screen`|[潜台词与内心戏转成视听](modules/subtext-to-screen.md)|保留心理作用，选择可表演的动作、声音或空间|
+|`dialogue-performance-budget`|[对白表演与时间分配](modules/dialogue-performance-budget.md)|分清镜内、画外与旁白，给语义和反应留时间|
+|`prompt-production-layers`|[完整镜头信息的分层提示词包](modules/prompt-production-layers.md)|保留导演逻辑，分离可见描述、台词、参数与后期|
+|`scene-context-editing`|[按当前情境选择剪辑策略](modules/scene-context-editing.md)|用场景问题、知情与行为决定切点，不套统一节拍|
+|`shot-handoff-contracts`|[镜间交出、接收与替代覆盖](modules/shot-handoff-contracts.md)|每个切点交代动作、空间、声音或信息怎样继续|
+|`editorial-story-guards`|[剪辑保护关键动作、反应与揭示](modules/editorial-story-guards.md)|追踪实际取帧是否删掉必须看见的叙事内容|
 
-运行入口：[通用影像执行](visual-reliability.md)、[剪辑工作台](editing-handbook.md)、[交付扩展](delivery-extensions.md)。来源见[整合说明](integrations.md)。
+入口：[剧本到情境剪辑](script-to-edit.md)、[通用影像](visual-reliability.md)、[剪辑工作台](editing-handbook.md)、[来源](integrations.md)。

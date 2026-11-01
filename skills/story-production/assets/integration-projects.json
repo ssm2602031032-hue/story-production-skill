@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "projects": [
     {
       "id": "chinese-novelist",
@@ -1479,6 +1479,308 @@
       "verification": {
         "level": "real-cpu-tested",
         "details": "实际Farneback区域光流与时间戳归一化，用合成运动视频验证主体/背景区分，未推断物理速度"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "professional-screenwriter",
+      "repository": "YuYingRay/LaoYu-Professional-Screenwriter",
+      "repository_url": "https://github.com/YuYingRay/LaoYu-Professional-Screenwriter",
+      "commit": "1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1",
+      "license": "CC-BY-4.0",
+      "license_detection": "NOASSERTION",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/YuYingRay/LaoYu-Professional-Screenwriter/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/LICENSE",
+          "sha256": "3178b2dd720b6fe9e397f46f9d8918cdd3f3dfe74253aa59defcf752c43a88d7",
+          "bytes": 741,
+          "bundled_path": "references/upstream/professional-screenwriter/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/YuYingRay/LaoYu-Professional-Screenwriter/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/README.md",
+          "sha256": "aaf6fe2d8cf7ac9cfbf66d76ad1658c66994ae89c6556235da9246299ef3501b",
+          "bytes": 1286
+        },
+        {
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/YuYingRay/LaoYu-Professional-Screenwriter/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/SKILL.md",
+          "sha256": "a3f1252cca7c5504252e0cf2b2ea9a3d03351b68b260749122fef728fa9eb866",
+          "bytes": 16562
+        },
+        {
+          "path": "LICENSES/skill-license.md",
+          "url": "https://raw.githubusercontent.com/YuYingRay/LaoYu-Professional-Screenwriter/1ecca2eb5551b40fcc28eba304c1d47ebc8e83f1/LICENSES/skill-license.md",
+          "sha256": "9b82b9e0bd5852e79457286f6f630da7ba0c50f04364a8e63ff4191cca6d7f10",
+          "bytes": 16045,
+          "bundled_path": "references/upstream/professional-screenwriter/LICENSES__skill-license.md"
+        }
+      ],
+      "modules": [
+        "scene-intent-engine"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "场景意图与因果方法改编，scene-intent-engine模块保留CC BY 4.0署名；不继承强制Full Bible或等待审批"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "emma-screenwriting",
+      "repository": "adoria111/emma-screenwriting-skills",
+      "repository_url": "https://github.com/adoria111/emma-screenwriting-skills",
+      "commit": "da3aaae532a1509a3a4b70af994ceb4e89e80681",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/adoria111/emma-screenwriting-skills/da3aaae532a1509a3a4b70af994ceb4e89e80681/LICENSE",
+          "sha256": "aa27e87c76ceef569deae040b5c80dd08a370178b5435b689711f4a8da0da8e6",
+          "bytes": 1069,
+          "bundled_path": "references/upstream/emma-screenwriting/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/adoria111/emma-screenwriting-skills/da3aaae532a1509a3a4b70af994ceb4e89e80681/README.md",
+          "sha256": "2b48b3e22ebcfbd41e6a74de41abce94e2a043edf187c6b775360d39c053dd8d",
+          "bytes": 9298
+        },
+        {
+          "path": "skills/drama-script-refiner/SKILL.md",
+          "url": "https://raw.githubusercontent.com/adoria111/emma-screenwriting-skills/da3aaae532a1509a3a4b70af994ceb4e89e80681/skills/drama-script-refiner/SKILL.md",
+          "sha256": "dc0aef28f9d8657431d560a1b6c6a9ada7bc5b3061f6e291acadeabfacefce19",
+          "bytes": 7936
+        },
+        {
+          "path": "skills/em-adaptation/SKILL.md",
+          "url": "https://raw.githubusercontent.com/adoria111/emma-screenwriting-skills/da3aaae532a1509a3a4b70af994ceb4e89e80681/skills/em-adaptation/SKILL.md",
+          "sha256": "eeae3ec100d1f93326c17f50d54d46a453902142c7253bb792eed59b11bd3189",
+          "bytes": 3703
+        }
+      ],
+      "modules": [
+        "source-shot-trace",
+        "subtext-to-screen",
+        "scene-context-editing"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "改编功能与精修信息折叠方法，源故事事实/新方案/删除损失分开；不默认短剧付费点或爱情主线"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "story-to-script",
+      "repository": "oleo17/story-to-script-en",
+      "repository_url": "https://github.com/oleo17/story-to-script-en",
+      "commit": "b1f5485c6e4cf3103ac87e901c558d17f5dd9701",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/LICENSE",
+          "sha256": "f682e9d312b36d8c873b566ddfbdf82bbd41aa36178d34300354e50842a8104f",
+          "bytes": 1085,
+          "bundled_path": "references/upstream/story-to-script/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/README.md",
+          "sha256": "dbc2e9558539459b112dffd1dd488521a7443a030a01d37ac177dc7d99d20aa2",
+          "bytes": 10029
+        },
+        {
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/SKILL.md",
+          "sha256": "5223b1cc0af1bed408c01cde5ae96aa6260ab59246135b16ffe464a8d4b45eed",
+          "bytes": 12173
+        },
+        {
+          "path": "references/02-script-drafting.md",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/references/02-script-drafting.md",
+          "sha256": "16f8ef4947550254a4b73fe46d6a03b10f39f0fac8816430d536160aa93c06ae",
+          "bytes": 10217
+        },
+        {
+          "path": "references/06-storyboard.md",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/references/06-storyboard.md",
+          "sha256": "81e0004e4d36e031a3561c1867bd7825d8ec2fd584d747660aae95694d0b2102",
+          "bytes": 9190
+        },
+        {
+          "path": "references/07-video-prompts.md",
+          "url": "https://raw.githubusercontent.com/oleo17/story-to-script-en/b1f5485c6e4cf3103ac87e901c558d17f5dd9701/references/07-video-prompts.md",
+          "sha256": "81efeec2f4d9d150c762393ef25f2366029942d5cb9a8cca4647e2de91167f33",
+          "bytes": 15361
+        }
+      ],
+      "modules": [
+        "dialogue-performance-budget",
+        "prompt-production-layers"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "对白时间、分镜与生成任务层分离；不采用固定事件时长公式、镜头密度、强制英文或泛化模型能力断言"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "storyboard-director",
+      "repository": "62656456/ai-storyboard-director-v5.2",
+      "repository_url": "https://github.com/62656456/ai-storyboard-director-v5.2",
+      "commit": "a8d9ad6362ed38d76857199cb9ba92956f87ae5d",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/62656456/ai-storyboard-director-v5.2/a8d9ad6362ed38d76857199cb9ba92956f87ae5d/LICENSE",
+          "sha256": "875f1b4ac529d31aed9d1b16ba4d004bdf609ab60b3f4eb29e57ae2238b9b755",
+          "bytes": 1065,
+          "bundled_path": "references/upstream/storyboard-director/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/62656456/ai-storyboard-director-v5.2/a8d9ad6362ed38d76857199cb9ba92956f87ae5d/README.md",
+          "sha256": "d8f9aadcecce86192035e57f8f74e2ae16d5222c7a3ba75d104ed2f330311326",
+          "bytes": 8394
+        },
+        {
+          "path": "ai-storyboard-director5.2/ai-storyboard-director5.2-精编单文件.md",
+          "url": "https://raw.githubusercontent.com/62656456/ai-storyboard-director-v5.2/a8d9ad6362ed38d76857199cb9ba92956f87ae5d/ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md",
+          "sha256": "ac055e58cbb66cb023cbdb36cfae06e42a7a9aabfdce2233fd3807c8c9ba1db7",
+          "bytes": 43063
+        }
+      ],
+      "modules": [
+        "subtext-to-screen",
+        "scene-context-editing",
+        "editorial-story-guards"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "导演意图与可生成描述分开、剪辑动机和替代覆盖；不继承固定权重、母题次数、每次必反常规或确认关卡"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "cinematic-storyboard",
+      "repository": "chaoka-wooji/cinematic-storyboard-skill",
+      "repository_url": "https://github.com/chaoka-wooji/cinematic-storyboard-skill",
+      "commit": "bce9211bd6e3a3dcad120ab3703afa864a46aa4e",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/chaoka-wooji/cinematic-storyboard-skill/bce9211bd6e3a3dcad120ab3703afa864a46aa4e/LICENSE",
+          "sha256": "29674cb78751f48d46d80a68d903b0b30a5639d4dbcaa23ea394b64ad4957892",
+          "bytes": 1076,
+          "bundled_path": "references/upstream/cinematic-storyboard/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/chaoka-wooji/cinematic-storyboard-skill/bce9211bd6e3a3dcad120ab3703afa864a46aa4e/README.md",
+          "sha256": "0d3ce4600c2bc9713c08ea378dc5439da34624b40636af85c81a81bebfccf98f",
+          "bytes": 11453
+        },
+        {
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/chaoka-wooji/cinematic-storyboard-skill/bce9211bd6e3a3dcad120ab3703afa864a46aa4e/SKILL.md",
+          "sha256": "72fa6d8bc8091e77b5ac2a65ad2e2f20603bdd6fa0fa4f7dc034f8f3b16aba39",
+          "bytes": 6832
+        }
+      ],
+      "modules": [
+        "prompt-production-layers",
+        "shot-handoff-contracts"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "宏观故事/场面/镜头/视觉资产/生成描述层级，接入已有本包格式；未运行上游工作流或照搬模型参数"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "continuity-storyboard",
+      "repository": "TateZhouSiu/create-storyboard-skill",
+      "repository_url": "https://github.com/TateZhouSiu/create-storyboard-skill",
+      "commit": "4b8662e2fee51b37488c77952bbfa302bfeaf36c",
+      "license": "MIT",
+      "license_detection": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/TateZhouSiu/create-storyboard-skill/4b8662e2fee51b37488c77952bbfa302bfeaf36c/LICENSE",
+          "sha256": "bbdbaab4a5da253e18cf0d5532f5caf45b9d2be03bb942819e37c5f325d7da4b",
+          "bytes": 1066,
+          "bundled_path": "references/upstream/continuity-storyboard/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/TateZhouSiu/create-storyboard-skill/4b8662e2fee51b37488c77952bbfa302bfeaf36c/README.md",
+          "sha256": "be7a20e57b20072de45811ceb8a558c8852208318aa9b197d51f879c9f675e55",
+          "bytes": 4258
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://raw.githubusercontent.com/TateZhouSiu/create-storyboard-skill/4b8662e2fee51b37488c77952bbfa302bfeaf36c/README.zh-CN.md",
+          "sha256": "20e7c531414df0308b475d630786ea042a420fd024a19cc4fbe4e4647c3bc424",
+          "bytes": 3869
+        },
+        {
+          "path": "skills/create-storyboard/SKILL.md",
+          "url": "https://raw.githubusercontent.com/TateZhouSiu/create-storyboard-skill/4b8662e2fee51b37488c77952bbfa302bfeaf36c/skills/create-storyboard/SKILL.md",
+          "sha256": "b0069350469d0fa050038091acf684b5989e5018cad61ffabc7c6edb8c52eef5",
+          "bytes": 19214
+        }
+      ],
+      "modules": [
+        "shot-handoff-contracts",
+        "editorial-story-guards"
+      ],
+      "integration": "Independently adapted scoped methods; original bridge code and local tests; no upstream full scripts/media bundled",
+      "omitted": [
+        "强制固定时长/镜头密度/英文/反转次数和对所有模型的泛化断言",
+        "强制多轮审批、推广、上游商业书籍或剧本摘录",
+        "未执行的模型效果与剪辑质量结论"
+      ],
+      "verification": {
+        "level": "adapter-tested",
+        "details": "镜间交出/接收、干净首帧与审看片板分离，映射/边界/剪辑保护用本包脚本测试；未运行上游图像模型或固定15秒流程"
       },
       "reviewed_at": "2026-11-01"
     }

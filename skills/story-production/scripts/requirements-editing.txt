@@ -1,0 +1,4 @@
+# Optional local review renderer and CMX3600 EDL interchange.
+# Use with requirements-media.txt; no models or remote generation service.
+imageio-ffmpeg>=0.7,<0.8
+otio-cmx3600-adapter>=1,<2

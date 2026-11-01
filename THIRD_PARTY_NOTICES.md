@@ -123,3 +123,21 @@ LTX与Hunyuan模型/适配器采用自定义社区许可，不以本项目MIT条
 |[SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit)|`28b5f675abd48d3090d2ba50439e70c19f42ef4e`|[MIT](skills/story-production/references/upstream/subtitle-edit/LICENSE)|
 |[vilcans/screenplain](https://github.com/vilcans/screenplain)|`abf0d0800ab0b9dfd5bbe780137641e746afbad4`|[MIT](skills/story-production/references/upstream/screenplain/LICENSE.txt)|
 |[treeverse/dvc](https://github.com/treeverse/dvc)|`56e59829512ff134aa269099a2099587b810b4dd`|[Apache-2.0](skills/story-production/references/upstream/dvc/LICENSE)|
+
+## v1.5 剪辑来源
+
+本项目独立编写工作台、脚本和模块；上游完整Skill、可执行文件与样本媒体未重新分发。版本、哈希和真实测试边界见[integration-projects.json](skills/story-production/assets/integration-projects.json)。
+
+|项目|固定提交|许可|
+|---|---|---|
+|[kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill)|`1ce2c186bf1dba96132d87274eee46df4f537e0e`|[MIT](skills/story-production/references/upstream/ffmpeg-skill/LICENSE)|
+|[Jaycheng1103/chatgpt-video-editing-skills](https://github.com/Jaycheng1103/chatgpt-video-editing-skills)|`dc2f10ac4616603188aff3df9ea6548a8da36355`|[MIT](skills/story-production/references/upstream/video-editing-skills/LICENSE)|
+|[chang416/cutcraft](https://github.com/chang416/cutcraft)|`535a1176a48fffcafe4a094b5090ec500306ac41`|[MIT](skills/story-production/references/upstream/cutcraft/LICENSE)|
+|[odaiouattara0022-del/davinci-resolve-skill](https://github.com/odaiouattara0022-del/davinci-resolve-skill)|`71d243773caa34502666c4d53e0b0b050f069918`|[MIT](skills/story-production/references/upstream/resolve-skill/LICENSE)|
+|[WyattBlue/auto-editor](https://github.com/WyattBlue/auto-editor)|`ac1eb0c6f85f77fe8ebe0125478152420116cc83`|[Unlicense](skills/story-production/references/upstream/auto-editor/LICENSE)|
+|[mifi/lossless-cut](https://github.com/mifi/lossless-cut)|`6fc47dd4cc81b72a8f1b3132c47a99880cd9bbdb`|[GPL-2.0](skills/story-production/references/upstream/losslesscut/LICENSE)|
+|[AcademySoftwareFoundation/OpenColorIO](https://github.com/AcademySoftwareFoundation/OpenColorIO)|`22dd9c4faa0d1b7cfb3d64d1a6e9cb454acc6cfd`|[BSD-3-Clause](skills/story-production/references/upstream/ocio/LICENSE)|
+|[OpenTimelineIO/otio-cmx3600-adapter](https://github.com/OpenTimelineIO/otio-cmx3600-adapter)|`4b02a6668b4ddb435bd6b8e7459e1dbd170938df`|[Apache-2.0](skills/story-production/references/upstream/cmx3600/LICENSE)|
+|[imageio/imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg)|`be2a02bdeaa728047df3822fa14db2aee0bed4ff`|[BSD-2-Clause](skills/story-production/references/upstream/imageio-ffmpeg/LICENSE)|
+
+LosslessCut仅作方法与链接参考，其GPL条款未被本项目MIT覆盖。imageio-ffmpeg包与实际FFmpeg/编解码器发行的许可分别适用，本包不包含该运行时。

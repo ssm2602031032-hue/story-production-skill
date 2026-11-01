@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install optional CPU media adapters
-        run: python -m pip install -r skills/story-production/scripts/requirements-media.txt -r skills/story-production/scripts/requirements-delivery.txt
+        run: python -m pip install -r skills/story-production/scripts/requirements-media.txt -r skills/story-production/scripts/requirements-delivery.txt -r skills/story-production/scripts/requirements-editing.txt
       - name: Run all tests including actual media and OTIO
         run: python -m unittest discover -s tests -v
   epub:

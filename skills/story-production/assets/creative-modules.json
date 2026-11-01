@@ -1,6 +1,6 @@
 {
-  "version": "1.4.0",
-  "module_count": 80,
+  "version": "1.5.0",
+  "module_count": 92,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -1052,6 +1052,182 @@
       "integration": "independently-authored-adapter",
       "tags": [
         "subtitle-localization"
+      ]
+    },
+    {
+      "id": "story-edit-pass",
+      "title": "叙事粗剪与精剪",
+      "summary": "从人物选择和信息顺序决定保留、删减与补镜",
+      "stage": "review",
+      "reference": "references/modules/story-edit-pass.md",
+      "sources": [
+        "cutcraft"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "story-edit-pass"
+      ]
+    },
+    {
+      "id": "dialogue-jl-edit",
+      "title": "对白剪辑与J/L声音桥",
+      "summary": "让声音与画面独立衔接且不重复播音",
+      "stage": "production",
+      "reference": "references/modules/dialogue-jl-edit.md",
+      "sources": [
+        "cutcraft",
+        "video-editing-skills"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "dialogue-jl-edit"
+      ]
+    },
+    {
+      "id": "edit-rhythm-silence",
+      "title": "节奏与停顿候选",
+      "summary": "用声音和表演判断停顿价值",
+      "stage": "review",
+      "reference": "references/modules/edit-rhythm-silence.md",
+      "sources": [
+        "auto-editor"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "edit-rhythm-silence"
+      ]
+    },
+    {
+      "id": "cut-transitions",
+      "title": "动作匹配与转场设计",
+      "summary": "为硬切、匹配切和溶解选择真实素材余量",
+      "stage": "production",
+      "reference": "references/modules/cut-transitions.md",
+      "sources": [
+        "cutcraft",
+        "auto-editor"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "cut-transitions"
+      ]
+    },
+    {
+      "id": "proxy-relink",
+      "title": "代理素材与原片回连",
+      "summary": "区分审看代理、原片、关键帧裁切和精确重编码",
+      "stage": "delivery",
+      "reference": "references/modules/proxy-relink.md",
+      "sources": [
+        "losslesscut",
+        "ffmpeg-skill"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "proxy-relink"
+      ]
+    },
+    {
+      "id": "roughcut-render",
+      "title": "本地粗剪预览渲染",
+      "summary": "从真实素材执行精确裁切、重排与声音混合",
+      "stage": "delivery",
+      "reference": "references/modules/roughcut-render.md",
+      "sources": [
+        "ffmpeg-skill",
+        "imageio-ffmpeg"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "roughcut-render"
+      ]
+    },
+    {
+      "id": "subtitle-conform",
+      "title": "剪辑后的字幕重排",
+      "summary": "随保留区间移动字幕并标出断句风险",
+      "stage": "delivery",
+      "reference": "references/modules/subtitle-conform.md",
+      "sources": [
+        "video-editing-skills",
+        "cutcraft"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "subtitle-conform"
+      ]
+    },
+    {
+      "id": "editorial-version-diff",
+      "title": "剪辑版本与修改影响",
+      "summary": "按稳定片段ID追踪移动、裁切、音轨和来源变化",
+      "stage": "review",
+      "reference": "references/modules/editorial-version-diff.md",
+      "sources": [
+        "cutcraft"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "editorial-version-diff"
+      ]
+    },
+    {
+      "id": "nle-interchange",
+      "title": "剪辑软件交接与回读",
+      "summary": "导出可核对的OTIO与CMX3600画面EDL",
+      "stage": "delivery",
+      "reference": "references/modules/nle-interchange.md",
+      "sources": [
+        "resolve-skill",
+        "cmx3600"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "nle-interchange"
+      ]
+    },
+    {
+      "id": "color-management-handoff",
+      "title": "色彩管理与调色交接",
+      "summary": "记录输入输出变换、真实标签和作者CDL数值",
+      "stage": "production",
+      "reference": "references/modules/color-management-handoff.md",
+      "sources": [
+        "ocio"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "color-management-handoff"
+      ]
+    },
+    {
+      "id": "titles-captions-safe",
+      "title": "片头字幕与画幅适配",
+      "summary": "把文字放进真实画面后检查字形与遮挡",
+      "stage": "production",
+      "reference": "references/modules/titles-captions-safe.md",
+      "sources": [
+        "ffmpeg-skill",
+        "cutcraft"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "titles-captions-safe"
+      ]
+    },
+    {
+      "id": "final-review-qc",
+      "title": "成片审看与交付状态",
+      "summary": "核对实际输出并保留尚需观看、听音和调色的范围",
+      "stage": "delivery",
+      "reference": "references/modules/final-review-qc.md",
+      "sources": [
+        "cutcraft",
+        "video-editing-skills"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "final-review-qc"
       ]
     }
   ]

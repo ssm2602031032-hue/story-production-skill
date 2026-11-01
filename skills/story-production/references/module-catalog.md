@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共80个按需模块：12份昆卡原文参考、68个本项目扩展模块。每阶段只读取当前需要的两三个。
+共92个按需模块：12份昆卡原文参考、80个本项目扩展模块。每阶段只读取当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -84,5 +84,17 @@
 |`visual-contact-review`|[真实帧接触表](modules/visual-contact-review.md)|对照实际首尾、光线、构图和服装|
 |`audio-delivery-qc`|[对白与混音技术检查](modules/audio-delivery-qc.md)|测量WAV响度、峰值和异常采样|
 |`subtitle-localization`|[字幕与配音本地化](modules/subtitle-localization.md)|保留条目对应、时序与人物术语|
+|`story-edit-pass`|[叙事粗剪与精剪](modules/story-edit-pass.md)|从人物选择和信息顺序决定保留、删减与补镜|
+|`dialogue-jl-edit`|[对白剪辑与J/L声音桥](modules/dialogue-jl-edit.md)|让声音与画面独立衔接且不重复播音|
+|`edit-rhythm-silence`|[节奏与停顿候选](modules/edit-rhythm-silence.md)|用声音和表演判断停顿价值|
+|`cut-transitions`|[动作匹配与转场设计](modules/cut-transitions.md)|为硬切、匹配切和溶解选择真实素材余量|
+|`proxy-relink`|[代理素材与原片回连](modules/proxy-relink.md)|区分审看代理、原片、关键帧裁切和精确重编码|
+|`roughcut-render`|[本地粗剪预览渲染](modules/roughcut-render.md)|从真实素材执行精确裁切、重排与声音混合|
+|`subtitle-conform`|[剪辑后的字幕重排](modules/subtitle-conform.md)|随保留区间移动字幕并标出断句风险|
+|`editorial-version-diff`|[剪辑版本与修改影响](modules/editorial-version-diff.md)|按稳定片段ID追踪移动、裁切、音轨和来源变化|
+|`nle-interchange`|[剪辑软件交接与回读](modules/nle-interchange.md)|导出可核对的OTIO与CMX3600画面EDL|
+|`color-management-handoff`|[色彩管理与调色交接](modules/color-management-handoff.md)|记录输入输出变换、真实标签和作者CDL数值|
+|`titles-captions-safe`|[片头字幕与画幅适配](modules/titles-captions-safe.md)|把文字放进真实画面后检查字形与遮挡|
+|`final-review-qc`|[成片审看与交付状态](modules/final-review-qc.md)|核对实际输出并保留尚需观看、听音和调色的范围|
 
-命令与输入见[交付扩展](delivery-extensions.md)、[媒体工具](integration-tools.md)；来源见[整合说明](integrations.md)。
+运行入口：[剪辑工作台](editing-handbook.md)、[交付扩展](delivery-extensions.md)、[媒体工具](integration-tools.md)。来源见[整合说明](integrations.md)。

@@ -1,4 +1,4 @@
 interface:
   display_name: "Story Production · 全套创作"
-  short_description: "80个创作模块，含因果知情检查、小说电子书、剧本交换、选片与声音交付"
+  short_description: "92个创作模块，含小说长剧、真实素材粗剪、声音桥、剪后字幕与剪辑交接"
   default_prompt: "使用 $story-production，按我的主题、媒介和范围选择创作模块，完成正文或指定修改，并审校人物、伏笔、时间线与对应制作资料。"

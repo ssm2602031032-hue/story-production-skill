@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和68个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和80个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)
@@ -50,3 +50,19 @@ OpenTimelineIO的[NOTICE](upstream/opentimelineio/NOTICE.txt)随许可保留。�
 - [treeverse/dvc](https://github.com/treeverse/dvc/tree/56e59829512ff134aa269099a2099587b810b4dd)：素材与计划分版本思路；本包JSON指纹及人工选片检查实测，未安装DVC。 [许可](upstream/dvc/LICENSE)
 
 未采用cnskycn/novel-writing-skill的内容：本次核验未见明确许可证。已采用的网文Skill仅吸收分层审稿方法，不带入其敏感词替换、强制补字数、代理数量和平台规则。
+
+## v1.5 剪辑适配
+
+入口见[剪辑工作台](editing-handbook.md)。来源固定提交与实际验证程度见[integration-projects.json](../assets/integration-projects.json)。
+
+- [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill/tree/1ce2c186bf1dba96132d87274eee46df4f537e0e)：读取真实参数、执行后复核与源文件保护方法；本包自写FFmpeg命令构建器并实际CPU渲染。 [许可](upstream/ffmpeg-skill/LICENSE)
+- [Jaycheng1103/chatgpt-video-editing-skills](https://github.com/Jaycheng1103/chatgpt-video-editing-skills/tree/dc2f10ac4616603188aff3df9ea6548a8da36355)：剪后字幕时钟、先审预览再交付方法；不继承固定9:16、强制确认或目录布局。 [许可](upstream/video-editing-skills/LICENSE)
+- [chang416/cutcraft](https://github.com/chang416/cutcraft/tree/535a1176a48fffcafe4a094b5090ec500306ac41)：叙事剪辑、声音桥、版本与输出审查方法；不复制上游完整脚本或安装/云转录要求。 [许可](upstream/cutcraft/LICENSE)
+- [odaiouattara0022-del/davinci-resolve-skill](https://github.com/odaiouattara0022-del/davinci-resolve-skill/tree/71d243773caa34502666c4d53e0b0b050f069918)：仅参考原生项目/时间线对象与返回值复核方法；未安装或操纵Resolve，不保证其版本/授权能力。 [许可](upstream/resolve-skill/LICENSE)
+- [WyattBlue/auto-editor](https://github.com/WyattBlue/auto-editor/tree/ac1eb0c6f85f77fe8ebe0125478152420116cc83)：候选区间和先预览思路；本包独立实现PCM静音候选，未运行Auto-Editor，不自动删静音或录麦。 [许可](upstream/auto-editor/LICENSE)
+- [mifi/lossless-cut](https://github.com/mifi/lossless-cut/tree/6fc47dd4cc81b72a8f1b3132c47a99880cd9bbdb)：参考无损裁切和代理回连边界；未运行桌面工具，本包预览明确重编码。 [许可](upstream/losslesscut/LICENSE)
+- [AcademySoftwareFoundation/OpenColorIO](https://github.com/AcademySoftwareFoundation/OpenColorIO/tree/22dd9c4faa0d1b7cfb3d64d1a6e9cb454acc6cfd)：参考颜色管线分离；实际只读取色彩标签/写作者CDL，未应用OCIO配置或渲染调色。 [许可](upstream/ocio/LICENSE)
+- [OpenTimelineIO/otio-cmx3600-adapter](https://github.com/OpenTimelineIO/otio-cmx3600-adapter/tree/4b02a6668b4ddb435bd6b8e7459e1dbd170938df)：otio-cmx3600-adapter 1.0.0实际导出并读回单层画面EDL，检查帧范围和总长度。 [许可](upstream/cmx3600/LICENSE)
+- [imageio/imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg/tree/be2a02bdeaa728047df3822fa14db2aee0bed4ff)：0.7.0提供本地FFmpeg 7.1 Windows运行时，实际裁切/拼接/音频延迟/淡化/混合并核对输出。 [许可](upstream/imageio-ffmpeg/LICENSE)
+
+Remotion技能候选未见仓库级明确再分发许可证，因此未复制其技能内容。MoviePy被调研但未引入重复运行层。本包不分发FFmpeg二进制或桌面编辑器，依赖按其发行许可使用。

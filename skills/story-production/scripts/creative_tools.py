@@ -26,6 +26,21 @@ EXTENSIONS={
  'audio-qc':('audio-delivery-qc',('响度','lufs','音频质检','对白wav','audio qc')),
  'localize':('subtitle-localization',('翻译字幕','译文字幕','字幕本地化','subtitle localization'))}
 TASKS=TASKS+tuple(EXTENSIONS)
+EDITING_EXTENSIONS={
+ 'roughcut':('roughcut-render',('粗剪','渲染预览','审片预览','拼接视频','合并视频','剪辑视频','剪片')),
+ 'subtitle-conform':('subtitle-conform',('剪后字幕','剪辑后字幕','重排字幕')),
+ 'edit-diff':('editorial-version-diff',('剪辑版本','剪辑差异','比较剪辑')),
+ 'edit-story':('story-edit-pass',('叙事剪辑','精剪方案','按剧情剪辑')),
+ 'edit-dialogue':('dialogue-jl-edit',('j-cut','l-cut','j/l','j-l','声音桥')),
+ 'edit-rhythm':('edit-rhythm-silence',('去静音','停顿候选','剪辑节奏','静音检测')),
+ 'edit-transitions':('cut-transitions',('动作匹配','匹配切','溶解转场','转场设计')),
+ 'proxy':('proxy-relink',('代理回连','原片回连','代理素材','无损裁切')),
+ 'nle':('nle-interchange',('剪辑交接','davinci','resolve','premiere','cmx3600','edl','音轨otio')),
+ 'color-handoff':('color-management-handoff',('调色交接','色彩标签','色彩管理','调色方案','cdl')),
+ 'title-layout':('titles-captions-safe',('片头设计','字幕安全区','文字安全区','多画幅')),
+ 'final-qc':('final-review-qc',('成片验收','交付验收','切点审看','成片检查'))}
+TASKS=TASKS+tuple(EDITING_EXTENSIONS)
+EXTENSIONS={**EDITING_EXTENSIONS,**EXTENSIONS}
 GENRE_MODULES={'comedy':'comedy','romance':'romance','mystery':'mystery-thriller','thriller':'mystery-thriller','horror':'horror-atmosphere','action':'action-stakes','sports':'action-stakes','fantasy':'worldbuilding','sci-fi':'science-fiction','historical':'historical-period','serial':'serial-rewards','revenge':'serial-rewards','crime':'crime-procedural'}
 def read(path):
  value=json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -193,7 +208,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'metrics':['与视频任务匹配的指标方案','实际评分证据或明确未运行状态'],
   'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核'],
   **{key:[by[value[0]]['summary'],'实际产物与验证边界；不代替正文或生成媒体'] for key,value in EXTENSIONS.items()}}[task]
- return {'version':'1.4.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+ return {'version':'1.5.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

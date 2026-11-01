@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Production · 全套创作"
+  short_description: "从主题完成小说、长剧或电影剧本，并构建全套分镜、声音与AI制作资料"
+  default_prompt: "使用 $story-production，根据我给出的主题完成作品全文和对应制作全套，并校验人物、时间线与所有交付文件。"

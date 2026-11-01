@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.venv/
+.DS_Store
+*.inspect.ndjson
+build/
+dist/
+tmp/
+.env
+.env.*
+!.env.example

@@ -1,4 +1,4 @@
 interface:
   display_name: "Story Production · 全套创作"
-  short_description: "61个创作模块，含写实视频提示词、模型适配、小说长剧与电影全套工作流"
+  short_description: "69个创作模块，支持长篇记忆、写实提示词检查、字幕与剪辑工程交接"
   default_prompt: "使用 $story-production，按我的主题、媒介和范围选择创作模块，完成正文或指定修改，并审校人物、伏笔、时间线与对应制作资料。"

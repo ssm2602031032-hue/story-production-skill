@@ -1,0 +1,6 @@
+# Optional local media analysis and editorial interchange; core scripts remain stdlib-only.
+av>=14,<18
+opentimelineio>=0.17,<0.20
+# Optional cut detection (install separately if only metadata/OTIO is needed):
+scenedetect>=0.6.7,<0.8
+opencv-python-headless>=4.8,<5

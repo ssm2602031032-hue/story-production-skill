@@ -1,0 +1,383 @@
+{
+  "version": "1.3.0",
+  "projects": [
+    {
+      "id": "chinese-novelist",
+      "repository": "PenglongHuang/chinese-novelist-skill",
+      "commit": "507d41567925eab520ad459db08fda83813e8051",
+      "license": "MIT",
+      "repository_url": "https://github.com/PenglongHuang/chinese-novelist-skill",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/PenglongHuang/chinese-novelist-skill/507d41567925eab520ad459db08fda83813e8051/README.md",
+          "sha256": "361eaffc86ccb0d95c4527bea6057dd058a66e6a8b1ca58b89f0044e2084c8ee",
+          "bytes": 11893
+        },
+        {
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/PenglongHuang/chinese-novelist-skill/507d41567925eab520ad459db08fda83813e8051/SKILL.md",
+          "sha256": "64629a252f85a540ef4b5e522b5d964e8bf05614a88c358d8b44d4e115cb246b",
+          "bytes": 3573
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/PenglongHuang/chinese-novelist-skill/507d41567925eab520ad459db08fda83813e8051/LICENSE",
+          "sha256": "27315737dd6b5dd75d99eb148fa32fc3cafdeb1e51ea0b8b6242e88acf9a2117",
+          "bytes": 1070,
+          "bundled_path": "references/upstream/chinese-novelist/LICENSE"
+        }
+      ],
+      "modules": [
+        "novel-context-packs"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "强制多轮访谈与逐阶段确认",
+        "每章固定冲突/钩子及字数保证质量"
+      ],
+      "verification": {
+        "level": "adapter-tested",
+        "details": "断点恢复方法和章节包；未运行上游完整小说生成"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "plotrail",
+      "repository": "waylean/plotrail",
+      "commit": "a7917c8b4951f540bb4da39b5f10b99dbacc45c0",
+      "license": "MIT",
+      "repository_url": "https://github.com/waylean/plotrail",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/waylean/plotrail/a7917c8b4951f540bb4da39b5f10b99dbacc45c0/README.md",
+          "sha256": "86b59992d448681bd1b013ecd654960157ada4d3fd4ff4edc477aa8ca9367cf3",
+          "bytes": 11119
+        },
+        {
+          "path": "plotrail/SKILL.md",
+          "url": "https://raw.githubusercontent.com/waylean/plotrail/a7917c8b4951f540bb4da39b5f10b99dbacc45c0/plotrail/SKILL.md",
+          "sha256": "c894ac8f8e3904cb00546c1a13693c125e62b6b0f7080117051d417c834af284",
+          "bytes": 5196
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/waylean/plotrail/a7917c8b4951f540bb4da39b5f10b99dbacc45c0/LICENSE",
+          "sha256": "fb57373c95816004c9a21f491d891e429c67ab842f3d895e20018a2e34eb86ba",
+          "bytes": 1064,
+          "bundled_path": "references/upstream/plotrail/LICENSE"
+        }
+      ],
+      "modules": [
+        "novel-context-packs"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "所有正史调整必须暂停审批",
+        "迁移全套目录和外部agent依赖"
+      ],
+      "verification": {
+        "level": "adapter-tested",
+        "details": "正史/提案边界与上下文包；未照搬其审批流程"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "write-screenplay",
+      "repository": "egguy886/write-screenplay-skill",
+      "commit": "fd2404312b2d4fa1e0b0381529de9d9cf21da547",
+      "license": "MIT",
+      "repository_url": "https://github.com/egguy886/write-screenplay-skill",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/egguy886/write-screenplay-skill/fd2404312b2d4fa1e0b0381529de9d9cf21da547/README.md",
+          "sha256": "3c28d2b9443634eafc95397424d3dcec9450036558ca9559ebf2508ebd9e957b",
+          "bytes": 10663
+        },
+        {
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/egguy886/write-screenplay-skill/fd2404312b2d4fa1e0b0381529de9d9cf21da547/SKILL.md",
+          "sha256": "efec42b1e7e2e5c512c9de53a6c67451745089eb8b10a2ebc37e4010b6ae39be",
+          "bytes": 18029
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/egguy886/write-screenplay-skill/fd2404312b2d4fa1e0b0381529de9d9cf21da547/LICENSE",
+          "sha256": "d6a5a832e362be58e34f9d86ce4c053cf2fd7d2f6eea8371caffc683c6f60a01",
+          "bytes": 1065,
+          "bundled_path": "references/upstream/write-screenplay/LICENSE"
+        }
+      ],
+      "modules": [
+        "adaptation-beat-transfer"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "统一60至120秒和固定反转",
+        "强制英文名、全量删内心独白和暴力示例"
+      ],
+      "verification": {
+        "level": "method-adapted",
+        "details": "原文覆盖与动作解耦指导；非自动小说解析器"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "promptfoo",
+      "repository": "promptfoo/promptfoo",
+      "commit": "aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1",
+      "license": "MIT",
+      "repository_url": "https://github.com/promptfoo/promptfoo",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1/README.md",
+          "sha256": "7fd57809624e22da73bf6b6feb027c9e09aec74e0099bdea711fe2e276e87c4a",
+          "bytes": 4599
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1/LICENSE",
+          "sha256": "bf813686553f451e1b833fbd827488aee49b60b189626915bf3108d10b754e44",
+          "bytes": 1053,
+          "bundled_path": "references/upstream/promptfoo/LICENSE"
+        },
+        {
+          "path": ".claude/skills/promptfoo-evals/SKILL.md",
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1/.claude/skills/promptfoo-evals/SKILL.md",
+          "sha256": "40d2426fa520133b276d1efa888254f1e9a649c18289da18a75bfc2c75ea48c5",
+          "bytes": 7589
+        },
+        {
+          "path": "site/docs/providers/python.md",
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1/site/docs/providers/python.md",
+          "sha256": "7d8b4f252e6107cdfcf1810de315480d5504442226761fd1e0fd128fb91d7c6b",
+          "bytes": 32039
+        },
+        {
+          "path": "site/docs/configuration/guide.md",
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1/site/docs/configuration/guide.md",
+          "sha256": "4e34f7e8315234da3581635bcf2a3986b4b07df7bad34e932633dc22b73eae67",
+          "bytes": 24704
+        }
+      ],
+      "modules": [
+        "prompt-regression"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "赞助/推广内容",
+        "默认在线provider、自动发布结果和无授权付费"
+      ],
+      "verification": {
+        "level": "real-cli-offline-tested",
+        "details": "0.125.1 CLI、Node 24.22.1，5个离线Python provider案例通过；无模型请求"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "vbench",
+      "repository": "Vchitect/VBench",
+      "commit": "fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490",
+      "license": "Apache-2.0",
+      "repository_url": "https://github.com/Vchitect/VBench",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Vchitect/VBench/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/README.md",
+          "sha256": "9f5db5e459cc216e49e0e151a8b242aec8cc98b5f826716825e8369a3669d5c3",
+          "bytes": 34512
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/Vchitect/VBench/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/LICENSE",
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+          "bytes": 11356,
+          "bundled_path": "references/upstream/vbench/LICENSE"
+        },
+        {
+          "path": "VBench-2.0/README.md",
+          "url": "https://raw.githubusercontent.com/Vchitect/VBench/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/VBench-2.0/README.md",
+          "sha256": "0a5dc041fbe58b36c2146c8e21421074455825dd700974ee60288e81450a1361",
+          "bytes": 16295
+        }
+      ],
+      "modules": [
+        "video-metric-reading"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "权重和样本视频",
+        "未经执行的分数与跨任务集排名"
+      ],
+      "verification": {
+        "level": "documentation-reviewed",
+        "details": "VBench及2.0任务和限制已核验；未下载权重或运行评分"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "pyscenedetect",
+      "repository": "Breakthrough/PySceneDetect",
+      "commit": "55f20ff3448ed336df032ac6270cf47d215dc2c4",
+      "license": "BSD-3-Clause",
+      "repository_url": "https://github.com/Breakthrough/PySceneDetect",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Breakthrough/PySceneDetect/55f20ff3448ed336df032ac6270cf47d215dc2c4/README.md",
+          "sha256": "ff45f6f05b01cfd5e6e796e494e5fb5ee83741925da7b6485d4a18c53b755ba7",
+          "bytes": 7770
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/Breakthrough/PySceneDetect/55f20ff3448ed336df032ac6270cf47d215dc2c4/LICENSE",
+          "sha256": "e855ca89e457a7d0b6b7c92ad475d1120a9a5b5bf4e5048c706b1b3889fbc349",
+          "bytes": 1505,
+          "bundled_path": "references/upstream/pyscenedetect/LICENSE"
+        }
+      ],
+      "modules": [
+        "scene-detection-review"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "上游运行环境与媒体样本",
+        "将切点当成剧本场次"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "0.7.2 AdaptiveDetector处理实际技术片段；不证明剧情场次识别"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "opentimelineio",
+      "repository": "AcademySoftwareFoundation/OpenTimelineIO",
+      "commit": "80c5ff30938e4adffe9c94f419b1055856cee9f5",
+      "license": "Apache-2.0",
+      "repository_url": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/AcademySoftwareFoundation/OpenTimelineIO/80c5ff30938e4adffe9c94f419b1055856cee9f5/README.md",
+          "sha256": "fc636466b740c636d6ceb488e00d2b5a95f8fdb5c46de142b2a227fda928aeca",
+          "bytes": 9396
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/AcademySoftwareFoundation/OpenTimelineIO/80c5ff30938e4adffe9c94f419b1055856cee9f5/LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "bundled_path": "references/upstream/opentimelineio/LICENSE.txt"
+        },
+        {
+          "path": "docs/tutorials/otio-serialized-schema.md",
+          "url": "https://raw.githubusercontent.com/AcademySoftwareFoundation/OpenTimelineIO/80c5ff30938e4adffe9c94f419b1055856cee9f5/docs/tutorials/otio-serialized-schema.md",
+          "sha256": "4f33cee40ba1bf66290687228ad49d90a164611c73194a64f41c87d8cc84114d",
+          "bytes": 16601
+        },
+        {
+          "path": "examples/build_simple_timeline.py",
+          "url": "https://raw.githubusercontent.com/AcademySoftwareFoundation/OpenTimelineIO/80c5ff30938e4adffe9c94f419b1055856cee9f5/examples/build_simple_timeline.py",
+          "sha256": "dd8ba013f1198bd69240ef9b63055fa3bcb2542c77d3d73026485dec0432f5fb",
+          "bytes": 2967
+        },
+        {
+          "path": "NOTICE.txt",
+          "url": "https://raw.githubusercontent.com/AcademySoftwareFoundation/OpenTimelineIO/80c5ff30938e4adffe9c94f419b1055856cee9f5/NOTICE.txt",
+          "sha256": "e5ca061ef053cb9fd1b7146da3b10d4e4f2ec218445c3ba7f7edb32ae9452543",
+          "bytes": 178,
+          "bundled_path": "references/upstream/opentimelineio/NOTICE.txt"
+        }
+      ],
+      "modules": [
+        "editorial-handoff"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "二进制和全套编辑器适配器",
+        "音频混音、变速、调色、成片渲染"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "0.18.1创建并重开OTIO，核对帧范围和缺失引用；未验证每种剪辑软件"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "faster-whisper",
+      "repository": "SYSTRAN/faster-whisper",
+      "commit": "9e472ae9de8bb374552f531f752654554b76b2d6",
+      "license": "MIT",
+      "repository_url": "https://github.com/SYSTRAN/faster-whisper",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/SYSTRAN/faster-whisper/9e472ae9de8bb374552f531f752654554b76b2d6/README.md",
+          "sha256": "43efe4a6eb9046d5ba4dcdcf2abcc27ad9e021f3edfc00bd6eb4913a9abe065b",
+          "bytes": 15249
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/SYSTRAN/faster-whisper/9e472ae9de8bb374552f531f752654554b76b2d6/LICENSE",
+          "sha256": "af6798135e729f8aa6c853936d037dfdea449734d26b8ea6a89805fca758c0d5",
+          "bytes": 1064,
+          "bundled_path": "references/upstream/faster-whisper/LICENSE"
+        }
+      ],
+      "modules": [
+        "subtitle-alignment"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "模型权重和自动下载",
+        "自动认人及把识别文本当权威对白"
+      ],
+      "verification": {
+        "level": "import-adapter-tested",
+        "details": "已有识别JSON转SRT和时间检查通过；未运行ASR模型"
+      },
+      "reviewed_at": "2026-11-01"
+    },
+    {
+      "id": "pyav",
+      "repository": "PyAV-Org/PyAV",
+      "commit": "31cf756fcc773106f2900d44b83f31bfc8fd634d",
+      "license": "BSD-3-Clause",
+      "repository_url": "https://github.com/PyAV-Org/PyAV",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/PyAV-Org/PyAV/31cf756fcc773106f2900d44b83f31bfc8fd634d/README.md",
+          "sha256": "3ebebb2d36aae9edc3ade5adbcaa30385a394f9d68d945e1184a1660b1bd16ea",
+          "bytes": 3594
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/PyAV-Org/PyAV/31cf756fcc773106f2900d44b83f31bfc8fd634d/LICENSE.txt",
+          "sha256": "76af0461ffb92e19f1c14449e95557d83a2dfaa1baf202d49e5f1d8746c0da19",
+          "bytes": 1505,
+          "bundled_path": "references/upstream/pyav/LICENSE.txt"
+        }
+      ],
+      "modules": [
+        "technical-media-qc",
+        "editorial-handoff"
+      ],
+      "integration": "Independent Chinese guidance and local adapters; upstream runtime and models are not bundled",
+      "omitted": [
+        "FFmpeg二进制与编解码器包",
+        "由技术通过推断摄影真实或创作质量"
+      ],
+      "verification": {
+        "level": "real-cpu-tested",
+        "details": "17.1.0解码真实48帧24fps MPEG-4技术素材，检查fps/帧数/时间戳"
+      },
+      "reviewed_at": "2026-11-01"
+    }
+  ],
+  "scope": "Additional sources, separate from upstream-sources.json and video-projects.json; fixed source commits are not claims that the latest library release was tested."
+}

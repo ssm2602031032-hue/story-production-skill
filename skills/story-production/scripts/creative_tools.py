@@ -5,7 +5,7 @@ import argparse,hashlib,json,re,sys
 from pathlib import Path
 
 SKILL=Path(__file__).resolve().parents[1]
-TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt','opening','emotion','antagonist','ensemble','transitions','pacing','short-form','audio','comics','nonfiction','naming','table-read','prompts','models','evaluation','impact','realism')
+TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt','opening','emotion','antagonist','ensemble','transitions','pacing','short-form','audio','comics','nonfiction','naming','table-read','prompts','models','evaluation','impact','realism','context','regression','media-qc','subtitles','editorial','metrics','cuts')
 GENRES={
  'comedy':('喜剧','搞笑','comedy','sitcom'), 'romance':('爱情','恋爱','romance'),
  'mystery':('悬疑','推理','侦探','mystery','detective'), 'thriller':('惊悚','thriller'),
@@ -31,6 +31,13 @@ def infer_mode(text):
  return 'film'
 def infer_task(text):
  if re.search(r'(?:写|创作|制作|完成).{0,16}(?:完整电影|电影全套|完整小说|整季剧本|小说全文|剧集全套)',text) and not has(text,('只审','只检查','不改正文')):return 'full'
+ if has(text,('otio','剪辑工程','剪辑交接','editorial handoff')):return 'editorial'
+ if has(text,('字幕校时','字幕检查','检查字幕','asr','srt','字幕导入')):return 'subtitles'
+ if has(text,('切点检测','切点候选','scenedetect','检测切点')):return 'cuts'
+ if has(text,('视频参数','视频元数据','视频技术检查','媒体质检','media qc','帧时间戳')):return 'media-qc'
+ if has(text,('提示词回归','promptfoo','prompt regression')):return 'regression'
+ if has(text,('vbench','视频指标','视频评分指标')):return 'metrics'
+ if has(text,('章节上下文','章节契约','上下文包','chapter context')) and not has(text,('续写','继续写','改写','continue chapter')):return 'context'
  if has(text,('ai感','去ai','塑料皮肤','运镜很假','运镜假','超级真实','photographic realism')):return 'realism'
  if has(text,('视频提示词','优化提示词','润色提示词','提示词模板','prompt pack')):return 'prompts'
  if has(text,('模型选型','选择视频模型','model selection')):return 'models'
@@ -74,7 +81,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  base={'full':['premise','character','structure'],'brainstorm':['premise','genre-blend'],
        'draft':['scene','dialogue'],'rewrite':['revision','continuity'],'critique':['revision','continuity','reader-experience'],
        'dialogue':['dialogue'],'pitch':['pitch'],'production':['visual-design','sound-design','production-limits'],
-       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','structure'],
+       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','adaptation-beat-transfer','structure'],
        'opening':['opening-ending'],'emotion':['emotional-payoff'],'antagonist':['antagonist-design'],'ensemble':['ensemble-subplots'],
        'transitions':['scene-transitions'],'pacing':['pacing-compression','continuity'],'short-form':['short-vertical','series'],
        'audio':['audio-drama','sound-design'],'comics':['comics-webtoon','visual-design'],
@@ -82,7 +89,11 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
        'prompts':['video-prompt-architecture','model-selection','identity-continuity'],
        'models':['model-selection','workflow-reproducibility'],
        'evaluation':['prompt-evaluation'],'impact':['revision-impact','continuity'],
-       'realism':['realism-diagnostics','camera-blocking','micro-performance','prompt-evaluation']}
+       'realism':['realism-diagnostics','camera-blocking','micro-performance','prompt-evaluation'],
+       'context':['novel-context-packs'],'regression':['prompt-regression'],
+       'media-qc':['technical-media-qc'],'subtitles':['subtitle-alignment'],
+       'editorial':['editorial-handoff','technical-media-qc'],
+       'metrics':['video-metric-reading'],'cuts':['scene-detection-review']}
  for mid in base[task]:add(mid,'当前任务的直接方法')
  if task in ('audio','comics') and has(clean,('改编','adapt')):add('adaptation','跨媒介时保留源材料映射与取舍')
  if task in ('full','draft','rewrite','adapt','critique'):
@@ -97,7 +108,7 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
    if has(clean,terms):add(mid,'请求中明确提到的专项问题')
  if task in ('full','brainstorm','draft','rewrite') and has(clean,('风格实验','风格对照','不同文风','style comparison')):add('style-lab','用户要求比较表达风格')
  if task in ('full','draft','rewrite','adapt'):
-  if mode=='novel':add('prose-voice','小说需要独立叙述视角与文风')
+  if mode=='novel':add('prose-voice','小说需要独立叙述视角与文风');add('novel-context-packs','按当前章组织前文、契约和知情范围')
   if mode=='series' and task in ('full','adapt'):add('series-room','全季需要持续故事来源与分工');add('series','逐集推进与兑现')
  if task in ('full','brainstorm','draft','rewrite','adapt'):
   for genre in selected_genres:add(GENRE_MODULES[genre],'用户请求中的类型方向：'+genre)
@@ -107,6 +118,10 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  if task in ('prompts','production','realism'):
   for mid,terms in [('image-to-video',('图生视频','i2v')),('text-to-video',('文生视频','t2v')),('keyframe-video',('首尾帧','关键帧','flf2v')),('motion-physics',('接触','物理','动作失真')),('workflow-reproducibility',('comfyui','工作流'))]:
    if has(clean,terms):add(mid,'视频任务明确需要：'+mid)
+ if task in ('editorial','media-qc','cuts','subtitles'):
+  for mid,terms in [('subtitle-alignment',('字幕','srt','asr')),('scene-detection-review',('切点','scenedetect')),('technical-media-qc',('技术参数','帧率','元数据'))]:
+   if has(clean,terms):add(mid,'请求中同时要求的媒体处理')
+ if task in ('evaluation','realism') and has(clean,('vbench','视频指标')):add('video-metric-reading','需要区分实际视频指标的任务边界')
  if task=='full':
   add('scene','把关键事件写成完整正文');add('dialogue','人物实际交流与声音')
   if mode in ('novel','series'):add('project-memory','长篇需要有效版本、事实与交接')
@@ -148,8 +163,15 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'models':['可核验的模型/工作流选择','明确能力、许可与未验证项'],
   'evaluation':['固定条件的A/B测试方案','只有实际产物与观察才填写的结果记录'],
   'impact':['源版本改动与直接依赖清单','需要人工复核或重建的产物'],
-  'realism':['真实摄影基准提示词与单变量对照','起始图、动作、运镜和后期的分层排查']}[task]
- return {'version':'1.2.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
+  'realism':['真实摄影基准提示词与单变量对照','起始图、动作、运镜和后期的分层排查'],
+  'context':['指定章的资料包与省略说明','作者与读者知情边界；不冒充已续写正文'],
+  'regression':['可运行的离线Promptfoo配置','实际运行结果或明确待运行状态；不等于视频评分'],
+  'media-qc':['实际媒体技术报告与采样范围','需复看的告警；不自动证明写实'],
+  'subtitles':['用户指定的字幕校验或ASR导入','识别与剧本差异待核对'],
+  'editorial':['真实OTIO画面时间线或明确缺素材规划工程','素材范围、帧率与缺失引用记录'],
+  'metrics':['与视频任务匹配的指标方案','实际评分证据或明确未运行状态'],
+  'cuts':['实际切点候选或缺少依赖说明','人工映射场次与误报复核']}[task]
+ return {'version':'1.3.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):
  path=Path(path)

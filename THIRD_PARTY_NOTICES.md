@@ -87,3 +87,21 @@ Screenwriting Skills用于比较喜剧场面、类型承诺与连续剧持续产
 Rylaispirit/cinematic-video-prompt-skill的摄影词汇组织与单镜约束供写实诊断参考。本项目独立重写中文方法与24个英文原创提示词例子，没有复制其词典全文或采用“所有工具必须英文”等通用命令。[MIT许可](skills/story-production/references/upstream/cinematic/LICENSE)保留，固定提交与入口文件在video-projects.json中列出。
 
 LTX与Hunyuan模型/适配器采用自定义社区许可，不以本项目MIT条款重新授权。Vidu技能仓库在核验提交中未见明确再分发许可证，因此仅提供来源索引。Wan、ComfyUI、Diffusers及其他适配器的许可范围按各仓库与依赖分别核对；本包不执行其安装脚本。
+
+## v1.3 新增方法与接口适配
+
+原始文档固定提交与SHA256见[integration-projects.json](skills/story-production/assets/integration-projects.json)。本项目用中文独立编写模块和适配脚本，不分发上游商业作品、推广内容、模型权重或运行时。下表许可指上游代码/文档；不扩展授权到模型、训练集和用户媒体。
+
+|项目|固定提交|许可与声明|
+|---|---|---|
+|[PenglongHuang/chinese-novelist-skill](https://github.com/PenglongHuang/chinese-novelist-skill)|`507d41567925eab520ad459db08fda83813e8051`|MIT [LICENSE](skills/story-production/references/upstream/chinese-novelist/LICENSE)|
+|[waylean/plotrail](https://github.com/waylean/plotrail)|`a7917c8b4951f540bb4da39b5f10b99dbacc45c0`|MIT [LICENSE](skills/story-production/references/upstream/plotrail/LICENSE)|
+|[egguy886/write-screenplay-skill](https://github.com/egguy886/write-screenplay-skill)|`fd2404312b2d4fa1e0b0381529de9d9cf21da547`|MIT [LICENSE](skills/story-production/references/upstream/write-screenplay/LICENSE)|
+|[promptfoo/promptfoo](https://github.com/promptfoo/promptfoo)|`aa3ee561b1416d4d68f7c4e05fedd082db6aa2b1`|MIT [LICENSE](skills/story-production/references/upstream/promptfoo/LICENSE)|
+|[Vchitect/VBench](https://github.com/Vchitect/VBench)|`fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490`|Apache-2.0 [LICENSE](skills/story-production/references/upstream/vbench/LICENSE)|
+|[Breakthrough/PySceneDetect](https://github.com/Breakthrough/PySceneDetect)|`55f20ff3448ed336df032ac6270cf47d215dc2c4`|BSD-3-Clause [LICENSE](skills/story-production/references/upstream/pyscenedetect/LICENSE)|
+|[AcademySoftwareFoundation/OpenTimelineIO](https://github.com/AcademySoftwareFoundation/OpenTimelineIO)|`80c5ff30938e4adffe9c94f419b1055856cee9f5`|Apache-2.0 [LICENSE.txt](skills/story-production/references/upstream/opentimelineio/LICENSE.txt)、[NOTICE.txt](skills/story-production/references/upstream/opentimelineio/NOTICE.txt)|
+|[SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)|`9e472ae9de8bb374552f531f752654554b76b2d6`|MIT [LICENSE](skills/story-production/references/upstream/faster-whisper/LICENSE)|
+|[PyAV-Org/PyAV](https://github.com/PyAV-Org/PyAV)|`31cf756fcc773106f2900d44b83f31bfc8fd634d`|BSD-3-Clause [LICENSE.txt](skills/story-production/references/upstream/pyav/LICENSE.txt)|
+
+吸收断点恢复、章节契约、改编映射、动作分解、离线评估和媒体交换方法。没有采用上游的强制访谈、逐章审批、固定短剧时长或所有项目均英文的要求。各项实际测试边界见项目资料表。

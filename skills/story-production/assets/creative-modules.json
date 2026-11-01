@@ -1,6 +1,6 @@
 {
-  "version": "1.2.0",
-  "module_count": 61,
+  "version": "1.3.0",
+  "module_count": 69,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -783,6 +783,120 @@
       "integration": "original",
       "tags": [
         "realism"
+      ]
+    },
+    {
+      "id": "novel-context-packs",
+      "title": "章节契约与有限上下文",
+      "summary": "按目标章组织正史与前文，试读不提前泄密",
+      "stage": "draft",
+      "reference": "references/modules/novel-context-packs.md",
+      "sources": [
+        "chinese-novelist",
+        "plotrail"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "novel-context-packs"
+      ]
+    },
+    {
+      "id": "adaptation-beat-transfer",
+      "title": "改编覆盖与动作拆解",
+      "summary": "保留源事件因果，将复杂接触转成可验证分镜",
+      "stage": "develop",
+      "reference": "references/modules/adaptation-beat-transfer.md",
+      "sources": [
+        "write-screenplay"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "adaptation-beat-transfer"
+      ]
+    },
+    {
+      "id": "prompt-regression",
+      "title": "提示词回归测试",
+      "summary": "运行离线契约样例，区分文本通过与实际画面质量",
+      "stage": "review",
+      "reference": "references/modules/prompt-regression.md",
+      "sources": [
+        "promptfoo"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "prompt-regression"
+      ]
+    },
+    {
+      "id": "technical-media-qc",
+      "title": "实际媒体技术检查",
+      "summary": "解码检查帧率与时间戳，标明采样范围和技术局限",
+      "stage": "delivery",
+      "reference": "references/modules/technical-media-qc.md",
+      "sources": [
+        "pyav"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "technical-media-qc"
+      ]
+    },
+    {
+      "id": "subtitle-alignment",
+      "title": "录音识别与字幕校时",
+      "summary": "导入真实识别分段并检查SRT，不伪造词级时间",
+      "stage": "delivery",
+      "reference": "references/modules/subtitle-alignment.md",
+      "sources": [
+        "faster-whisper"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "subtitle-alignment"
+      ]
+    },
+    {
+      "id": "editorial-handoff",
+      "title": "剪辑工程交接",
+      "summary": "以实际素材生成可重开的OTIO画面时间线",
+      "stage": "delivery",
+      "reference": "references/modules/editorial-handoff.md",
+      "sources": [
+        "opentimelineio",
+        "pyav"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "editorial-handoff"
+      ]
+    },
+    {
+      "id": "video-metric-reading",
+      "title": "视频指标解读",
+      "summary": "用正确任务和对照条件分析视频真实感的失败",
+      "stage": "review",
+      "reference": "references/modules/video-metric-reading.md",
+      "sources": [
+        "vbench"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "video-metric-reading"
+      ]
+    },
+    {
+      "id": "scene-detection-review",
+      "title": "切点检测与场次复核",
+      "summary": "获取真实切点候选并与剧情场次分开",
+      "stage": "delivery",
+      "reference": "references/modules/scene-detection-review.md",
+      "sources": [
+        "pyscenedetect"
+      ],
+      "integration": "independently-authored-adapter",
+      "tags": [
+        "scene-detection-review"
       ]
     }
   ]

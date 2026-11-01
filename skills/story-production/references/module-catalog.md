@@ -1,6 +1,6 @@
 # 创作模块目录
 
-共61个按需模块：12份昆卡原文参考、49个本项目扩展模块。每阶段只读取当前需要的两三个。
+共69个按需模块：12份昆卡原文参考、57个本项目扩展模块。每阶段只读取当前需要的两三个。
 
 |ID|模块|用途|
 |---|---|---|
@@ -65,7 +65,13 @@
 |`workflow-reproducibility`|[工作流复现](modules/workflow-reproducibility.md)|记录模型、节点、参数和素材版本|
 |`revision-impact`|[改稿影响检查](modules/revision-impact.md)|识别需要复核或重建的依赖|
 |`realism-diagnostics`|[真实摄影与去AI感](modules/realism-diagnostics.md)|用固定机位基准、单变量对照和后期对比定位失真|
+|`novel-context-packs`|[章节契约与有限上下文](modules/novel-context-packs.md)|按目标章组织正史与前文，试读不提前泄密|
+|`adaptation-beat-transfer`|[改编覆盖与动作拆解](modules/adaptation-beat-transfer.md)|保留源事件因果，将复杂接触转成可验证分镜|
+|`prompt-regression`|[提示词回归测试](modules/prompt-regression.md)|运行离线契约样例，区分文本通过与实际画面质量|
+|`technical-media-qc`|[实际媒体技术检查](modules/technical-media-qc.md)|解码检查帧率与时间戳，标明采样范围和技术局限|
+|`subtitle-alignment`|[录音识别与字幕校时](modules/subtitle-alignment.md)|导入真实识别分段并检查SRT，不伪造词级时间|
+|`editorial-handoff`|[剪辑工程交接](modules/editorial-handoff.md)|以实际素材生成可重开的OTIO画面时间线|
+|`video-metric-reading`|[视频指标解读](modules/video-metric-reading.md)|用正确任务和对照条件分析视频真实感的失败|
+|`scene-detection-review`|[切点检测与场次复核](modules/scene-detection-review.md)|获取真实切点候选并与剧情场次分开|
 
-专项提示词、模型约束、开源项目与评测见[AI视频手册](video-handbook.md)。任务选择与事实账见[创作工具](creative-ledger.md)。
-
-模块数量不代表全部同时执行。用户要求只改对白或只审稿时保持范围；关键词路由可由显式task/mode覆盖。模型资料是固定版本文档核验，未进行GPU生成，不据此宣称市场第一。
+工具适配、来源与实测边界见[扩展工具手册](integration-tools.md)及[整合说明](integrations.md)。

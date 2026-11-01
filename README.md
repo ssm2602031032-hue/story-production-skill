@@ -6,6 +6,22 @@
 
 这是创作与拍前制作Skill。它不包含视频模型，不保证一次生成影院成片，也不会因为调用Skill就自动付费或公开用户作品。
 
+## v1.3 长篇创作、回归检查与实际媒体交接
+
+新增 **9个GitHub来源的适配、8个按需模块**：Chinese Novelist、PlotRail、write-screenplay、Promptfoo、VBench、PySceneDetect、OpenTimelineIO、Faster Whisper和PyAV。不是把上游入口全部堆进上下文，而是将章节契约、改编覆盖、单镜动作、实际文件检查等方法接入本包。
+
+- 长篇：有界章节上下文、作者与读者知情分离、正史与提案分离。
+- 提示词：可运行的Promptfoo离线回归，检查部分机位/景深冲突，实际画面另做对照。
+- 制作：真实视频元数据与帧时间戳检查、切点候选、已有ASR转字幕、真实OTIO画面时间线。
+
+来源固定提交、许可、吸收/未采用的规则及实际验证状态见[新增项目表](skills/story-production/assets/integration-projects.json)。命令和安装选项见[扩展工具手册](skills/story-production/references/integration-tools.md)。已运行CPU媒体、OTIO和Promptfoo离线测试；未运行GPU视频生成、VBench评分或Faster Whisper模型。
+
+```text
+$story-production 继续这部长篇小说，先核对目标章节契约和人物知情，完整写到既定结局。
+$story-production 将我的小说改编为电影，保留主要因果，给出章节到场景映射和可生成的动作分镜。
+$story-production 检查这批AI视频的技术参数和字幕，按现有镜头计划导出OTIO，缺素材明确列出。
+```
+
 ## v1.2 写实视频提示词与制作适配
 
 新增真实摄影与“去AI感”排查、24张原创单镜头提示词卡、7个按官方资料核验的模型任务配置、11个开源或公开项目索引，以及4份附许可证的官方ComfyUI界面工作流快照。细节见[AI视频手册](skills/story-production/references/video-handbook.md)。
@@ -20,7 +36,7 @@ $story-production 改了第8集主角对白和服装，检查哪些配音、镜�
 
 ## 创作技能整合
 
-现在内置 **61个按需调用的创作模块**，不需要逐个安装。12个昆卡技能覆盖构思、人物、结构、场景、对白、连续性、改稿、风格、剧集、改编、格式和提案；49个扩展模块补充题材、文风、关系、类型、长篇管理及AI视频制作。新一轮细化了刑侦、恐怖、科幻、年代、角色弧线、伏笔、非线性叙事、主题意象与视频任务。
+现在内置 **69个按需调用的创作模块**，不需要逐个安装。12个昆卡技能覆盖构思、人物、结构、场景、对白、连续性、改稿、风格、剧集、改编、格式和提案；57个扩展模块补充题材、文风、关系、类型、长篇管理及AI视频制作。新一轮细化了刑侦、恐怖、科幻、年代、角色弧线、伏笔、非线性叙事、主题意象与视频任务。
 
 模块按当前任务分批加载。只改一句台词时不会默认重写整季；完整作品则按阶段继续完成正文与制作包。可查看[全部模块](skills/story-production/references/module-catalog.md)与[第三方来源及许可证](THIRD_PARTY_NOTICES.md)。整合参考固定于公开提交，日常调用不需要连接上游仓库。
 
@@ -156,7 +172,7 @@ PDF需要ReportLab、pypdf和可用字体，中文可通过`--font`指定字体�
 python -m unittest discover -s tests -v
 ```
 
-核心测试仅依赖Python标准库。GitHub Actions在Linux与Windows、Python 3.10与3.12上运行相同检查；PDF字体、原生Excel和真实浏览器显示仍需在实际制作环境中验证。
+核心测试仅依赖Python标准库，可选媒体测试在未安装依赖时明确跳过。GitHub Actions除Linux/Windows × Python 3.10/3.12核心检查外，另在Python 3.12安装媒体依赖并执行真实文件测试；PDF字体、原生Excel和真实浏览器显示仍需在实际制作环境中验证。
 
 ## 检查的作用
 

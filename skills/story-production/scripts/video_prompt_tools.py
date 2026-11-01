@@ -5,6 +5,7 @@ import argparse,hashlib,json,math,re,sys
 from pathlib import Path
 from fractions import Fraction
 from creative_tools import read,safe_write
+from prompt_contract import check as check_prompt_contract
 ASSETS=Path(__file__).resolve().parents[1]/'assets'
 def profiles():return read(ASSETS/'video-model-profiles.json')['profiles']
 def digest(path):
@@ -20,10 +21,9 @@ def lint(prompt,profile_id,mode):
  p=choose(profile_id);errors=[];warnings=[];t=prompt.lower()
  if mode not in p['modes']:errors.append('Mode is not supported by this pinned profile')
  if not prompt.strip():errors.append('Prompt is empty')
- groups=[('locked camera',('locked-off','static camera','camera remains still','固定机位','相机固定')),('camera translation',('dolly','orbit','tracking camera','camera tracks','环绕','推轨','跟拍'))]
- if any(x in t for x in groups[0][1]) and any(x in t for x in groups[1][1]):warnings.append('Check conflicting fixed-camera and moving-camera instructions; describe phases if intentional')
- if sum(word in t for word in ('8k','masterpiece','award-winning','最高画质','顶级','超级真实','hyperrealistic'))>=3:warnings.append('Quality adjectives dominate; replace with visible light, material, action and camera evidence')
- if ('shallow depth' in t or '浅景深' in t) and ('everything in focus' in t or '所有景物清晰' in t):warnings.append('Depth-of-field instructions conflict')
+ contract=check_prompt_contract(prompt)
+ labels={'fixed_and_moving_camera':'Check conflicting fixed-camera and moving-camera instructions; describe phases if intentional','quality_adjective_stack':'Quality adjectives dominate; replace with visible light, material, action and camera evidence','conflicting_depth_of_field':'Depth-of-field instructions conflict'}
+ warnings.extend(labels[i] for i in contract['issues'] if i in labels)
  if mode=='i2v' and any(x in t for x in ('change clothes','different face','换衣服','变成另一张脸')):warnings.append('Appearance change may conflict with reference identity; separate it into an intentional shot')
  words=len(re.findall(r"[A-Za-z]+(?:['-][A-Za-z]+)*",prompt))
  if p.get('max_english_words') and words>p['max_english_words']:warnings.append(f"Above the official {p['max_english_words']}-word English prompt guidance; edit meaningfully, do not blindly truncate")

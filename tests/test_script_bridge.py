@@ -42,6 +42,7 @@ class BridgeTests(unittest.TestCase):
  def test_build_separates_speech_from_visual_text_and_exports_safe_csv(self):
   self.data['shot_links'][0]['cut_trigger']='=formula-looking authored text';self.save();out=self.root/'package';build(self.source,self.visual,self.bridge,out);p=json.loads((out/'shot-packages.json').read_text(encoding='utf-8'));self.assertEqual(p['shots'][0]['speech_track'][0]['spoken_text'],'我来拿吧。');self.assertNotIn('我来拿吧。',p['shots'][0]['visible_prompt']);self.assertIn('可见发声者：乙',p['shots'][0]['visible_prompt']);self.assertFalse(p['media_generated'])
   with (out/'source-shot-map.csv').open(encoding='utf-8-sig',newline='') as f:rows=list(csv.reader(f));self.assertTrue(rows[1][-1].startswith("'="))
+  adaptation=json.loads((out/'adaptation-records.json').read_text(encoding='utf-8'));self.assertEqual(len(adaptation['beats']),len(self.data['beats']));self.assertTrue(any(b['id']=='B04' and b['treatment']=='omit' for b in adaptation['beats']));self.assertIn('开门余波',(out/'director-and-prompts.md').read_text(encoding='utf-8'))
  def test_series_dependency_fingerprint_changes_when_episode_changes(self):
   directory=self.root/'series';shutil.copytree(S/'assets/example-series',directory);source=directory/'series.json';anchors,first=leaf_anchors(source);self.assertTrue(all('/S' in key for key in anchors));ep=directory/'episodes/E002/film.json';ep.write_bytes(ep.read_bytes()+b'\n');self.assertNotEqual(first,leaf_anchors(source)[1])
  def edit_fixture(self):

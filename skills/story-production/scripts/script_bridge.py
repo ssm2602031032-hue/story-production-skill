@@ -122,7 +122,10 @@ def build(source,visual,bridge,out):
  if not report['valid']:raise ValueError('; '.join(report['errors']))
  out=Path(out)
  if out.exists():raise ValueError('Choose a fresh output directory')
- fresh(out/'manifest.json');d=read(bridge);v=compile_contract(visual);jobs={j['id']:j for j in v['jobs']};scenes=index(d['scenes'],'scenes');beats=index(d['beats'],'beats');links=index(d['shot_links'],'links');packages=[];table=[];notes=['# '+d['title'],'原文、作者改编决定、视觉提示词与剪辑说明分别保留。以下是制作设计，未生成影像或核准表演时长。']
+ fresh(out/'manifest.json');d=read(bridge);v=compile_contract(visual);jobs={j['id']:j for j in v['jobs']};scenes=index(d['scenes'],'scenes');beats=index(d['beats'],'beats');links=index(d['shot_links'],'links');packages=[];table=[];notes=['# '+d['title'],'原文、作者改编决定、视觉提示词与剪辑说明分别保留。以下是制作设计，未生成影像或核准表演时长。','## 改编取舍']
+ for beat in d['beats']:
+  if beat['treatment']!='preserve':notes.append(beat['id']+' / '+beat['anchor']+' / '+beat['treatment']+'：'+beat['quote']+'\n\n取舍说明：'+beat['adaptation_note'])
+ for omitted in d['anchor_omissions']:notes.append('整单元省略 '+omitted['anchor']+'：'+omitted['reason'])
  for jid,j in jobs.items():
   link=links[jid];scene=scenes[link['scene']];related=[b for b in d['beats'] if jid in b['targets']];speech=[row for row in d['dialogue'] if row['shot']==jid];policy=policies()[scene['context']]
   speakers=list(dict.fromkeys(row['speaker'] for row in speech if row['delivery']=='visible'));prompt=j['positive_prompt']
@@ -132,7 +135,7 @@ def build(source,visual,bridge,out):
   package={'id':jid,'source_beats':[{'id':b['id'],'anchor':b['anchor'],'quote':b['quote'],'treatment':b['treatment'],'adaptation_note':b.get('adaptation_note','')} for b in related],'director_context':scene,'shot_function':link,'visible_prompt':prompt,'visual_conditions':{'mode':j['mode'],'duration_sec':j['duration_sec'],'conditioning':j['conditioning'],'missing_conditions':j['missing_conditions']},'speech_track':speech,'sound_note':j['sound_note'],'editorial_policy':policy,'model_payload_status':'not_submitted; native dialogue syntax and reference parameters need the actual model adapter','rendered':False};packages.append(package)
   table.append([jid,link['scene'],scene['context'],';'.join(b['id'] for b in related),';'.join(b['anchor'] for b in related),link['function'],j['duration_sec'],link['cut_trigger']])
   notes += ['## '+jid+' · '+link['function'],'来源：'+'；'.join(b['anchor']+' / '+b['id']+' / '+b['quote'] for b in related),'场景问题：'+scene['question']+'\n\n本镜作用：'+link['purpose'],'可见提示词：\n\n'+prompt,'对白单独轨道：\n\n'+('\n'.join(row['speaker']+'（'+row['delivery']+'）：'+row['spoken_text'] for row in speech) or '无已映射对白；不自动补台词'),'剪辑触发：'+link['cut_trigger']+'\n\n情境策略：'+policy['priority'],'替代覆盖：'+link['fallback']]
- safe_write(out/'bridge-report.json',report);safe_write(out/'shot-packages.json',{'version':'1.7.0','source_fingerprint':report['source_fingerprint'],'visual_sha256':report['visual_sha256'],'bridge_sha256':report['bridge_sha256'],'shots':packages,'boundaries':d['boundaries'],'media_generated':False})
+ safe_write(out/'bridge-report.json',report);safe_write(out/'adaptation-records.json',{'beats':d['beats'],'anchor_omissions':d['anchor_omissions'],'source_fingerprint':report['source_fingerprint'],'scope_mode':d['scope_mode'],'scope':d['scope'],'limits':'All declared mapping decisions, including omitted material. Does not certify sentence-by-sentence adaptation completeness.'});safe_write(out/'shot-packages.json',{'version':'1.7.0','source_fingerprint':report['source_fingerprint'],'visual_sha256':report['visual_sha256'],'bridge_sha256':report['bridge_sha256'],'shots':packages,'boundaries':d['boundaries'],'adaptation_records':'adaptation-records.json','media_generated':False})
  for rel,record in v['copy_files'].items():
   target=out/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(record['path'],target)
   if digest(target)!=record['sha256']:raise ValueError('Reference changed during package copy')

@@ -61,6 +61,7 @@ python scripts/script_bridge.py build project/novel.json --visual project/visual
 - `reference-map.json`及已绑定的`references/`：实际批准参考图会复制并核对哈希，可传入模型工作包的`--references`；缺失参考不会凭空补齐。
 - `dialogue-track.json`：准确台词与暂定时间，不伪称已生成配音。
 - `source-shot-map.csv`、校验与哈希清单。
+- `adaptation-records.json`：所有已声明的改编取舍，包含没有目标镜头的省略项；导演阅读稿也列出这些损失，不能因镜头没有采用就让省略记录从交付中消失。
 
 可见提示词复用视觉契约的身份、状态、起止动作、机位、光线和材质。对白全文留在单独轨道，可见发声者只作为画面表演提示。支持原生对白的模型还需其真实格式适配；本工具不凭泛化句式保证口型，不能把单独配音声明当成已完成。
 

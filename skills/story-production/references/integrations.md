@@ -1,6 +1,6 @@
 # 已整合的创作技能
 
-12个昆卡原文参考和16个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
+12个昆卡原文参考和28个扩展模块由[模块目录](module-catalog.md)按任务选择。原文快照固定版本见[来源清单](../assets/upstream-sources.json)。
 
 - **geslie1/kunka-screenwriting-master**：https://github.com/geslie1/kunka-screenwriting-master/tree/8d5b157fa6ce9136ab3bde28ab934cf9633c700c 。MIT。12 unmodified skill-text snapshots, renamed as references。
   [许可证](upstream/kunka/LICENSE)

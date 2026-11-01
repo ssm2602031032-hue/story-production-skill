@@ -18,6 +18,19 @@ class CreativeToolsTests(unittest.TestCase):
  def test_novel_full_does_not_require_film_production_modules(self):
   p=creative.plan('写一部成长小说的完整正文')
   self.assertEqual(p['mode'],'novel');self.assertIn('prose-voice',self.selected(p));self.assertNotIn('visual-design',self.selected(p))
+ def test_naming_only_does_not_create_a_whole_story(self):
+  p=creative.plan('只给这部悬疑小说起书名')
+  self.assertEqual(p['task'],'naming');self.assertEqual(self.selected(p),{'title-logline'})
+ def test_comic_adaptation_is_not_claimed_as_a_rendered_film(self):
+  p=creative.plan('把小说改编成条漫分格脚本')
+  self.assertEqual(p['task'],'comics');self.assertIn('comics-webtoon',self.selected(p));self.assertIn('adaptation',self.selected(p));self.assertNotIn('format',self.selected(p))
+ def test_audio_read_and_short_form_routes_are_distinct(self):
+  for request,task,mid in [('改编成广播剧','audio','audio-drama'),('做对白读演，校准口气','table-read','table-read'),('制作一部竖屏短剧','short-form','short-vertical')]:
+   p=creative.plan(request);self.assertEqual(p['task'],task);self.assertIn(mid,self.selected(p));self.assertFalse(p['media_generated'])
+  self.assertEqual(creative.plan('制作一部竖屏短剧')['mode'],'series')
+ def test_new_focus_passes_remain_bounded(self):
+  for request,mid in [('只改结尾，保留人物经历','opening-ending'),('反派扁平，帮我设计反派','antagonist-design'),('梳理支线与群像关系','ensemble-subplots'),('补转场，不增加新人物','scene-transitions'),('压缩篇幅但不要丢失线索','pacing-compression')]:
+   p=creative.plan(request);self.assertIn(mid,self.selected(p));self.assertNotEqual(p['task'],'full')
  def test_adaptation_uses_destination_mode(self):
   p=creative.plan('把小说改编成12集爱情悬疑剧集')
   self.assertEqual((p['mode'],p['task']),('series','adapt'))

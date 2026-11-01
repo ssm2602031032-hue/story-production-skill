@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "module_count": 28,
+  "module_count": 40,
   "loading_policy": "Select by task; read at most three new modules at one stage. Never load the whole library by default.",
   "modules": [
     {
@@ -386,6 +386,151 @@
       "integration": "local-adaptation",
       "tags": [
         "series"
+      ]
+    },
+    {
+      "id": "opening-ending",
+      "title": "开篇与结局",
+      "summary": "让首尾承诺、关键选择与余波相互兑现",
+      "stage": "draft",
+      "reference": "references/modules/opening-ending.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "opening",
+        "ending"
+      ]
+    },
+    {
+      "id": "emotional-payoff",
+      "title": "情感铺垫与高潮",
+      "summary": "用关系经历与可见决定建立情绪回报",
+      "stage": "draft",
+      "reference": "references/modules/emotional-payoff.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "antagonist-design",
+      "title": "反派与对抗",
+      "summary": "设计对手资源、盲区、知情与反制行动",
+      "stage": "develop",
+      "reference": "references/modules/antagonist-design.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "antagonist"
+      ]
+    },
+    {
+      "id": "ensemble-subplots",
+      "title": "群像与支线",
+      "summary": "让各线有独立行动并互相改变处境",
+      "stage": "develop",
+      "reference": "references/modules/ensemble-subplots.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "ensemble"
+      ]
+    },
+    {
+      "id": "scene-transitions",
+      "title": "场景桥接与转场",
+      "summary": "连接行动后果、空间和叙述视角",
+      "stage": "draft",
+      "reference": "references/modules/scene-transitions.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "id": "pacing-compression",
+      "title": "节奏与删改",
+      "summary": "删减不丢因果，扩写增加真实选择",
+      "stage": "review",
+      "reference": "references/modules/pacing-compression.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "pacing"
+      ]
+    },
+    {
+      "id": "short-vertical",
+      "title": "短剧与竖屏",
+      "summary": "设计短集兑现、竖向构图和跨集后果",
+      "stage": "develop",
+      "reference": "references/modules/short-vertical.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "vertical"
+      ]
+    },
+    {
+      "id": "audio-drama",
+      "title": "广播剧与有声改编",
+      "summary": "将视觉作用转成可听行动与声场",
+      "stage": "draft",
+      "reference": "references/modules/audio-drama.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "id": "comics-webtoon",
+      "title": "漫画与条漫分格",
+      "summary": "设计静态时刻、阅读顺序和翻页揭示",
+      "stage": "draft",
+      "reference": "references/modules/comics-webtoon.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "nonfiction-adaptation",
+      "title": "真实事件改编",
+      "summary": "区分证实材料、推断与新增虚构",
+      "stage": "develop",
+      "reference": "references/modules/nonfiction-adaptation.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "nonfiction"
+      ]
+    },
+    {
+      "id": "title-logline",
+      "title": "命名与一句话简介",
+      "summary": "按实际故事与受众选择名称和表达",
+      "stage": "delivery",
+      "reference": "references/modules/title-logline.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "naming"
+      ]
+    },
+    {
+      "id": "table-read",
+      "title": "对白读演",
+      "summary": "校准人物声音、可说性、停顿与时长",
+      "stage": "review",
+      "reference": "references/modules/table-read.md",
+      "sources": [],
+      "integration": "original",
+      "tags": [
+        "table-read"
       ]
     }
   ]

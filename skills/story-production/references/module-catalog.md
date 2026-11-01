@@ -1,6 +1,6 @@
 # 创作模块目录
 
-本库共28个按任务调用的模块：12份昆卡技能原文快照、16个本项目扩展模块。不是28个同时执行的步骤。先确定用户要做什么，只读本阶段确实需要的2—3份；下一阶段再按问题加载。
+本库共40个按任务调用的模块：12份昆卡技能原文快照、28个本项目扩展模块。不是40个同时执行的步骤。先确定用户要做什么，只读本阶段确实需要的2—3份；下一阶段再按问题加载。
 
 ## 快速路由
 
@@ -51,6 +51,18 @@
 | `project-memory` | [长篇记忆与交接](modules/project-memory.md) | 区分正史、信念、提案与未兑现承诺 |
 | `production-limits` | [制作约束改稿](modules/production-limits.md) | 在资源与模型限制中保住戏剧作用 |
 | `series-room` | [全季开发与编剧室](modules/series-room.md) | 维护持续故事来源、分工边界与跨集交接 |
+| `opening-ending` | [开篇与结局](modules/opening-ending.md) | 让首尾承诺、关键选择与余波相互兑现 |
+| `emotional-payoff` | [情感铺垫与高潮](modules/emotional-payoff.md) | 用关系经历与可见决定建立情绪回报 |
+| `antagonist-design` | [反派与对抗](modules/antagonist-design.md) | 设计对手资源、盲区、知情与反制行动 |
+| `ensemble-subplots` | [群像与支线](modules/ensemble-subplots.md) | 让各线有独立行动并互相改变处境 |
+| `scene-transitions` | [场景桥接与转场](modules/scene-transitions.md) | 连接行动后果、空间和叙述视角 |
+| `pacing-compression` | [节奏与删改](modules/pacing-compression.md) | 删减不丢因果，扩写增加真实选择 |
+| `short-vertical` | [短剧与竖屏](modules/short-vertical.md) | 设计短集兑现、竖向构图和跨集后果 |
+| `audio-drama` | [广播剧与有声改编](modules/audio-drama.md) | 将视觉作用转成可听行动与声场 |
+| `comics-webtoon` | [漫画与条漫分格](modules/comics-webtoon.md) | 设计静态时刻、阅读顺序和翻页揭示 |
+| `nonfiction-adaptation` | [真实事件改编](modules/nonfiction-adaptation.md) | 区分证实材料、推断与新增虚构 |
+| `title-logline` | [命名与一句话简介](modules/title-logline.md) | 按实际故事与受众选择名称和表达 |
+| `table-read` | [对白读演](modules/table-read.md) | 校准人物声音、可说性、停顿与时长 |
 
 ## 模块协作规则
 

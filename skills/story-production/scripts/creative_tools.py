@@ -5,7 +5,7 @@ import argparse,hashlib,json,re,sys
 from pathlib import Path
 
 SKILL=Path(__file__).resolve().parents[1]
-TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt')
+TASKS=('auto','full','brainstorm','draft','rewrite','critique','dialogue','pitch','production','research','rehearse','format','adapt','opening','emotion','antagonist','ensemble','transitions','pacing','short-form','audio','comics','nonfiction','naming','table-read')
 GENRES={
  'comedy':('喜剧','搞笑','comedy','sitcom'), 'romance':('爱情','恋爱','romance'),
  'mystery':('悬疑','推理','侦探','mystery','detective'), 'thriller':('惊悚','thriller'),
@@ -26,13 +26,25 @@ def cleaned(request):
 def infer_mode(text):
  if re.search(r'(?:改编成|改成|改编为|adapt.{0,20}into).{0,12}(?:电影|film)',text):return 'film'
  if re.search(r'(?:改编成|改成|改编为|adapt.{0,20}into).{0,12}(?:电视剧|剧集|series)',text):return 'series'
- if has(text,('电视剧','剧集','整季','长剧','tv series','season')):return 'series'
+ if has(text,('电视剧','剧集','整季','长剧','短剧','tv series','season')):return 'series'
  if has(text,('小说','novel')):return 'novel'
  return 'film'
 def infer_task(text):
  if re.search(r'(?:只|仅).{0,18}(?:润色|修改|改写).{0,18}(?:对白|台词)',text):return 'dialogue'
  if has(text,('只改对白','只改台词','润色台词','润色对白','dialogue only','polish dialogue')):return 'dialogue'
  if has(text,('只审','审稿','审读','只检查','不改正文','critique','review only')):return 'critique'
+ if has(text,('读演','读本排练','台词朗读','table read','table-read')):return 'table-read'
+ if has(text,('广播剧','有声书','音频剧','audio drama')):return 'audio'
+ if has(text,('漫画','条漫','webtoon','comic')):return 'comics'
+ if has(text,('竖屏','微短剧','短剧','vertical drama')):return 'short-form'
+ if has(text,('真实事件改编','纪实改编','口述改编','nonfiction adaptation')):return 'nonfiction'
+ if re.search(r'(?:只|仅|起|取|拟|想|改|选|设计|推荐).{0,10}(?:片名|书名|章名|集名|标题)',text):return 'naming'
+ if has(text,('只改开头','只改结尾','重写开篇','重写结局','opening only')):return 'opening'
+ if has(text,('加强情感','情感铺垫','催泪生硬','emotional payoff')):return 'emotion'
+ if has(text,('设计反派','反派扁平','对手塑造','antagonist design')):return 'antagonist'
+ if has(text,('梳理支线','设计群像','群像关系','ensemble design')):return 'ensemble'
+ if has(text,('补转场','场景衔接','转场生硬','scene transitions')):return 'transitions'
+ if has(text,('压缩篇幅','删减','节奏拖沓','有效扩写','pacing pass')):return 'pacing'
  if has(text,('改编','adapt')):return 'adapt'
  if has(text,('提案','推介','pitch','logline')):return 'pitch'
  if has(text,('考据','研究资料','research')):return 'research'
@@ -55,8 +67,22 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
  base={'full':['premise','character','structure'],'brainstorm':['premise','genre-blend'],
        'draft':['scene','dialogue'],'rewrite':['revision','continuity'],'critique':['revision','continuity','reader-experience'],
        'dialogue':['dialogue'],'pitch':['pitch'],'production':['visual-design','sound-design','production-limits'],
-       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','structure']}
+       'research':['research'],'rehearse':['character-rehearsal'],'format':['format'],'adapt':['adaptation','structure'],
+       'opening':['opening-ending'],'emotion':['emotional-payoff'],'antagonist':['antagonist-design'],'ensemble':['ensemble-subplots'],
+       'transitions':['scene-transitions'],'pacing':['pacing-compression','continuity'],'short-form':['short-vertical','series'],
+       'audio':['audio-drama','sound-design'],'comics':['comics-webtoon','visual-design'],
+       'nonfiction':['nonfiction-adaptation','research'],'naming':['title-logline'],'table-read':['table-read','dialogue']}
  for mid in base[task]:add(mid,'当前任务的直接方法')
+ if task in ('audio','comics') and has(clean,('改编','adapt')):add('adaptation','跨媒介时保留源材料映射与取舍')
+ if task in ('full','draft','rewrite','adapt','critique'):
+  focused=[('opening-ending',('开篇','结局无力','首尾')),
+           ('emotional-payoff',('情感铺垫','情感高潮','催泪生硬')),
+           ('antagonist-design',('反派','对抗网')),
+           ('ensemble-subplots',('群像','多主角','支线')),
+           ('scene-transitions',('转场','场景衔接')),
+           ('pacing-compression',('节奏拖沓','删减','压缩篇幅'))]
+  for mid,terms in focused:
+   if has(clean,terms):add(mid,'请求中明确提到的专项问题')
  if task in ('full','brainstorm','draft','rewrite') and has(clean,('风格实验','风格对照','不同文风','style comparison')):add('style-lab','用户要求比较表达风格')
  if task in ('full','draft','rewrite','adapt'):
   if mode=='novel':add('prose-voice','小说需要独立叙述视角与文风')
@@ -87,7 +113,19 @@ def plan(request,mode='auto',task='auto',genres=None,modules=None,scope=''):
   'dialogue':['指定台词或对白替换稿','保留信息与人物关系说明'], 'pitch':['指定用途的简介/梗概/提案草稿'],
   'production':['指定范围视觉/声音/分镜方案','待制作验证项'],'research':['有来源的可用发现','冲突与未核实部分'],
   'rehearse':['有限知情的角色对话','正史支持项与新提案分开'],'format':['指定格式转换','正文未变的核对'],
-  'adapt':['改编正文或用户指定方案','源章节到集/场映射及取舍原因']}[task]
+  'adapt':['改编正文或用户指定方案','源章节到集/场映射及取舍原因'],
+  'opening':['指定开篇/结尾实际文本','需联动的中段伏笔'],
+  'emotion':['铺垫与回应关系','指定情感场景正文'],
+  'antagonist':['对手目标/资源/知情与行动','指定对抗场面'],
+  'ensemble':['各支线行动与相交节点','指定范围正文'],
+  'transitions':['前场尾部、桥接与后场开头','时空与道具衔接说明'],
+  'pacing':['指定范围删减或扩写稿','取舍损失与连续性联动'],
+  'short-form':['用户指定短剧集数完整文本','竖屏构图与跨集状态'],
+  'audio':['广播剧/有声版本文本','角色声线与音效录音任务；不冒称音频已生成'],
+  'comics':['漫画/条漫分格脚本','阅读顺序、气泡和图像任务；不冒称成品漫画'],
+  'nonfiction':['事实/推断/虚构对照','用户指定范围改编文本'],
+  'naming':['少量有区别的命名候选','推荐名称及简介'],
+  'table-read':['对白读本与表演提示','真实计时或明确估计，必要台词修订']}[task]
  return {'version':'1.1.0','status':'planned','request':request,'mode':mode,'task':task,'scope':scope or '遵循用户指定范围；未指定时按任务语义处理','genres':selected_genres,'modules':rows,'read_batches':batches,'deliverables':deliverables,'routing_note':'关键词路由只作起点；显式mode/task优先，不能把计划清单当作品正文或已完成任务。','media_generated':False}
 
 def safe_write(path,value,overwrite=False):

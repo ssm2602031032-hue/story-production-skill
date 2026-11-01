@@ -13,6 +13,8 @@ python scripts/creative_tools.py plan --request "小说改编成12集悬疑剧" 
 
 `--mode`和`--task`覆盖关键词推断。类型采用`comedy romance mystery thriller action sports fantasy sci-fi historical horror serial revenge`；`--modules`可显式添加[目录](module-catalog.md)中的ID。路由结果是计划，包含理由、建议交付和每组不超过三个模块的阅读批次。先读当前阶段需要的一组，不把所有批次塞入上下文。
 
+专项任务还支持`opening / emotion / antagonist / ensemble / transitions / pacing / short-form / audio / comics / nonfiction / naming / table-read`。例如`--task naming`只产生命名路线；`--task comics`选择漫画分格方法。`mode`仍用于标记既有小说/影视项目背景，专项任务不会因此自动转成一整部电影；广播剧/漫画的专用成品格式需按实际工具另行制作。
+
 这是一套透明关键词规则，不是语义模型。多义、否定或复杂目标应以用户实际意图纠正；未识别不能改写用户请求。局部对白任务不会自动生成整部电影。
 
 ## 建立证据关联记录
